@@ -11,3 +11,6 @@ obj/
 
 #extra folder
 Extra/
+/ProjectSettings/ProjectVersion.txt
+/ProjectSettings/ProjectSettings.asset
+/*.userprefs
