@@ -66,7 +66,6 @@ public class CameraControl : MonoBehaviour {
             initialPosition = targetPosition = basePosition;
         
         //tilt shake
-        Debug.Log(initialTilt + " " + targetTilt + " " + tiltDamp);
         currentTilt = Mathf.LerpAngle(initialTilt, targetTilt, tiltDamp);
 
         transform.localEulerAngles = new Vector3(
