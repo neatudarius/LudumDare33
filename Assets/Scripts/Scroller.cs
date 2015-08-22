@@ -8,8 +8,11 @@ public class Scroller : MonoBehaviour {
 	
 
 	void OnBecameInvisible() {
-		if (transform.position.x < 0)
-			Destroy (gameObject);
+        if ( transform.position.x < 0 ) {
+            if (gameObject.tag == "bean")
+                GameObject.Find ( "RangePanel" ).GetComponent<RangePanelController> ( ).IncreaseRange ( );
+            Destroy ( gameObject );
+        }
 	}
 
 	// Update is called once per frame

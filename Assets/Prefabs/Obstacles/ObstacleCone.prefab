@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11459408}
   - 61: {fileID: 6161546}
   - 114: {fileID: 11418610}
+  - 68: {fileID: 6879190}
   m_Layer: 0
   m_Name: ObstacleCone
   m_TagString: Untagged
@@ -41,9 +42,27 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 3.98000002}
+  m_Offset: {x: -.0429296494, y: .374152064}
   serializedVersion: 2
-  m_Size: {x: 5.71000004, y: 7.61000013}
+  m_Size: {x: 6.13926888, y: .468954444}
+--- !u!68 &6879190
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156642}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -.659172535, y: 7.72062302}
+  - {x: .624024868, y: 7.79779673}
+  - {x: 2.38265038, y: .630984008}
+  - {x: -2.49275684, y: .531799495}
+  - {x: -2.34349251, y: .799221098}
+  - {x: -.670623779, y: 7.75656462}
 --- !u!114 &11418610
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -80,12 +80,16 @@ public class PlayerControl : MonoBehaviour {
             state = "jump";
             anim.SetInteger("state", 3);
             rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpSpeed);
+            GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Jumping ;
+            GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Jumping;
         }
         
 
         if (rigid2D.velocity.normalized.y < 0.2 && state == "jump") {
             state = "falling";
             anim.SetInteger("state", 4);
+            GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Accelerated;
+            GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Accelerated;
         }
     }
 

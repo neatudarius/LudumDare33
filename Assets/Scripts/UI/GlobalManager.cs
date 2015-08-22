@@ -57,7 +57,8 @@ public class GlobalManager : MonoBehaviour {
     public static float foregroundSpeed_Normal = 2.0f;
     public static float backgroundSpeed_Accelerated = 2.0f;
     public static float foregroundSpeed_Accelerated = 3.0f;
-
+    public static float backgroundSpeed_Jumping = 10.0f;
+    public static float foregroundSpeed_Jumping = 12.0f;
     // curent speed
     public static float foregroundSpeed = 2.0f;
     public static float backgroundSpeed = 1.0f;
