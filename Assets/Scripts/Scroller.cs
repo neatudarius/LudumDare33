@@ -5,12 +5,7 @@ public class Scroller : MonoBehaviour {
 	
 	public bool isBackgroundItem;
 
-	private GameObject globalManager;
-
-	// Use this for initialization
-	void Start () {
-		globalManager = GameObject.Find ("_GlobalManager");
-	}
+	
 
 	void OnBecameInvisible() {
 		if (transform.position.x < 0)
@@ -20,9 +15,9 @@ public class Scroller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (isBackgroundItem) {
-			transform.position = transform.position + globalManager.GetComponent<GlobalManager>().backgroundSpeed * Vector3.left * Time.deltaTime;
+			transform.position = transform.position + GlobalManager.backgroundSpeed * Vector3.left * Time.deltaTime;
 		} else {
-			transform.position = transform.position + globalManager.GetComponent<GlobalManager>().foregroundSpeed * Vector3.left * Time.deltaTime;
+			transform.position = transform.position + GlobalManager.foregroundSpeed * Vector3.left * Time.deltaTime;
 		}
 	}
 }

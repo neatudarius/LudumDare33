@@ -5,13 +5,7 @@ public class RoadSpawner : MonoBehaviour {
 
 	public GameObject roadTilePrefab;
 	private float spawnTimer = 0;
-	private GameObject globalManager;
 
-
-	// Use this for initialization
-	void Start () {
-		globalManager = GameObject.Find ("_GlobalManager");
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -27,7 +21,7 @@ public class RoadSpawner : MonoBehaviour {
 			float leftXvalue = (pos + newRoadTile.GetComponent<SpriteRenderer>().bounds.min).x;
 			float rightXvalue = (pos + newRoadTile.GetComponent<SpriteRenderer>().bounds.max).x;
 			float distance = rightXvalue - leftXvalue - 0.1f;
-			spawnTimer = distance / globalManager.GetComponent<GlobalManager>().foregroundSpeed;
+			spawnTimer = distance / GlobalManager.foregroundSpeed;
 		}
 
 		spawnTimer -= Time.deltaTime;

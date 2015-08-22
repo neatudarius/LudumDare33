@@ -50,10 +50,19 @@ public class GlobalManager : MonoBehaviour {
             Application.CaptureScreenshot ( StringsDatabase.screenShotName + printSreenCounter.ToString ( ) + ".png" );
         }
     }
-    */
-   
-	public float foregroundSpeed;
-	public float backgroundSpeed;
+   */
+
+    //default speed values
+    public static float backgroundSpeed_Normal = 1.0f;
+    public static float foregroundSpeed_Normal = 2.0f;
+    public static float backgroundSpeed_Accelerated = 2.0f;
+    public static float foregroundSpeed_Accelerated = 3.0f;
+
+    // curent speed
+    public static float foregroundSpeed = 2.0f;
+    public static float backgroundSpeed = 1.0f;
+
+
 
     public void LoadLevel ( string nextLevel ) {
         Application.LoadLevel ( nextLevel );
