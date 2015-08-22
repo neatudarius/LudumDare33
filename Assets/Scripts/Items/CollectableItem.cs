@@ -2,16 +2,23 @@
 using System.Collections;
 
 public class CollectableItem : MonoBehaviour {
+    public GameObject rangePanel;
+
     public float rotateSpeed = 100.0f;
     private bool effectIsOn = false;
     public float timeUntilDestroy = 0.7f;
+
+
     void Start ( ) {
         effectIsOn = false;
     }
     void OnTriggerEnter2D (Collider2D hit ) {
-        gameObject.GetComponent<Collider2D> ( ).enabled = false;
-        effectIsOn = true;
-        Destroy ( gameObject, timeUntilDestroy );
+        if ( !effectIsOn ) {
+            gameObject.GetComponent<Collider2D> ( ).enabled = false;
+            effectIsOn = true;
+            GameObject.Find ( "RangePanel" ).GetComponent<RangePanelController> ( ).IncreaseRange ( );
+            Destroy ( gameObject, timeUntilDestroy );
+        }
     }
 
     void Update ( ) {
