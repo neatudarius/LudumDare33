@@ -28,11 +28,11 @@ public class PlayerControl : MonoBehaviour {
     void Update() {
         //make sure it stays in bounds
         if (transform.position.x < leftBound.position.x) {
-            transform.position = new Vector2(leftBound.position.x, transform.position.y);
+            transform.position = new Vector3(leftBound.position.x, transform.position.y, transform.position.z);
             currentSpeed = 0.0f;
         }
         else if (transform.position.x > rightBound.position.x) {
-            transform.position = new Vector2(rightBound.position.x, transform.position.y);
+            transform.position = new Vector3(rightBound.position.x, transform.position.y, transform.position.z);
             currentSpeed = 0.0f;
         }
 
