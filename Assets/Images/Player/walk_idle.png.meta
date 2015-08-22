@@ -1,0 +1,418 @@
+fileFormatVersion: 2
+guid: ec907464ef6bea0438783ee8b4f40b8b
+timeCreated: 1440266463
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: walk_idle_0
+    21300002: walk_idle_1
+    21300004: walk_idle_2
+    21300006: walk_idle_3
+    21300008: walk_idle_4
+    21300010: walk_idle_5
+    21300012: walk_idle_6
+    21300014: walk_idle_7
+    21300016: walk_idle_8
+    21300018: walk_idle_9
+    21300020: walk_idle_10
+    21300022: walk_idle_11
+    21300024: walk_idle_12
+    21300026: walk_idle_13
+    21300028: walk_idle_14
+    21300030: walk_idle_15
+    21300032: walk_idle_16
+    21300034: walk_idle_17
+    21300036: walk_idle_18
+    21300038: walk_idle_19
+    21300040: walk_idle_20
+    21300042: walk_idle_21
+    21300044: walk_idle_22
+    21300046: walk_idle_23
+    21300048: walk_idle_24
+    21300050: walk_idle_25
+    21300052: walk_idle_26
+    21300054: walk_idle_27
+    21300056: walk_idle_28
+    21300058: walk_idle_29
+    21300060: walk_idle_30
+    21300062: walk_idle_31
+    21300064: walk_idle_32
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: walk_idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1665
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_1
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1665
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_2
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1665
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_3
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1665
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_4
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1665
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_5
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1665
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1332
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_7
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1332
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_8
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1332
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_9
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1332
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_10
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1332
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_11
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1332
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 999
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_13
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 999
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_14
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 999
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_15
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 999
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_16
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 999
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_17
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 999
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 666
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_19
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 666
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_20
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 666
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_21
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 666
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_22
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 666
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_23
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 666
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 333
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_25
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 333
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_26
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 333
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_27
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 333
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_28
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 333
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_29
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 333
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_31
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_idle_32
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 264
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

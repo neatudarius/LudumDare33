@@ -71,7 +71,7 @@ public class PlayerControl : MonoBehaviour {
             rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpSpeed);
         }
 
-        if (rigid2D.velocity.normalized.y < -0.1 && state == "jump") {
+        if (rigid2D.velocity.normalized.y < 0.2 && state == "jump") {
             state = "falling";
             anim.SetInteger("state", 4);
         }
