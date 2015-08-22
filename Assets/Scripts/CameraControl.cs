@@ -28,9 +28,14 @@ public class CameraControl : MonoBehaviour {
 
     private float tiltDamp;
 
+    Vector3 currentPosition = Vector3.zero;
+    float currentTilt = 0f;
+
 	void Start () {
         basePosition =  targetPosition = initialPosition = transform.position;
         baseTilt = targetTilt = initialTilt = transform.rotation.z;
+        positionDamp = Vector3.zero;
+        tiltDamp = 0.0f;
 	}
 	
 	void Update () {
@@ -40,8 +45,6 @@ public class CameraControl : MonoBehaviour {
             Shake(new Vector3(0, 1f, 0), new Vector3(0, 0.05f, 0), 0.5f);
         }
         */
-        Vector3 currentPosition;
-        float currentTilt;
 
         //position shake
         currentPosition.x = Mathf.Lerp(initialPosition.x, targetPosition.x, positionDamp.x);

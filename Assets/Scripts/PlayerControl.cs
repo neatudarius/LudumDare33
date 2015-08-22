@@ -12,6 +12,8 @@ public class PlayerControl : MonoBehaviour {
     public float speedSmooth = 0.2f;
     public Transform groundCheck;
 
+    public string state;
+
     private Rigidbody2D rigid2D;
     private Animator anim;
 
@@ -24,6 +26,8 @@ public class PlayerControl : MonoBehaviour {
         currentSpeed = 0;
         rigid2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        state = "walk_idle";
+        anim.SetInteger("state", 0);
 	}
 
     void Update() {
@@ -39,18 +43,37 @@ public class PlayerControl : MonoBehaviour {
 
         //get input for forward/backward movement
         if (Input.GetAxis("Horizontal") > 0.1) {
+            if (isGrounded) {
+                state = "walk_forward";
+                anim.SetInteger("state", 1);
+            }
             currentSpeed = Mathf.SmoothDamp(currentSpeed, forwardSpeed, ref speedDampVelocity, speedSmooth);
         }
         else if (Input.GetAxis("Horizontal") < -0.1) {
+            if (isGrounded) {
+                state = "walk_backward";
+                anim.SetInteger("state", 2);
+            }
             currentSpeed = Mathf.SmoothDamp(currentSpeed, -backwardSpeed, ref speedDampVelocity, speedSmooth);
         }
         else {
+            if (isGrounded) {
+                state = "walk_idle";
+                anim.SetInteger("state", 0);
+            }
             currentSpeed = Mathf.SmoothDamp(currentSpeed, 0f, ref speedDampVelocity, speedSmooth);
         }
 
         //jump
         if (isGrounded && (Input.GetButton("Jump") || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) ) {
+            state = "jump";
+            anim.SetInteger("state", 3);
             rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpSpeed);
+        }
+
+        if (rigid2D.velocity.normalized.y < -0.1 && state == "jump") {
+            state = "falling";
+            anim.SetInteger("state", 4);
         }
     }
 
@@ -63,6 +86,8 @@ public class PlayerControl : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D hit) {
         if(hit.gameObject.layer == LayerMask.NameToLayer("Ground")) {
+            state = "landed";
+            anim.SetInteger("state", 5);
             cameraControl.PositionShake(new Vector3(0, 0.5f, 0), new Vector3(0, 20.0f, 0), 0.5f);
             cameraControl.TiltShake(2.0f, 25.0f, 0.5f);
         }
