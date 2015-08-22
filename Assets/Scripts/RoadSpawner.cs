@@ -14,7 +14,7 @@ public class RoadSpawner : MonoBehaviour {
 			GameObject newRoadTile = Instantiate (roadTilePrefab);
 			newRoadTile.transform.position = transform.position;
 			newRoadTile.transform.parent = GameObject.Find ("RoadHolder").transform;
-            gameObject.GetComponent<CoffeBeansController> ( ).coffeeParent = newRoadTile.transform;
+            //gameObject.GetComponent<CoffeBeansController> ( ).coffeeParent = newRoadTile.transform;
 
 			// Calculate time until next spawn
 			Vector3 pos = newRoadTile.transform.position;

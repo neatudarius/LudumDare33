@@ -98,7 +98,8 @@ public class CoffeBeansController : MonoBehaviour {
         GameObject newBean = ( GameObject ) Instantiate ( CoffeeBeanPrefab, transform.position, Quaternion.identity );
         newBean.transform.SetParent ( coffeeParent );
         newBean.transform.position = new Vector3 ( transform.position.x, _defaultY, -1 );
-        newBean.transform.localScale = new Vector3 ( 0.8f, 0.8f, 0.8f );
+        //newBean.transform.localScale = new Vector3 ( 0.8f, 0.8f, 0.8f );
+        newBean.transform.localScale = new Vector3 ( 0.4f, 0.4f, 0.4f );
         return newBean;
     }
 }
