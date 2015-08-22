@@ -4,7 +4,6 @@ using System.Collections;
 public class RoadSpawner : MonoBehaviour {
 
 	public GameObject roadTilePrefab;
-
 	private float spawnTimer = 0;
 
 	// Use this for initialization
@@ -19,6 +18,7 @@ public class RoadSpawner : MonoBehaviour {
 			GameObject newRoadTile = Instantiate (roadTilePrefab);
 			newRoadTile.transform.position = transform.position;
 			newRoadTile.transform.parent = GameObject.Find ("RoadHolder").transform;
+            gameObject.GetComponent<CoffeBeansController> ( ).coffeeParent = newRoadTile.transform;
 
 			// Calculate time until next spawn
 			Vector3 pos = newRoadTile.transform.position;

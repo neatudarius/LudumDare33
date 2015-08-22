@@ -374,7 +374,6 @@ GameObject:
   - 124: {fileID: 646445454}
   - 81: {fileID: 646445453}
   - 114: {fileID: 646445458}
-  - 114: {fileID: 646445459}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -1044,7 +1043,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 469646, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -7.38000011
       objectReference: {fileID: 0}
     - target: {fileID: 469646, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1086,26 +1085,6 @@ Prefab:
       propertyPath: rightBound
       value: 
       objectReference: {fileID: 78971824}
-    - target: {fileID: 11440450, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
-      propertyPath: forwardSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 11440450, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
-      propertyPath: backwardSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 11440450, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
-      propertyPath: jumpSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5067260, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
-      propertyPath: m_GravityScale
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 469646, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
   m_IsPrefabParent: 0
@@ -1225,7 +1204,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 402538, guid: 23bc01643287e3e40beef57d46be21a5, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 23bc01643287e3e40beef57d46be21a5, type: 2}
@@ -1331,6 +1310,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1776411467}
   - 114: {fileID: 1776411466}
+  - 114: {fileID: 1776411468}
   m_Layer: 0
   m_Name: RoadSpawner
   m_TagString: Untagged
@@ -1362,6 +1342,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &1776411468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1776411465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec4fdf823ea7a14e88dcced05c3517a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoffeeBeanPrefab: {fileID: 100130, guid: ee64b03419e599749a8b83bd0874a1a3, type: 2}
+  leftBound: {fileID: 430337020}
+  rightBound: {fileID: 78971823}
+  coffeeParent: {fileID: 855292592}
+  delayTime: .5
+  minY: 1
+  maxY: 8
+  dif: .5
 --- !u!1001 &1789067845
 Prefab:
   m_ObjectHideFlags: 0
@@ -1537,7 +1536,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22486372, guid: 1f8679a56c319b04ab8950afe58221a3, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 22486372, guid: 1f8679a56c319b04ab8950afe58221a3, type: 2}
       propertyPath: m_AnchoredPosition.x
