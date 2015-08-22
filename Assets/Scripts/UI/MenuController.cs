@@ -61,7 +61,7 @@ public class MenuController : MonoBehaviour {
     }
 
     void Update( ) {
-        if ( Input.GetKeyUp(KeyCode.Escape) ) {
+        if ( Input.GetKeyUp(KeyCode.Escape) && !isGameOver ) {
             if ( isShowingMenu ) {
                 if (!isInMainMenu) {
                     isShowingMenu = false;
@@ -75,7 +75,6 @@ public class MenuController : MonoBehaviour {
         }
 
         if ( isGameOver ) {
-            isShowingMenu = true;
             GameOverMenu ( );
         }
 
@@ -221,10 +220,12 @@ public class MenuController : MonoBehaviour {
 
     // Assign Game Over Menu Buttons' names
     void GameOverMenu ( ) {
-        for ( int i = 0; i < ButtonsCount - 1; i++ ) {
-            buttons[ i ] = buttons[ i + 1 ];
+        if ( isShowingMenu ) {
+            return;
         }
-        ButtonsCount--;
+        
+        buttons[ 0 ].SetActive (false );
+        isShowingMenu = true;
     }
 
     // For a preset set of value build a menu

@@ -5,7 +5,7 @@ public class Obstacle : MonoBehaviour {
 
 	void OnCollisionEnter2D( Collision2D coll ) {
 		if (coll.gameObject.name == "Player") {
-			Application.LoadLevel ("Menu");
+            GameObject.Find ( "_Canvas" ).GetComponent<MenuController> ( ).isGameOver = true;
 		}
 	}
 
