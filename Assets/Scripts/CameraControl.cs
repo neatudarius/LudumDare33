@@ -34,8 +34,8 @@ public class CameraControl : MonoBehaviour {
 	void Start () {
         basePosition =  targetPosition = initialPosition = transform.position;
         baseTilt = targetTilt = initialTilt = transform.rotation.z;
-        positionDamp = Vector3.zero;
-        tiltDamp = 0.0f;
+        positionDamp = Vector3.one;
+        tiltDamp = 1.0f;
 	}
 	
 	void Update () {
@@ -65,7 +65,8 @@ public class CameraControl : MonoBehaviour {
         else
             initialPosition = targetPosition = basePosition;
         
-        //tilt shake 
+        //tilt shake
+        Debug.Log(initialTilt + " " + targetTilt + " " + tiltDamp);
         currentTilt = Mathf.LerpAngle(initialTilt, targetTilt, tiltDamp);
 
         transform.localEulerAngles = new Vector3(
