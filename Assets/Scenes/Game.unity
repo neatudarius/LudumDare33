@@ -208,6 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabList:
   - {fileID: 156642, guid: f6dfdb9b52306cc419135e2db2b8fa3e, type: 2}
+  - {fileID: 123512, guid: 67852ce312bdd8040a06ac66c9989250, type: 2}
 --- !u!4 &50319887
 Transform:
   m_ObjectHideFlags: 0
@@ -215,7 +216,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 50319885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.7700005, y: .150000006, z: 0}
+  m_LocalPosition: {x: 13.9799995, y: .75999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
