@@ -52,6 +52,8 @@ public class GlobalManager : MonoBehaviour {
     }
     */
    
+	public float foregroundSpeed;
+	public float backgroundSpeed;
 
     public void LoadLevel ( string nextLevel ) {
         Application.LoadLevel ( nextLevel );

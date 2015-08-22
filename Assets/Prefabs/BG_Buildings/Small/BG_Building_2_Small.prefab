@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681edd76865bab74c9f62c458c348a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 1
+  isBackgroundItem: 1
 --- !u!212 &21257242
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -105,6 +105,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Color.b
       value: .619607866
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isBackgroundItem
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
