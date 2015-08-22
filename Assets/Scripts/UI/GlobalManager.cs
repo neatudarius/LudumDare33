@@ -42,7 +42,7 @@ public class GlobalManager : MonoBehaviour {
 
     static int printSreenCounter = 0;
 
-
+    /*
     void Update ( ) {
 
         if ( Input.GetKeyUp ( KeyCode.P ) ) {
@@ -50,7 +50,7 @@ public class GlobalManager : MonoBehaviour {
             Application.CaptureScreenshot ( StringsDatabase.screenShotName + printSreenCounter.ToString ( ) + ".png" );
         }
     }
-
+    */
    
 
     public void LoadLevel ( string nextLevel ) {
