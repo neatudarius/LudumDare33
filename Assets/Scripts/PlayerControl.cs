@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 
+    public Transform leftBound;
+    public Transform rightBound;
     public float forwardSpeed = 5.0f;
     public float backwardSpeed = 10.0f;
     public float jumpSpeed = 15.0f;
@@ -24,6 +26,17 @@ public class PlayerControl : MonoBehaviour {
 	}
 
     void Update() {
+        //make sure it stays in bounds
+        if (transform.position.x < leftBound.position.x) {
+            transform.position = new Vector2(leftBound.position.x, transform.position.y);
+            currentSpeed = 0.0f;
+        }
+        else if (transform.position.x > rightBound.position.x) {
+            transform.position = new Vector2(rightBound.position.x, transform.position.y);
+            currentSpeed = 0.0f;
+        }
+
+        //get input for forward/backward movement
         if (Input.GetAxis("Horizontal") > 0.1) {
             currentSpeed = Mathf.SmoothDamp(currentSpeed, forwardSpeed, ref speedDampVelocity, speedSmooth);
         }
@@ -34,6 +47,7 @@ public class PlayerControl : MonoBehaviour {
             currentSpeed = Mathf.SmoothDamp(currentSpeed, 0f, ref speedDampVelocity, speedSmooth);
         }
 
+        //jump
         if (isGrounded && (Input.GetButton("Jump") || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) ) {
             rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpSpeed);
         }
@@ -42,6 +56,7 @@ public class PlayerControl : MonoBehaviour {
 	void FixedUpdate () {
         //apply the force
         rigid2D.velocity = new Vector2(currentSpeed, rigid2D.velocity.y);
+        //check if is grounded
         isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
     }
 }
