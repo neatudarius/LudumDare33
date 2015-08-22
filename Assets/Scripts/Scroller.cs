@@ -11,7 +11,8 @@ public class Scroller : MonoBehaviour {
 	}
 
 	void OnBecameInvisible() {
-		Destroy (gameObject);
+		if (transform.position.x < 0)
+			Destroy (gameObject);
 	}
 
 	// Update is called once per frame
