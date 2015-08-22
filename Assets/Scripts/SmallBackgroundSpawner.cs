@@ -9,13 +9,7 @@ public class SmallBackgroundSpawner : MonoBehaviour {
 	
 	private float spawnTimer = 0;
 	private Vector3 cornerOfNewestBuilding;
-	private GameObject globalManager;
-	
-	// Use this for initialization
-	void Start () {
-		globalManager = GameObject.Find ("_GlobalManager");
-	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (spawnTimer < 0) {
@@ -32,7 +26,7 @@ public class SmallBackgroundSpawner : MonoBehaviour {
 			rightmostBuilding = newBuilding;
 			
 			// Calculate time until next spawn
-			spawnTimer = newWidth / globalManager.GetComponent<GlobalManager>().backgroundSpeed;
+			spawnTimer = newWidth / GlobalManager.backgroundSpeed;
 		}
 		
 		spawnTimer -= Time.deltaTime;

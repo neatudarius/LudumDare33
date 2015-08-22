@@ -22,6 +22,9 @@ public class PlayerControl : MonoBehaviour {
 
     private float speedDampVelocity;
 
+
+
+
     void Start () {
         currentSpeed = 0;
         rigid2D = GetComponent<Rigidbody2D>();
@@ -31,6 +34,7 @@ public class PlayerControl : MonoBehaviour {
 	}
 
     void Update() {
+        
         //make sure it stays in bounds
         if (transform.position.x < leftBound.position.x) {
             transform.position = new Vector3(leftBound.position.x, transform.position.y, transform.position.z);
@@ -41,35 +45,43 @@ public class PlayerControl : MonoBehaviour {
             currentSpeed = 0.0f;
         }
 
+        
         //get input for forward/backward movement
         if (Input.GetAxis("Horizontal") > 0.1) {
             if (isGrounded) {
                 state = "walk_forward";
                 anim.SetInteger("state", 1);
             }
-            currentSpeed = Mathf.SmoothDamp(currentSpeed, forwardSpeed, ref speedDampVelocity, speedSmooth);
+            GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Accelerated;
+            GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Accelerated;
+            //currentSpeed = 
         }
         else if (Input.GetAxis("Horizontal") < -0.1) {
             if (isGrounded) {
                 state = "walk_backward";
                 anim.SetInteger("state", 2);
             }
-            currentSpeed = Mathf.SmoothDamp(currentSpeed, -backwardSpeed, ref speedDampVelocity, speedSmooth);
+            GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Normal;
+            GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Normal;
+            //currentSpeed = Mathf.SmoothDamp(currentSpeed, -backwardSpeed, ref speedDampVelocity, speedSmooth);
         }
         else {
             if (isGrounded) {
                 state = "walk_idle";
                 anim.SetInteger("state", 0);
             }
-            currentSpeed = Mathf.SmoothDamp(currentSpeed, 0f, ref speedDampVelocity, speedSmooth);
+            GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Normal;
+            GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Normal;
+            //currentSpeed = Mathf.SmoothDamp(currentSpeed, 0f, ref speedDampVelocity, speedSmooth);
         }
-
+        
         //jump
-        if (isGrounded && (Input.GetButton("Jump") || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) ) {
+        if ( isGrounded && (Input.GetButton("Jump") || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) ) {
             state = "jump";
             anim.SetInteger("state", 3);
             rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpSpeed);
         }
+        
 
         if (rigid2D.velocity.normalized.y < 0.2 && state == "jump") {
             state = "falling";
