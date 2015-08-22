@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 
+    public CameraControl cameraControl;
     public Transform leftBound;
     public Transform rightBound;
     public float forwardSpeed = 5.0f;
@@ -58,5 +59,12 @@ public class PlayerControl : MonoBehaviour {
         rigid2D.velocity = new Vector2(currentSpeed, rigid2D.velocity.y);
         //check if is grounded
         isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+    }
+
+    void OnCollisionEnter2D(Collision2D hit) {
+        if(hit.gameObject.layer == LayerMask.NameToLayer("Ground")) {
+            cameraControl.PositionShake(new Vector3(0, 0.5f, 0), new Vector3(0, 20.0f, 0), 0.5f);
+            cameraControl.TiltShake(2.0f, 25.0f, 0.5f);
+        }
     }
 }
