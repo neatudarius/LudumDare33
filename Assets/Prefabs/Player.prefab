@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ce8213e74d5a746ae7fd34d86c1b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraControl: {fileID: 0}
   leftBound: {fileID: 0}
   rightBound: {fileID: 0}
   forwardSpeed: 10
