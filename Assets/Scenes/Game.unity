@@ -153,9 +153,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 11405764, guid: ee64b03419e599749a8b83bd0874a1a3, type: 2}
-      propertyPath: rotateSpeed
-      value: 200
+    - target: {fileID: 5891524, guid: ee64b03419e599749a8b83bd0874a1a3, type: 2}
+      propertyPath: m_Radius
+      value: 1.16899538
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee64b03419e599749a8b83bd0874a1a3, type: 2}
