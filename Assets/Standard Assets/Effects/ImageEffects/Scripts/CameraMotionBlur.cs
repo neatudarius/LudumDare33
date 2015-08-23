@@ -311,7 +311,7 @@ namespace UnityStandardAssets.ImageEffects
                     Graphics.Blit (source, destination, motionBlurMaterial, 4);
                 }
                 else if (filterType == MotionBlurFilter.CameraMotion) {
-                    // orange box style motion blur
+                    // orage box style motion blur
                     Graphics.Blit (source, destination, motionBlurMaterial, 6);
                 }
                 else if (filterType == MotionBlurFilter.ReconstructionDisc) {

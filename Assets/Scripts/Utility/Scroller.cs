@@ -10,7 +10,7 @@ public class Scroller : MonoBehaviour {
 	void OnBecameInvisible() {
         if ( transform.position.x < 0 ) {
             if (gameObject.tag == "bean")
-                GameObject.Find ( "RangePanel" ).GetComponent<RangePanelController> ( ).IncreaseRange ( );
+                GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( ).IncreaseRage ( );
             Destroy ( gameObject );
         }
 	}

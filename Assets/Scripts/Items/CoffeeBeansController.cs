@@ -10,32 +10,33 @@ public class CoffeeBeansController : MonoBehaviour {
     public Transform coffeeParent;
     public float delayTime = 0.5f;
     public float minY = 1.0f, maxY = 5.0f, dif = 10f;
-    float Y_MAX = 9f, Y_MIN = 5.5f;
+    float Y_MAX = 9f;
+    //float Y_MIN = 5.5f;
     float defaultY = 1.0f;
 
-    List <GameObject> listOfBeans;
+    List<GameObject> listOfBeans;
     bool avaible;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start ( ) {
         listOfBeans = new List<GameObject> ( );
         avaible = true;
         defaultY = minY;
         Random.seed = 50;
-	}
+    }
 
     void FixedUpdate ( ) {
         if ( avaible ) {
             avaible = false;
-            int rand = Random.RandomRange ( 0, 100 ) % 3 + 1;
+            int rand = Random.Range ( 0, 100 ) % 3 + 1;
             switch ( rand ) {
                 case 1:
                     //line
-                    defaultY = Random.RandomRange ( 1.0f, 3.0f) * Random.RandomRange(1.0f,2.0f);
-                    StartCoroutine ( TrowBeans_LINE ((int)Random.RandomRange(2f, 5f)) );
+                    defaultY = Random.Range ( 1.0f, 3.0f ) * Random.Range ( 1.0f, 2.0f );
+                    StartCoroutine ( TrowBeans_LINE ( ( int ) Random.Range ( 2f, 5f ) ) );
                     break;
                 case 2:
-                    defaultY = Random.RandomRange ( 1.0f, 3.0f );
+                    defaultY = Random.Range ( 1.0f, 3.0f );
                     StartCoroutine ( TrowBeans_Ascending ( 5 ) );
                     break;
                 case 3:
@@ -46,7 +47,7 @@ public class CoffeeBeansController : MonoBehaviour {
         }
     }
 
-    IEnumerator TrowBeans_Descending (int cnt ) {
+    IEnumerator TrowBeans_Descending ( int cnt ) {
         listOfBeans.Add ( GetBean ( defaultY ) );
         yield return new WaitForSeconds ( delayTime );
         defaultY -= dif;
@@ -54,7 +55,7 @@ public class CoffeeBeansController : MonoBehaviour {
         if ( cnt > 0 && defaultY > minY )
             StartCoroutine ( TrowBeans_Descending ( cnt ) );
         else {
-            int rand = Random.RandomRange ( 0, 100 );
+            int rand = Random.Range ( 0, 100 );
             if ( rand % 2 == 0 )
                 StartCoroutine ( TrowBeans_Ascending ( 5 ) );
             else
@@ -62,15 +63,15 @@ public class CoffeeBeansController : MonoBehaviour {
         }
     }
 
-    IEnumerator TrowBeans_Ascending (int cnt) {
-        listOfBeans.Add ( GetBean ( defaultY) );
+    IEnumerator TrowBeans_Ascending ( int cnt ) {
+        listOfBeans.Add ( GetBean ( defaultY ) );
         yield return new WaitForSeconds ( delayTime );
         defaultY += dif;
         cnt--;
         if ( cnt > 0 && defaultY < Y_MAX )
             StartCoroutine ( TrowBeans_Ascending ( cnt ) );
         else {
-            int rand = Random.RandomRange ( 0, 100 );
+            int rand = Random.Range ( 0, 100 );
             if ( rand % 2 == 0 )
                 StartCoroutine ( TrowBeans_Descending ( 5 ) );
             else
@@ -78,23 +79,23 @@ public class CoffeeBeansController : MonoBehaviour {
         }
     }
 
-    IEnumerator TrowBeans_LINE (int cnt ) {
+    IEnumerator TrowBeans_LINE ( int cnt ) {
         listOfBeans.Add ( GetBean ( defaultY ) );
         yield return new WaitForSeconds ( delayTime );
         cnt--;
-        if (cnt > 0)
-            StartCoroutine ( TrowBeans_LINE ( cnt) );
+        if ( cnt > 0 )
+            StartCoroutine ( TrowBeans_LINE ( cnt ) );
         else
-            StartCoroutine(Release(2.50f));
+            StartCoroutine ( Release ( 2.50f ) );
     }
 
 
     IEnumerator Release ( float time ) {
-        yield return new WaitForSeconds (time);
+        yield return new WaitForSeconds ( time );
         avaible = true;
     }
 
-    private GameObject GetBean (float _defaultY ) {
+    private GameObject GetBean ( float _defaultY ) {
         GameObject newBean = ( GameObject ) Instantiate ( CoffeeBeanPrefab, transform.position, Quaternion.identity );
         newBean.transform.SetParent ( coffeeParent );
         newBean.transform.position = new Vector3 ( transform.position.x, _defaultY, -1 );

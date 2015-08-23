@@ -344,7 +344,7 @@ FXAA_SUBPIX_CAP - Insures fine detail is not completely removed.
 // Return the luma, the estimation of luminance from rgb inputs.
 // This approximates luma using one FMA instruction,
 // skipping normalization and tossing out blue.
-// FxaaLuma() will range 0.0 to 2.963210702.
+// FxaaLuma() will rage 0.0 to 2.963210702.
 float FxaaLuma(float3 rgb) {
     return rgb.y * (0.587/0.299) + rgb.x; } 
 /*--------------------------------------------------------------------------*/
@@ -371,7 +371,7 @@ float3 FxaaFilterReturn(float3 rgb) {
                                 VERTEX SHADER
 ============================================================================*/
 float2 FxaaVertexShader(
-// Both x and y range {-1.0 to 1.0 across screen}.
+// Both x and y rage {-1.0 to 1.0 across screen}.
 float2 inPos) {
     float2 pos;
     pos.xy = (inPos.xy * FxaaFloat2(0.5, 0.5)) + FxaaFloat2(0.5, 0.5);
@@ -404,8 +404,8 @@ Given the following neighborhood,
     W M E
       S   
     
-If the difference in local maximum and minimum luma (contrast "range") 
-is lower than a threshold proportional to the maximum local luma ("rangeMax"), 
+If the difference in local maximum and minimum luma (contrast "rage") 
+is lower than a threshold proportional to the maximum local luma ("rageMax"), 
 then the shader early exits (no visible aliasing). 
 This threshold is clamped at a minimum value ("FXAA_EDGE_THRESHOLD_MIN")
 to avoid processing in really dark areas.    
@@ -420,13 +420,13 @@ to avoid processing in really dark areas.
     float lumaM = FxaaLuma(rgbM);
     float lumaE = FxaaLuma(rgbE);
     float lumaS = FxaaLuma(rgbS);
-    float rangeMin = min(lumaM, min(min(lumaN, lumaW), min(lumaS, lumaE)));
-    float rangeMax = max(lumaM, max(max(lumaN, lumaW), max(lumaS, lumaE)));
-    float range = rangeMax - rangeMin;
+    float rageMin = min(lumaM, min(min(lumaN, lumaW), min(lumaS, lumaE)));
+    float rageMax = max(lumaM, max(max(lumaN, lumaW), max(lumaS, lumaE)));
+    float rage = rageMax - rageMin;
     #if FXAA_DEBUG
         float lumaO = lumaM / (1.0 + (0.587/0.299));
     #endif        
-    if(range < max(FXAA_EDGE_THRESHOLD_MIN, rangeMax * FXAA_EDGE_THRESHOLD)) {
+    if(rage < max(FXAA_EDGE_THRESHOLD_MIN, rageMax * FXAA_EDGE_THRESHOLD)) {
         #if FXAA_DEBUG
             return FxaaFilterReturn(FxaaToFloat3(lumaO));
         #endif
@@ -447,8 +447,8 @@ FXAA computes a local neighborhood lowpass value as follows,
  
   (N + W + E + S)/4
   
-Then uses the ratio of the contrast range of the lowpass 
-and the range found in the early exit check, 
+Then uses the ratio of the contrast rage of the lowpass 
+and the rage found in the early exit check, 
 as a sub-pixel aliasing detection filter. 
 When FXAA detects sub-pixel aliasing (such as single pixel dots), 
 it later blends in "blendL" amount 
@@ -456,15 +456,15 @@ of a lowpass value (computed in the next section) to the final result.
 ----------------------------------------------------------------------------*/
     #if FXAA_SUBPIX != 0
         float lumaL = (lumaN + lumaW + lumaE + lumaS) * 0.25;
-        float rangeL = abs(lumaL - lumaM);
+        float rageL = abs(lumaL - lumaM);
     #endif        
     #if FXAA_SUBPIX == 1
         float blendL = max(0.0, 
-            (rangeL / range) - FXAA_SUBPIX_TRIM) * FXAA_SUBPIX_TRIM_SCALE; 
+            (rageL / rage) - FXAA_SUBPIX_TRIM) * FXAA_SUBPIX_TRIM_SCALE; 
         blendL = min(FXAA_SUBPIX_CAP, blendL);
     #endif
     #if FXAA_SUBPIX == 2
-        float blendL = rangeL / range; 
+        float blendL = rageL / rage; 
     #endif
     #if FXAA_DEBUG_PASSTHROUGH
         #if FXAA_SUBPIX == 0

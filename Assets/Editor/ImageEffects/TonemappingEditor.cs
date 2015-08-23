@@ -38,7 +38,7 @@ namespace UnityStandardAssets.ImageEffects
         public override void OnInspectorGUI () {
             serObj.Update ();
 
-            GUILayout.Label("Mapping HDR to LDR ranges since 1982", EditorStyles.miniLabel);
+            GUILayout.Label("Mapping HDR to LDR rages since 1982", EditorStyles.miniLabel);
 
             Camera cam = (target as Tonemapping).GetComponent<Camera>();
             if (cam != null) {

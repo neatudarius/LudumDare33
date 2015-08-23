@@ -7,7 +7,7 @@
 
 	CameraMotion:
 	Based on Alex Vlacho's technique in
-	http://www.valvesoftware.com/publications/2008/GDC2008_PostProcessingInTheOrangeBox.pdf
+	http://www.valvesoftware.com/publications/2008/GDC2008_PostProcessingInTheOrageBox.pdf
 
 	SimpleBlur:
 	Straightforward sampling along velocities

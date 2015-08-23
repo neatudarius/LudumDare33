@@ -13,7 +13,7 @@ public class MenuController : MonoBehaviour {
     // Panels
     public GameObject MenuControlPanel;
     public GameObject CreditsControlPanel;
-    public GameObject RangePanel;
+    public GameObject RagePanel;
 
     // Maintenance
     public bool isGameOver = false;
@@ -24,46 +24,46 @@ public class MenuController : MonoBehaviour {
 
     // Main Menu/ Pause Menu
     private int ButtonsCount;
-    private GameObject[] buttons; // as object
-    private string[] buttonsNames; // what you see
+    private GameObject[ ] buttons; // as object
+    private string[ ] buttonsNames; // what you see
 
 
     // Settings menu
     private GameObject backToMenuButton;
 
-    void Start( ) {
+    void Start ( ) {
         globalManager = GameObject.FindObjectOfType<GlobalManager> ( );
 
         isInMainMenu = ( Application.loadedLevelName == StringsDatabase.menuSceneName ? true : false );
         isGameOver = false;
 
-        if ( RangePanel != null ) {
-            RangePanel.SetActive(true);
+        if ( RagePanel != null ) {
+            RagePanel.SetActive ( true );
         }
 
 
         if ( isInMainMenu ) {
-            MainMenu( );
+            MainMenu ( );
             isShowingMenu = true;
         } else {
-            PauseMenu( );
+            PauseMenu ( );
             isShowingMenu = false;
         }
 
-        BuildMenuButtons( );
-        BuildCreditsPanel( );
+        BuildMenuButtons ( );
+        BuildCreditsPanel ( );
 
 
         isShowingCreditsPanel = false;
-        CreditsControlPanel.SetActive( false );
+        CreditsControlPanel.SetActive ( false );
 
 
     }
 
-    void Update( ) {
-        if ( Input.GetKeyUp(KeyCode.Escape) && !isGameOver ) {
+    void Update ( ) {
+        if ( Input.GetKeyDown ( KeyCode.Escape ) && !isGameOver ) {
             if ( isShowingMenu ) {
-                if (!isInMainMenu) {
+                if ( !isInMainMenu ) {
                     isShowingMenu = false;
                 }
             } else {
@@ -82,49 +82,50 @@ public class MenuController : MonoBehaviour {
         Cursor.visible = ( isShowingMenu || isShowingCreditsPanel ? true : false );
 
         if ( isShowingMenu ) {
-            ShowMenu( );
+            ShowMenu ( );
         } else {
-            HideMenu( );
+            HideMenu ( );
         }
 
         if ( isShowingCreditsPanel ) {
-            ShowCreditsPanel( );
+            ShowCreditsPanel ( );
         } else {
-            HideCreditsPanel( );
+            HideCreditsPanel ( );
         }
 
     }
 
     // This functions is called by buttons. Execute commands
-    public void Command(string command) {
+    public void Command ( string command ) {
         // Play Button - Main Menu => Play first level
-        if (command == StringsDatabase._playGameButton){
+        if ( command == StringsDatabase._playGameButton ) {
             Time.timeScale = 1.0f;
             //Application.LoadLevel( StringsDatabase.gameSceneName );
             globalManager.LoadLevel ( StringsDatabase.gameSceneName );
             return;
         }
-        
+
         // Return to game
-        if (command == StringsDatabase._resumeGameButton){
-            HideMenu( );
+        if ( command == StringsDatabase._resumeGameButton ) {
+            HideMenu ( );
             return;
         }
 
-        
+
         // Show Settings panel, you must be in the menu
-        if (command == StringsDatabase._creditsButton){
-            HideMenu( );
-            ShowCreditsPanel( );
+        if ( command == StringsDatabase._creditsButton ) {
+            HideMenu ( );
+            ShowCreditsPanel ( );
             return;
         }
-            
-       
+
+
 
         // Hide Settings panel and return to menu
         if ( command == StringsDatabase._backToMenuButton ) {
-            if (isShowingCreditsPanel ) HideCreditsPanel( );
-            ShowMenu( );
+            if ( isShowingCreditsPanel )
+                HideCreditsPanel ( );
+            ShowMenu ( );
             return;
         }
 
@@ -139,14 +140,14 @@ public class MenuController : MonoBehaviour {
 
     }
 
-    void ShowMenu( ) {
+    void ShowMenu ( ) {
         Time.timeScale = 1.0f;
 
         isShowingMenu = true;
-        MenuControlPanel.SetActive(true);
+        MenuControlPanel.SetActive ( true );
 
-        if ( RangePanel != null ) {
-            RangePanel.SetActive(false);
+        if ( RagePanel != null ) {
+            RagePanel.SetActive ( false );
         }
 
         if ( !isInMainMenu ) {
@@ -154,25 +155,25 @@ public class MenuController : MonoBehaviour {
         }
     }
 
-    void HideMenu( ) {
+    void HideMenu ( ) {
         Time.timeScale = 1.0f;
 
         isShowingMenu = false;
-        MenuControlPanel.SetActive(false);
+        MenuControlPanel.SetActive ( false );
 
-        if ( RangePanel != null ) {
-            RangePanel.SetActive(true);
+        if ( RagePanel != null ) {
+            RagePanel.SetActive ( true );
         }
     }
 
-    void ShowCreditsPanel( ) {
+    void ShowCreditsPanel ( ) {
         Time.timeScale = 1.0f;
 
         isShowingCreditsPanel = true;
-        CreditsControlPanel.SetActive(true);
+        CreditsControlPanel.SetActive ( true );
 
-        if ( RangePanel != null ) {
-            RangePanel.SetActive(false);
+        if ( RagePanel != null ) {
+            RagePanel.SetActive ( false );
         }
 
         if ( !isInMainMenu ) {
@@ -182,11 +183,11 @@ public class MenuController : MonoBehaviour {
 
 
 
-    void HideCreditsPanel( ) {
+    void HideCreditsPanel ( ) {
         Time.timeScale = 1.0f;
 
         isShowingCreditsPanel = false;
-        CreditsControlPanel.SetActive(false);
+        CreditsControlPanel.SetActive ( false );
 
         if ( isShowingMenu ) {
             Time.timeScale = 0.0f;
@@ -195,24 +196,24 @@ public class MenuController : MonoBehaviour {
 
 
 
-    
+
     // Assign Main Menu Buttons' names
-    void MainMenu( ) {
+    void MainMenu ( ) {
         ButtonsCount = 2;
 
-        buttons = new GameObject[ButtonsCount];
-        buttonsNames = new string[ButtonsCount];
+        buttons = new GameObject[ ButtonsCount ];
+        buttonsNames = new string[ ButtonsCount ];
 
         buttonsNames[ 0 ] = StringsDatabase._playGameButton;
         buttonsNames[ 1 ] = StringsDatabase._creditsButton;
     }
 
     // Assign Pause Menu Buttons' names
-    void PauseMenu( ) {
+    void PauseMenu ( ) {
         ButtonsCount = 2;
 
-        buttons = new GameObject[ButtonsCount];
-        buttonsNames = new string[ButtonsCount];
+        buttons = new GameObject[ ButtonsCount ];
+        buttonsNames = new string[ ButtonsCount ];
 
         buttonsNames[ 0 ] = StringsDatabase._resumeGameButton;
         buttonsNames[ 1 ] = StringsDatabase._advanceToMenuScene;
@@ -223,26 +224,26 @@ public class MenuController : MonoBehaviour {
         if ( isShowingMenu ) {
             return;
         }
-        
-        buttons[ 0 ].SetActive (false );
+
+        buttons[ 0 ].SetActive ( false );
         isShowingMenu = true;
     }
 
     // For a preset set of value build a menu
-    void BuildMenuButtons( ) {
-        Vector3 currentPosition = new Vector3(0, +100, 0);
-        Vector3 offset = new Vector3(0, -50, 0);
+    void BuildMenuButtons ( ) {
+        Vector3 currentPosition = new Vector3 ( 0, +100, 0 );
+        Vector3 offset = new Vector3 ( 0, -50, 0 );
         for ( int i = 0; i < ButtonsCount; i++ ) {
-            buttons[i] = GetButton(SF_ButtonPrefab, MenuControlPanel, buttonsNames[i], currentPosition);
+            buttons[ i ] = GetButton ( SF_ButtonPrefab, MenuControlPanel, buttonsNames[ i ], currentPosition );
             currentPosition += offset;
         }
     }
 
-	
+
     // For a preset set of value build a settings menu
-    void BuildCreditsPanel( ) {
+    void BuildCreditsPanel ( ) {
         float W = Screen.width, H = Screen.height;
-        Vector3 position = new Vector3 ( -W / 3.3f, +H/3.0f, 0f );
+        Vector3 position = new Vector3 ( -W / 3.3f, +H / 3.0f, 0f );
         Vector3 translation = new Vector3 ( 0, -50, 0 );
 
         backToMenuButton = GetButton ( SF_ButtonPrefab, CreditsControlPanel, StringsDatabase._backToMenuButton, position + 8 * translation );
@@ -260,24 +261,24 @@ public class MenuController : MonoBehaviour {
     }
 
     // Create a button, set parent, position as (x,y,z) , scale (1,1,1)
-    private GameObject GetButton(GameObject ButtonPrefab, GameObject ButtonParent, string ButtonName, float x = 0, float y = 50, float z = 0) {
-        GameObject newButton = (GameObject) Instantiate (ButtonPrefab);
-        newButton.transform.SetParent(ButtonParent.transform);
-        newButton.GetComponent<ButtonAction>( ).buttonName.text = ButtonName;
-        newButton.GetComponent<ButtonAction>( ).command = ButtonName;
-        newButton.transform.localPosition = new Vector3(x, y, z);
-        newButton.transform.localScale = new Vector3(1, 1, 1);
+    private GameObject GetButton ( GameObject ButtonPrefab, GameObject ButtonParent, string ButtonName, float x = 0, float y = 50, float z = 0 ) {
+        GameObject newButton = ( GameObject ) Instantiate ( ButtonPrefab );
+        newButton.transform.SetParent ( ButtonParent.transform );
+        newButton.GetComponent<ButtonAction> ( ).buttonName.text = ButtonName;
+        newButton.GetComponent<ButtonAction> ( ).command = ButtonName;
+        newButton.transform.localPosition = new Vector3 ( x, y, z );
+        newButton.transform.localScale = new Vector3 ( 1, 1, 1 );
         return newButton;
     }
 
     // Create a button, set parent, position, scale (1,1,1)
-    private GameObject GetButton(GameObject ButtonPrefab, GameObject ButtonParent, string ButtonName, Vector3 localPosition) {
-        GameObject newButton = (GameObject) Instantiate(ButtonPrefab);
-        newButton.transform.SetParent(ButtonParent.transform);
-        newButton.GetComponent<ButtonAction>( ).buttonName.text = ButtonName;
-        newButton.GetComponent<ButtonAction>( ).command = ButtonName;
+    private GameObject GetButton ( GameObject ButtonPrefab, GameObject ButtonParent, string ButtonName, Vector3 localPosition ) {
+        GameObject newButton = ( GameObject ) Instantiate ( ButtonPrefab );
+        newButton.transform.SetParent ( ButtonParent.transform );
+        newButton.GetComponent<ButtonAction> ( ).buttonName.text = ButtonName;
+        newButton.GetComponent<ButtonAction> ( ).command = ButtonName;
         newButton.transform.localPosition = localPosition;
-        newButton.transform.localScale = new Vector3(1, 1, 1);
+        newButton.transform.localScale = new Vector3 ( 1, 1, 1 );
         return newButton;
     }
 }

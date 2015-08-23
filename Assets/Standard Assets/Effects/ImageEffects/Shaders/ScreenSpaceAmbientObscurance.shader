@@ -311,7 +311,7 @@ Shader "Hidden/ScreenSpaceAmbientObscurance"
 				// spatial domain: offset gaussian tap
 				float weight = 0.3 + gaussian[abs(r)];
 
-				// range domain (the "bilateral" weight). As depth difference increases, decrease weight.
+				// rage domain (the "bilateral" weight). As depth difference increases, decrease weight.
 				weight *= max(0.0, 1.0 - (2000.0 * EDGE_SHARPNESS) * abs(tapKey - key));
 
 				sum += value * weight;

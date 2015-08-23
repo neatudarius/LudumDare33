@@ -94,7 +94,7 @@ CGPROGRAM
                                 
 ============================================================================*/
 float4 FxaaVertexShader(
-float2 pos,                 // Both x and y range {-1.0 to 1.0 across screen}.
+float2 pos,                 // Both x and y rage {-1.0 to 1.0 across screen}.
 float2 rcpFrame) {          // {1.0/frameWidth, 1.0/frameHeight}
 /*--------------------------------------------------------------------------*/
     #define FXAA_SUBPIX_SHIFT (1.0/4.0)

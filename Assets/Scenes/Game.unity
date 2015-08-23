@@ -1827,7 +1827,7 @@ MonoBehaviour:
   SF_ButtonPrefab: {fileID: 100004, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
   MenuControlPanel: {fileID: 1546725764}
   CreditsControlPanel: {fileID: 1550059204}
-  RangePanel: {fileID: 1962879129}
+  RagePanel: {fileID: 0}
   isGameOver: 0
 --- !u!114 &1052606306
 MonoBehaviour:
@@ -3541,38 +3541,9 @@ Prefab:
       propertyPath: m_Pivot.y
       value: .5
       objectReference: {fileID: 0}
-    - target: {fileID: 22448586, guid: 4862fa648a2f3de4982831c7f49efa2e, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -3.141047
-      objectReference: {fileID: 0}
-    - target: {fileID: 22448586, guid: 4862fa648a2f3de4982831c7f49efa2e, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 86
-      objectReference: {fileID: 0}
-    - target: {fileID: 11417624, guid: 4862fa648a2f3de4982831c7f49efa2e, type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11417624, guid: 4862fa648a2f3de4982831c7f49efa2e, type: 2}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 6ce3a4a4501c13b459b23e56ab830b71,
-        type: 3}
-    - target: {fileID: 11417624, guid: 4862fa648a2f3de4982831c7f49efa2e, type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11417624, guid: 4862fa648a2f3de4982831c7f49efa2e, type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11417624, guid: 4862fa648a2f3de4982831c7f49efa2e, type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22448586, guid: 4862fa648a2f3de4982831c7f49efa2e, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 29.7180004
+    - target: {fileID: 157088, guid: 4862fa648a2f3de4982831c7f49efa2e, type: 2}
+      propertyPath: m_Name
+      value: RagePanel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4862fa648a2f3de4982831c7f49efa2e, type: 2}
@@ -3673,36 +3644,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1962879129 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 157088, guid: 4862fa648a2f3de4982831c7f49efa2e, type: 2}
-  m_PrefabInternal: {fileID: 1901742997}
 --- !u!224 &1962879130 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22492360, guid: 4862fa648a2f3de4982831c7f49efa2e,
     type: 2}
   m_PrefabInternal: {fileID: 1901742997}
---- !u!114 &1962879133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1962879129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
 --- !u!1001 &1979336330
 Prefab:
   m_ObjectHideFlags: 0

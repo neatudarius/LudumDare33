@@ -74,21 +74,21 @@ namespace UnityStandardAssets.ImageEffects
 
         public float UpdateCurve()
         {
-            float range = 1.0f;
+            float rage = 1.0f;
             if (remapCurve.keys.Length < 1)
                 remapCurve = new AnimationCurve(new Keyframe(0, 0), new Keyframe(2, 1));
             if (remapCurve != null)
             {
                 if (remapCurve.length > 0)
-                    range = remapCurve[remapCurve.length - 1].time;
+                    rage = remapCurve[remapCurve.length - 1].time;
                 for (float i = 0.0f; i <= 1.0f; i += 1.0f/255.0f)
                 {
-                    float c = remapCurve.Evaluate(i*1.0f*range);
+                    float c = remapCurve.Evaluate(i*1.0f*rage);
                     curveTex.SetPixel((int) Mathf.Floor(i*255.0f), 0, new Color(c, c, c));
                 }
                 curveTex.Apply();
             }
-            return 1.0f/range;
+            return 1.0f/rage;
         }
 
 
@@ -143,7 +143,7 @@ namespace UnityStandardAssets.ImageEffects
             }
 #endif
 
-            // clamp some values to not go out of a valid range
+            // clamp some values to not go out of a valid rage
 
             exposureAdjustment = exposureAdjustment < 0.001f ? 0.001f : exposureAdjustment;
 
@@ -151,8 +151,8 @@ namespace UnityStandardAssets.ImageEffects
 
             if (type == TonemapperType.UserCurve)
             {
-                float rangeScale = UpdateCurve();
-                tonemapMaterial.SetFloat("_RangeScale", rangeScale);
+                float rageScale = UpdateCurve();
+                tonemapMaterial.SetFloat("_RageScale", rageScale);
                 tonemapMaterial.SetTexture("_Curve", curveTex);
                 Graphics.Blit(source, destination, tonemapMaterial, 4);
                 return;

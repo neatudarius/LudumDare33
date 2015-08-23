@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CollectableItem : MonoBehaviour {
-    public GameObject rangePanel;
+    public GameObject ragePanel;
 
     public float rotateSpeed = 100.0f;
     private bool effectIsOn = false;
@@ -12,11 +12,11 @@ public class CollectableItem : MonoBehaviour {
     void Start ( ) {
         effectIsOn = false;
     }
-    void OnTriggerEnter2D (Collider2D hit ) {
+    void OnTriggerEnter2D ( Collider2D hit ) {
         if ( !effectIsOn ) {
             gameObject.GetComponent<Collider2D> ( ).enabled = false;
             effectIsOn = true;
-            GameObject.Find ( "RangePanel" ).GetComponent<RangePanelController> ( ).IncreaseRange ( );
+            GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( ).IncreaseRage ( );
             Destroy ( gameObject, timeUntilDestroy );
         }
     }
@@ -24,8 +24,8 @@ public class CollectableItem : MonoBehaviour {
     void Update ( ) {
         if ( effectIsOn ) {
             gameObject.transform.Rotate ( Vector3.up, Time.deltaTime * rotateSpeed );
-            gameObject.transform.Rotate(    Vector3.forward, Time.deltaTime * rotateSpeed  );
-            
+            gameObject.transform.Rotate ( Vector3.forward, Time.deltaTime * rotateSpeed );
+
         }
     }
 }

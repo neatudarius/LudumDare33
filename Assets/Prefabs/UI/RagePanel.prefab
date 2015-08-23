@@ -27,8 +27,9 @@ GameObject:
   - 224: {fileID: 22492360}
   - 222: {fileID: 22255112}
   - 114: {fileID: 11400620}
+  - 114: {fileID: 11401444}
   m_Layer: 5
-  m_Name: RangePanel
+  m_Name: RagePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,8 +46,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66bbe4569ead78e48954f5c9fa51e58b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 0
-  rangeText: {fileID: 11417624}
+  value: 0
+  cost: 2
+  textObj: {fileID: 11417624}
+  activated: 0
+--- !u!114 &11401444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &11417624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -59,15 +83,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 6ce3a4a4501c13b459b23e56ab830b71, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -99,8 +123,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -4.80780029, y: -4.80776978}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 86, y: -3.141047}
+  m_SizeDelta: {x: 160, y: 29.7180004}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22492360
 RectTransform:
@@ -117,8 +141,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -312, y: 208}
-  m_SizeDelta: {x: -625, y: -418}
+  m_AnchoredPosition: {x: -336, y: 244}
+  m_SizeDelta: {x: -674, y: -496}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
 Prefab:

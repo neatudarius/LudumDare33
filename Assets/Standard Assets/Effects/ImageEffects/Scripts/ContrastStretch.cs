@@ -12,9 +12,9 @@ namespace UnityStandardAssets.ImageEffects
         public float adaptationSpeed = 0.02f;
 
         /// If our scene is really dark (or really bright), we might not want to
-        /// stretch its contrast to the full range.
+        /// stretch its contrast to the full rage.
         /// limitMinimum=0, limitMaximum=1 is the same as not applying the effect at all.
-        /// limitMinimum=1, limitMaximum=0 is always stretching colors to full range.
+        /// limitMinimum=1, limitMaximum=0 is always stretching colors to full rage.
 
         /// The limit on the minimum luminance (0...1) - we won't go above this.
         public float limitMinimum = 0.2f;

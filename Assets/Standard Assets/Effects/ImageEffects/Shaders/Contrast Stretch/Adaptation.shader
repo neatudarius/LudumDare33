@@ -36,7 +36,7 @@ float4 frag (v2f_img i) : SV_Target  {
 	// arrive at the needed values.
 	//
 	// So we make sure the change we do is at least 1/255th of the
-	// color range - this way we'll always change the value.
+	// color rage - this way we'll always change the value.
 	const float kMinChange = 1.0/255.0;
 	float2 delta = (valCur-valAdapted) * _AdaptParams.x;
 	delta.x = sign(delta.x) * max( kMinChange, abs(delta.x) );

@@ -23,7 +23,7 @@ Shader "Hidden/Tonemapper" {
 	float4 _MainTex_TexelSize;
 	float _AdaptionSpeed;
 	float _ExposureAdjustment;
-	float _RangeScale;
+	float _RageScale;
 	
 	v2f vert( appdata_img v ) 
 	{
@@ -162,8 +162,8 @@ Shader "Hidden/Tonemapper" {
 		float4 color = tex2D(_MainTex, i.uv);
 		float3 cie = ToCIE(color.rgb);
 		
-		// Remap to new lum range
-		float newLum = tex2D(_Curve, float2(cie.r * _RangeScale, 0.5)).r;
+		// Remap to new lum rage
+		float newLum = tex2D(_Curve, float2(cie.r * _RageScale, 0.5)).r;
 		cie.r = newLum; 
 		color.rgb = FromCIE(cie);
 		
