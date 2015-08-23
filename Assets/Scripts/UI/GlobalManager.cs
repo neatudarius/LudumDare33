@@ -48,6 +48,13 @@ public class GlobalManager : MonoBehaviour {
     public static float foregroundSpeed = 2.0f;
     public static float backgroundSpeed = 1.0f;
 
+	// Adjust difficulty using these!!
+	public static float baseDifficulty = 1.5f;
+	public static float speedIncrement = 0.1f;
+
+	// Do not give this initial value
+	public static float difficultyMultiplier;
+
     // rageMode
 
     public static RagePanelController rage;
@@ -56,6 +63,7 @@ public class GlobalManager : MonoBehaviour {
     void Start ( ) {
         rage = null;
         progressBar = null;
+		ResetDifficulty ();
     }
 
 
@@ -78,13 +86,20 @@ public class GlobalManager : MonoBehaviour {
             }
 
         }
+
+		difficultyMultiplier += Time.deltaTime * speedIncrement;
     }
-
-
+	
     public void LoadLevel ( string nextLevel ) {
         Application.LoadLevel ( nextLevel );
     }
+	
+	static public void ResetDifficulty() {
+		difficultyMultiplier = baseDifficulty;
+	}
 
-
+	static public void FreezeSpeed() {
+		difficultyMultiplier = 0.0f;
+	}
 
 }

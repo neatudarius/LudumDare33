@@ -14,6 +14,6 @@ public class ObstacleTire : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.Rotate ( rotationSpeed * Time.deltaTime * Vector3.forward);
-		transform.position += movementSpeed * Time.deltaTime * Vector3.left;
+		transform.position += GlobalManager.difficultyMultiplier * movementSpeed * Time.deltaTime * Vector3.left;
 	}
 }

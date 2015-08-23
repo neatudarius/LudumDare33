@@ -20,7 +20,7 @@ public class Scroller : MonoBehaviour {
 		if (isBackgroundItem) {
 			transform.position = transform.position + GlobalManager.backgroundSpeed * Vector3.left * Time.deltaTime;
 		} else {
-			transform.position = transform.position + GlobalManager.foregroundSpeed * Vector3.left * Time.deltaTime;
+			transform.position = transform.position + GlobalManager.difficultyMultiplier * GlobalManager.foregroundSpeed * Vector3.left * Time.deltaTime;
 		}
 	}
 }
