@@ -54,8 +54,8 @@ public class GlobalManager : MonoBehaviour {
     public static ProgressBarBehaviour progressBar;
 
     void Start ( ) {
-        rage = GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( );
-        progressBar = GameObject.Find ( "ProgressBarLabelRight" ).GetComponent<ProgressBarBehaviour> ( );
+        rage = null;
+        progressBar = null;
     }
 
 
@@ -66,7 +66,11 @@ public class GlobalManager : MonoBehaviour {
             Application.CaptureScreenshot ( StringsDatabase.screenShotName + printSreenCounter.ToString ( ) + ".png" );
         }
         */
-        if ( Input.GetKeyUp ( KeyCode.R ) ) {
+        if ( rage == null && GameObject.Find ( "RagePanel" ) ) {
+            rage = GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( );
+            progressBar = GameObject.Find ( "ProgressBarLabelRight" ).GetComponent<ProgressBarBehaviour> ( );
+        }
+        if ( rage && Input.GetKeyUp ( KeyCode.R ) ) {
             if ( !rage.activated && rage.cost <= rage.value && progressBar.Value >= 100) {
                 rage.activated = true;
                 rage.DecreaseRage ( );
