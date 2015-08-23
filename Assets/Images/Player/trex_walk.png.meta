@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 389de58021b7c644ab6bd45c6afe832e
-timeCreated: 1440354910
+guid: 8ec252b80e43c0848af1274b61da4a34
+timeCreated: 1440358992
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -100,69 +100,69 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 4320
-        width: 1280
-        height: 720
+        y: 2160
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_1
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 4320
-        width: 1280
-        height: 720
+        x: 640
+        y: 2160
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_2
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 4320
-        width: 1280
-        height: 720
+        x: 1280
+        y: 2160
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_3
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 4320
-        width: 1280
-        height: 720
+        x: 1920
+        y: 2160
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_4
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 4320
-        width: 1280
-        height: 720
+        x: 2560
+        y: 2160
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_5
       rect:
         serializedVersion: 2
-        x: 6400
-        y: 4320
-        width: 1280
-        height: 720
+        x: 3200
+        y: 2160
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_6
       rect:
         serializedVersion: 2
-        x: 7680
-        y: 4320
-        width: 1280
-        height: 720
+        x: 3840
+        y: 2160
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,69 +170,69 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3600
-        width: 1280
-        height: 720
+        y: 1800
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_8
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 3600
-        width: 1280
-        height: 720
+        x: 640
+        y: 1800
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_9
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 3600
-        width: 1280
-        height: 720
+        x: 1280
+        y: 1800
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_10
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 3600
-        width: 1280
-        height: 720
+        x: 1920
+        y: 1800
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_11
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 3600
-        width: 1280
-        height: 720
+        x: 2560
+        y: 1800
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_12
       rect:
         serializedVersion: 2
-        x: 6400
-        y: 3600
-        width: 1280
-        height: 720
+        x: 3200
+        y: 1800
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_13
       rect:
         serializedVersion: 2
-        x: 7680
-        y: 3600
-        width: 1280
-        height: 720
+        x: 3840
+        y: 1800
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,69 +240,69 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2880
-        width: 1280
-        height: 720
+        y: 1440
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_15
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 2880
-        width: 1280
-        height: 720
+        x: 640
+        y: 1440
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_16
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 2880
-        width: 1280
-        height: 720
+        x: 1280
+        y: 1440
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_17
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 2880
-        width: 1280
-        height: 720
+        x: 1920
+        y: 1440
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_18
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 2880
-        width: 1280
-        height: 720
+        x: 2560
+        y: 1440
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_19
       rect:
         serializedVersion: 2
-        x: 6400
-        y: 2880
-        width: 1280
-        height: 720
+        x: 3200
+        y: 1440
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_20
       rect:
         serializedVersion: 2
-        x: 7680
-        y: 2880
-        width: 1280
-        height: 720
+        x: 3840
+        y: 1440
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,69 +310,69 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2160
-        width: 1280
-        height: 720
+        y: 1080
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_22
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 2160
-        width: 1280
-        height: 720
+        x: 640
+        y: 1080
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_23
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 2160
-        width: 1280
-        height: 720
+        x: 1280
+        y: 1080
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_24
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 2160
-        width: 1280
-        height: 720
+        x: 1920
+        y: 1080
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_25
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 2160
-        width: 1280
-        height: 720
+        x: 2560
+        y: 1080
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_26
       rect:
         serializedVersion: 2
-        x: 6400
-        y: 2160
-        width: 1280
-        height: 720
+        x: 3200
+        y: 1080
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_27
       rect:
         serializedVersion: 2
-        x: 7680
-        y: 2160
-        width: 1280
-        height: 720
+        x: 3840
+        y: 1080
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,69 +380,69 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1440
-        width: 1280
-        height: 720
+        y: 720
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_29
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1440
-        width: 1280
-        height: 720
+        x: 640
+        y: 720
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_30
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 1440
-        width: 1280
-        height: 720
+        x: 1280
+        y: 720
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_31
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 1440
-        width: 1280
-        height: 720
+        x: 1920
+        y: 720
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_32
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 1440
-        width: 1280
-        height: 720
+        x: 2560
+        y: 720
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_33
       rect:
         serializedVersion: 2
-        x: 6400
-        y: 1440
-        width: 1280
-        height: 720
+        x: 3200
+        y: 720
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_34
       rect:
         serializedVersion: 2
-        x: 7680
-        y: 1440
-        width: 1280
-        height: 720
+        x: 3840
+        y: 720
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -450,69 +450,69 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 720
-        width: 1280
-        height: 720
+        y: 360
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_36
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 720
-        width: 1280
-        height: 720
+        x: 640
+        y: 360
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_37
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 720
-        width: 1280
-        height: 720
+        x: 1280
+        y: 360
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_38
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 720
-        width: 1280
-        height: 720
+        x: 1920
+        y: 360
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_39
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 720
-        width: 1280
-        height: 720
+        x: 2560
+        y: 360
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_40
       rect:
         serializedVersion: 2
-        x: 6400
-        y: 720
-        width: 1280
-        height: 720
+        x: 3200
+        y: 360
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_41
       rect:
         serializedVersion: 2
-        x: 7680
-        y: 720
-        width: 1280
-        height: 720
+        x: 3840
+        y: 360
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -521,48 +521,48 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1280
-        height: 720
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_43
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 640
         y: 0
-        width: 1280
-        height: 720
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_44
       rect:
         serializedVersion: 2
-        x: 2560
+        x: 1280
         y: 0
-        width: 1280
-        height: 720
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_45
       rect:
         serializedVersion: 2
-        x: 3840
+        x: 1920
         y: 0
-        width: 1280
-        height: 720
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trex_walk_46
       rect:
         serializedVersion: 2
-        x: 5120
+        x: 2560
         y: 0
-        width: 1280
-        height: 720
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
