@@ -11,7 +11,6 @@ public class ObstacleTire : MonoBehaviour {
 	void Start () {
         col = GetComponent<CircleCollider2D>();
         rotationSpeed = movementSpeed * col.radius * col.radius * Mathf.PI * 2;
-        Debug.Log(rotationSpeed);
 	}
 	
 	// Update is called once per frame
