@@ -11,7 +11,6 @@ GameObject:
   - 95: {fileID: 9529906}
   - 212: {fileID: 21268928}
   - 50: {fileID: 5067260}
-  - 58: {fileID: 5828102}
   - 114: {fileID: 11440450}
   - 61: {fileID: 6181216}
   - 58: {fileID: 5834128}
@@ -45,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.170000002, y: -1.87, z: 0}
+  m_LocalPosition: {x: .529999971, y: -3.94000006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 469646}
@@ -79,19 +78,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &5828102
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119470}
-  m_Enabled: 0
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.57000005
 --- !u!58 &5834128
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -102,9 +88,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -.25999999, y: -.680000007}
+  m_Offset: {x: .25999999, y: -1.59000003}
   serializedVersion: 2
-  m_Radius: .910000026
+  m_Radius: 1.62
 --- !u!61 &6181216
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -115,9 +101,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .103802249, y: .408200294}
+  m_Offset: {x: .58436358, y: .408200294}
   serializedVersion: 2
-  m_Size: {x: 1.28107393, y: 1.83460963}
+  m_Size: {x: 8.74827099, y: 1.83460963}
 --- !u!82 &8234100
 AudioSource:
   m_ObjectHideFlags: 1
@@ -127,7 +113,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fcc1036de3870a444830af36889b9cbe, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3510558a3756d3b479fef3d9a7d3397c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: .300000012
   m_Pitch: .600000024
@@ -251,7 +237,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: ec907464ef6bea0438783ee8b4f40b8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 389de58021b7c644ab6bd45c6afe832e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
