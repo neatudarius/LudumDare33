@@ -211,6 +211,7 @@ MonoBehaviour:
   - {fileID: 123512, guid: 67852ce312bdd8040a06ac66c9989250, type: 2}
   - {fileID: 164426, guid: bd586f85d3c1d0441940f18ca751e26b, type: 2}
   - {fileID: 122082, guid: d5041f52b52a9234d8c131d3e75a570c, type: 2}
+  - {fileID: 156724, guid: d2e908a0414187644aba833d767172cb, type: 2}
 --- !u!4 &50319887
 Transform:
   m_ObjectHideFlags: 0
@@ -852,7 +853,7 @@ Transform:
   - {fileID: 167142506}
   - {fileID: 1298103946}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!1 &282467085
 GameObject:
   m_ObjectHideFlags: 0
