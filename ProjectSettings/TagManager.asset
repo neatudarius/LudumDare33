@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - bean
+  - _Canvas
+  - SF_Button
   layers:
   - Default
   - TransparentFX

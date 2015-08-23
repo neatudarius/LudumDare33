@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class SmallBackgroundSpawner : MonoBehaviour {
+public class SmallBuildingSpawner : MonoBehaviour {
 
 	public List<GameObject> smallBuildingPrefabs;
 	public GameObject lastSmallBuilding;
