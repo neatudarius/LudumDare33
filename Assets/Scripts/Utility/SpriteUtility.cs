@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BackgroundTile : MonoBehaviour {
+public class SpriteUtility : MonoBehaviour {
 
 	private Vector2 leftCorner;
 	private Vector2 rightCorner;
@@ -23,7 +23,11 @@ public class BackgroundTile : MonoBehaviour {
 		return width;
 	}
 
-	public Vector2 GetCorner() {
-		return rightCorner;
+	public float GetRightXValue() {
+		return GetComponent<SpriteRenderer> ().bounds.max.x;
+	}
+
+	public float GetLeftXValue() {
+		return GetComponent<SpriteRenderer> ().bounds.min.x;
 	}
 }

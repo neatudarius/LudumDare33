@@ -4,26 +4,28 @@ using System.Collections.Generic;
 
 public class SmallBackgroundSpawner : MonoBehaviour {
 
-	public List<GameObject> smallBackgroundTilePrefabs;
-	public GameObject rightmostBuilding;
+	public List<GameObject> smallBuildingPrefabs;
+	public GameObject lastSmallBuilding;
+	public GameObject spawnBoundary;
 	
 	private float spawnTimer = 0;
 	private Vector3 cornerOfNewestBuilding;
+
 
 	// Update is called once per frame
 	void Update () {
 		if (spawnTimer < 0) {
 			// Choose a random building
-			int randomIndex = Random.Range(0, smallBackgroundTilePrefabs.Count);
-			GameObject randomPrefab = smallBackgroundTilePrefabs[randomIndex];
+			int randomIndex = Random.Range(0, smallBuildingPrefabs.Count);
+			GameObject randomPrefab = smallBuildingPrefabs[randomIndex];
 			
 			// Spawn the building and position it
 			GameObject newBuilding = Instantiate (randomPrefab);
-			float newWidth = newBuilding.GetComponent<BackgroundTile>().GetWidth () - 0.1f;
-			float oldWidth = rightmostBuilding.GetComponent<BackgroundTile>().GetWidth();
-			newBuilding.transform.position = rightmostBuilding.transform.position + new Vector3( (newWidth + oldWidth) / 2, 0, 0 );
+			float newWidth = newBuilding.GetComponent<SpriteUtility>().GetWidth () - 0.1f;
+			float oldWidth = lastSmallBuilding.GetComponent<SpriteUtility>().GetWidth();
+			newBuilding.transform.position = lastSmallBuilding.transform.position + new Vector3( (newWidth + oldWidth) / 2, 0, 0 );
 			newBuilding.transform.parent = GameObject.Find ("SmallBuildingHolder").transform;
-			rightmostBuilding = newBuilding;
+			lastSmallBuilding = newBuilding;
 			
 			// Calculate time until next spawn
 			spawnTimer = newWidth / GlobalManager.backgroundSpeed;
