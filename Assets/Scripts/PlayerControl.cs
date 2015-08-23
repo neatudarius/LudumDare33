@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
@@ -22,11 +23,14 @@ public class PlayerControl : MonoBehaviour {
     private float speedDampVelocity;
 
 
+    public float distance = 0f;
+    public Text distanceObj;
 
 
     void Start ( ) {
         currentSpeed = 0;
         isGrounded = true;
+        distance = 0f;
         rigid2D = GetComponent<Rigidbody2D> ( );
         anim = GetComponent<Animator> ( );
         state = "walk_idle";
@@ -34,6 +38,9 @@ public class PlayerControl : MonoBehaviour {
     }
 
     void Update ( ) {
+        distance += GlobalManager.foregroundSpeed * Time.deltaTime;
+        distanceObj.text = ( ( int ) distance ).ToString ( );
+
         //make sure it stays in bounds
         if ( transform.position.x < leftBound.position.x ) {
             transform.position = new Vector3 ( leftBound.position.x, transform.position.y, transform.position.z );
