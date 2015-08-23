@@ -31,11 +31,15 @@ public class FloorSpawner : MonoBehaviour {
 			float newFloorLeft = newFloor.GetComponent<SpriteUtility> ().GetLeftXValue();
 			float distance = newFloorLeft - lastFloorRight;				// Get the distance between the last floor and the new floor
 			newFloor.transform.Translate ( ( distance + 0.48f * floorTileWidth  ) * Vector3.left );	// Align the new floor tile
-			
+
+			// Put the new floor on top of the old one for correct showing
+			int lastFloorLayer = lastFloor.GetComponent<SpriteRenderer>().sortingOrder;
+			newFloor.GetComponent<SpriteRenderer>().sortingOrder = lastFloorLayer + 1;
+
 			// Set its parent
 			newFloor.transform.parent = GameObject.Find ("FloorHolder").transform;
 			
-			// Set it as the new last road piece
+			// Set it as the new last floor piece
 			lastFloor = newFloor;
 		}
 

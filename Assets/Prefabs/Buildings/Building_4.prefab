@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 95
   m_Sprite: {fileID: 21300000, guid: bd381550e0c7bb74a885e0e0f5bd8de8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
@@ -92,7 +92,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Sprite

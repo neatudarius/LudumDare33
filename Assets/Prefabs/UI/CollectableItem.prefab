@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78efea1c9fe5c64c8556162d7a0c35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangePanel: {fileID: 0}
+  ragePanel: {fileID: 0}
   rotateSpeed: 300
   timeUntilDestroy: .699999988
 --- !u!212 &21201300
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: 8488d6d4ab137814a92e5e9746bbf928, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
@@ -95,6 +95,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 8488d6d4ab137814a92e5e9746bbf928,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100130}
