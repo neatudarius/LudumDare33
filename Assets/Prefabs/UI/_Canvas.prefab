@@ -96,8 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66bbe4569ead78e48954f5c9fa51e58b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 0
-  rangeText: {fileID: 11489776}
+  value: 0
+  cost: 2
+  textObj: {fileID: 11489776}
+  activated: 0
 --- !u!114 &11476266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,7 +151,7 @@ MonoBehaviour:
   SF_ButtonPrefab: {fileID: 100004, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
   MenuControlPanel: {fileID: 166850}
   CreditsControlPanel: {fileID: 155802}
-  RangePanel: {fileID: 119006}
+  RagePanel: {fileID: 119006}
   isGameOver: 0
 --- !u!114 &11489776
 MonoBehaviour:
