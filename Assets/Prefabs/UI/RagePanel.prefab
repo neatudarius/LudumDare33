@@ -283,7 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FillRect: {fileID: 22459816}
   m_AttachedText: {fileID: 11481486}
-  ProgressSpeed: 120
+  ProgressSpeed: 10
   TriggerOnComplete: 1
   OnCompleteMethods:
     m_PersistentCalls:
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .254757792, g: .585526943, b: .911764681, a: 1}
+  m_Color: {r: .760784388, g: .760784388, b: .760784388, a: 1}
   m_Sprite: {fileID: 21300002, guid: 44267fa382843fa48a8f0cc5957039b4, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .760784388, g: .760784388, b: .760784388, a: 1}
   m_Sprite: {fileID: 21300000, guid: 72ae3e05650b1954e81bbd76050fedeb, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
