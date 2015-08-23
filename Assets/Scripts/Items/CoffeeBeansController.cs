@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
-public class CoffeBeansController : MonoBehaviour {
+public class CoffeeBeansController : MonoBehaviour {
     public GameObject CoffeeBeanPrefab;
     public GameObject leftBound, rightBound;
     public Transform coffeeParent;

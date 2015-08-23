@@ -128,7 +128,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 112700, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_16
+      value: Building_Small_16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
@@ -174,7 +174,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 106184, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_29
+      value: Building_Small_29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
@@ -260,6 +260,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 151666, guid: 4040dafede940ae4cb92a0adfb86a742, type: 2}
+      propertyPath: m_Name
+      value: Road_1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4040dafede940ae4cb92a0adfb86a742, type: 2}
   m_IsPrefabParent: 0
@@ -304,7 +308,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 198534, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_6
+      value: Building_Small_6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
@@ -350,7 +354,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 186098, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_1
+      value: Building_Small_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
@@ -396,7 +400,7 @@ GameObject:
   - 4: {fileID: 91802236}
   - 114: {fileID: 91802237}
   m_Layer: 0
-  m_Name: CoffeeBeans
+  m_Name: CoffeeBeansHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -514,7 +518,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 112700, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_19
+      value: Building_Small_19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
@@ -528,7 +532,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 163094195}
   m_Layer: 0
-  m_Name: SmallBackgroundHolder
+  m_Name: SmallBuildingHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,7 +627,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 112700, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_8
+      value: Building_Small_8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
@@ -673,7 +677,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 198534, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_24
+      value: Building_Small_24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
@@ -719,7 +723,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 106184, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_4
+      value: Building_Small_4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
@@ -765,7 +769,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 106184, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_9
+      value: Building_Small_9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
@@ -811,7 +815,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 151666, guid: 4040dafede940ae4cb92a0adfb86a742, type: 2}
       propertyPath: m_Name
-      value: Road (2)
+      value: Road_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4040dafede940ae4cb92a0adfb86a742, type: 2}
@@ -861,7 +865,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 193576, guid: 41b1f6bf4f4647049b91d38ccc9c7119, type: 2}
       propertyPath: m_Name
-      value: BG_Building_4
+      value: Building_4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41b1f6bf4f4647049b91d38ccc9c7119, type: 2}
@@ -934,7 +938,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 198534, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_15
+      value: Building_Small_15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
@@ -980,7 +984,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 112700, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_5
+      value: Building_Small_5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
@@ -1038,7 +1042,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 193576, guid: 41b1f6bf4f4647049b91d38ccc9c7119, type: 2}
       propertyPath: m_Name
-      value: BG_Building_9
+      value: Building_9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41b1f6bf4f4647049b91d38ccc9c7119, type: 2}
@@ -1084,7 +1088,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 106184, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_12
+      value: Building_Small_12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
@@ -1208,7 +1212,7 @@ GameObject:
   - 4: {fileID: 693514857}
   - 114: {fileID: 693514856}
   m_Layer: 0
-  m_Name: SmallBackgroundSpawner
+  m_Name: SmallBuildingSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1312,7 +1316,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 106184, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_22
+      value: Building_Small_22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
@@ -1358,7 +1362,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 151666, guid: 4040dafede940ae4cb92a0adfb86a742, type: 2}
       propertyPath: m_Name
-      value: Road (4)
+      value: Road_5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4040dafede940ae4cb92a0adfb86a742, type: 2}
@@ -1404,7 +1408,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 151666, guid: 4040dafede940ae4cb92a0adfb86a742, type: 2}
       propertyPath: m_Name
-      value: Road (3)
+      value: Road_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4040dafede940ae4cb92a0adfb86a742, type: 2}
@@ -1458,7 +1462,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 145526, guid: b4880802e55f84f449a9878f57e43e33, type: 2}
       propertyPath: m_Name
-      value: BG_Building_1
+      value: Building_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4880802e55f84f449a9878f57e43e33, type: 2}
@@ -1504,7 +1508,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 193576, guid: 41b1f6bf4f4647049b91d38ccc9c7119, type: 2}
       propertyPath: m_Name
-      value: BG_Building_12
+      value: Building_12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41b1f6bf4f4647049b91d38ccc9c7119, type: 2}
@@ -1550,7 +1554,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 112700, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_13
+      value: Building_Small_13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
@@ -1608,7 +1612,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 112700, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_30
+      value: Building_Small_30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
@@ -1713,7 +1717,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 170356, guid: 0a765800b32e1d244bc900a6ad5f22ee, type: 2}
       propertyPath: m_Name
-      value: BG_Building_8
+      value: Building_8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a765800b32e1d244bc900a6ad5f22ee, type: 2}
@@ -1763,7 +1767,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 198534, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_14
+      value: Building_Small_14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
@@ -1927,7 +1931,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 112700, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_26
+      value: Building_Small_26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
@@ -1997,7 +2001,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 186098, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_28
+      value: Building_Small_28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
@@ -2047,7 +2051,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 145526, guid: b4880802e55f84f449a9878f57e43e33, type: 2}
       propertyPath: m_Name
-      value: BG_Building_6
+      value: Building_6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4880802e55f84f449a9878f57e43e33, type: 2}
@@ -2093,7 +2097,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 134624, guid: 7e2a6169da6c1db4593e65f17649c354, type: 2}
       propertyPath: m_Name
-      value: BG_Building_10
+      value: Building_10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e2a6169da6c1db4593e65f17649c354, type: 2}
@@ -2143,7 +2147,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 170356, guid: 0a765800b32e1d244bc900a6ad5f22ee, type: 2}
       propertyPath: m_Name
-      value: BG_Building_13
+      value: Building_13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a765800b32e1d244bc900a6ad5f22ee, type: 2}
@@ -2265,7 +2269,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 186098, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_10
+      value: Building_Small_10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
@@ -2315,7 +2319,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 198534, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_7
+      value: Building_Small_7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
@@ -2361,7 +2365,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 193576, guid: 41b1f6bf4f4647049b91d38ccc9c7119, type: 2}
       propertyPath: m_Name
-      value: BG_Building_7
+      value: Building_7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41b1f6bf4f4647049b91d38ccc9c7119, type: 2}
@@ -2407,7 +2411,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 170356, guid: 0a765800b32e1d244bc900a6ad5f22ee, type: 2}
       propertyPath: m_Name
-      value: BG_Building_3
+      value: Building_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a765800b32e1d244bc900a6ad5f22ee, type: 2}
@@ -2585,7 +2589,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 198534, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_31
+      value: Building_Small_31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
@@ -2631,7 +2635,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 186098, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_11
+      value: Building_Small_11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
@@ -2688,7 +2692,7 @@ GameObject:
   - 4: {fileID: 1505729200}
   - 114: {fileID: 1505729199}
   m_Layer: 0
-  m_Name: BackgroundSpawner
+  m_Name: BuildingSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2764,7 +2768,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 112700, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_2
+      value: Building_Small_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
@@ -2897,7 +2901,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 186098, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_21
+      value: Building_Small_21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
@@ -2984,7 +2988,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 106184, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_27
+      value: Building_Small_27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
@@ -3030,7 +3034,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 106184, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_17
+      value: Building_Small_17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ddeb6667f79b3544929c4d9cdb2b9ee, type: 2}
@@ -3076,7 +3080,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 151666, guid: 4040dafede940ae4cb92a0adfb86a742, type: 2}
       propertyPath: m_Name
-      value: Road (1)
+      value: Road_4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4040dafede940ae4cb92a0adfb86a742, type: 2}
@@ -3176,7 +3180,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 112700, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_23
+      value: Building_Small_23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
@@ -3230,7 +3234,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 198534, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_25
+      value: Building_Small_25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1490aeb39e500024e8563308addce8e5, type: 2}
@@ -3280,7 +3284,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 193576, guid: 41b1f6bf4f4647049b91d38ccc9c7119, type: 2}
       propertyPath: m_Name
-      value: BG_Building_2
+      value: Building_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41b1f6bf4f4647049b91d38ccc9c7119, type: 2}
@@ -3326,7 +3330,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 112700, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_20
+      value: Building_Small_20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8143f23a270177c43849c4466ea184d8, type: 2}
@@ -3376,7 +3380,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 193576, guid: 41b1f6bf4f4647049b91d38ccc9c7119, type: 2}
       propertyPath: m_Name
-      value: BG_Building_14
+      value: Building_14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41b1f6bf4f4647049b91d38ccc9c7119, type: 2}
@@ -3425,7 +3429,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1893485869}
   m_Layer: 0
-  m_Name: BackgroundHolder
+  m_Name: BuildingHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3614,7 +3618,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 186098, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_3
+      value: Building_Small_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
@@ -3664,7 +3668,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 186098, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_32
+      value: Building_Small_32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
@@ -3740,7 +3744,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 186098, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
       propertyPath: m_Name
-      value: Initial_BG_Small_18
+      value: Building_Small_18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d708c278958f0304bba2e35729a6e0d3, type: 2}
@@ -3794,7 +3798,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 134624, guid: 7e2a6169da6c1db4593e65f17649c354, type: 2}
       propertyPath: m_Name
-      value: BG_Building_5
+      value: Building_5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e2a6169da6c1db4593e65f17649c354, type: 2}
@@ -3844,7 +3848,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 134624, guid: 7e2a6169da6c1db4593e65f17649c354, type: 2}
       propertyPath: m_Name
-      value: BG_Building_11
+      value: Building_11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e2a6169da6c1db4593e65f17649c354, type: 2}
@@ -3890,7 +3894,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 145526, guid: b4880802e55f84f449a9878f57e43e33, type: 2}
       propertyPath: m_Name
-      value: BG_Building_15
+      value: Building_15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4880802e55f84f449a9878f57e43e33, type: 2}

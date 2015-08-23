@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11456812}
   - 114: {fileID: 11419188}
   m_Layer: 0
-  m_Name: BG_Building_2
+  m_Name: Building_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681edd76865bab74c9f62c458c348a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 2
+  isBackgroundItem: 0
 --- !u!114 &11456812
 MonoBehaviour:
   m_ObjectHideFlags: 1
