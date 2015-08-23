@@ -9,9 +9,7 @@ public class SpriteUtility : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		leftCorner = GetComponent<SpriteRenderer> ().bounds.min;
-		rightCorner = GetComponent<SpriteRenderer> ().bounds.max;
-		width = rightCorner.x - leftCorner.x;
+
 	}
 	
 	// Update is called once per frame
@@ -20,6 +18,9 @@ public class SpriteUtility : MonoBehaviour {
 	}
 
 	public float GetWidth() {
+		leftCorner = GetComponent<SpriteRenderer> ().bounds.min;
+		rightCorner = GetComponent<SpriteRenderer> ().bounds.max;
+		float width = rightCorner.x - leftCorner.x;
 		return width;
 	}
 
