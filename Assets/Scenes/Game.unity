@@ -3820,10 +3820,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: .5
       objectReference: {fileID: 0}
-    - target: {fileID: 157088, guid: 4862fa648a2f3de4982831c7f49efa2e, type: 2}
-      propertyPath: m_Name
-      value: RagePanel
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4862fa648a2f3de4982831c7f49efa2e, type: 2}
   m_IsPrefabParent: 0

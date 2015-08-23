@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System;
 using System.IO;
 using System.Collections;
-
+using ProgressBar;
 public class GlobalManager : MonoBehaviour {
     #region GlobalManager's Things - DON'T CHANGE!!!
     private static GlobalManager _instance;
@@ -51,9 +51,11 @@ public class GlobalManager : MonoBehaviour {
     // rageMode
 
     public static RagePanelController rage;
+    public static ProgressBarBehaviour progressBar;
 
     void Start ( ) {
         rage = GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( );
+        progressBar = GameObject.Find ( "ProgressBarLabelRight" ).GetComponent<ProgressBarBehaviour> ( );
     }
 
 
@@ -65,9 +67,10 @@ public class GlobalManager : MonoBehaviour {
         }
         */
         if ( Input.GetKeyUp ( KeyCode.R ) ) {
-            if ( !rage.activated && rage.cost <= rage.value ) {
+            if ( !rage.activated && rage.cost <= rage.value && progressBar.Value >= 100) {
                 rage.activated = true;
                 rage.DecreaseRage ( );
+                rage.displayText.gameObject.SetActive ( true );
             }
 
         }
