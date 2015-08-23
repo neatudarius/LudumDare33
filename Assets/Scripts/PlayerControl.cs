@@ -26,6 +26,8 @@ public class PlayerControl : MonoBehaviour {
     public float distance = 0f;
     public Text distanceObj;
 
+    public AudioClip groundShake;
+    private AudioSource audioSource;
 
     void Start ( ) {
         currentSpeed = 0;
@@ -33,6 +35,7 @@ public class PlayerControl : MonoBehaviour {
         distance = 0f;
         rigid2D = GetComponent<Rigidbody2D> ( );
         anim = GetComponent<Animator> ( );
+        audioSource = GetComponent<AudioSource>();
         state = "walk_idle";
         anim.SetInteger ( "state", 0 );
     }
@@ -108,7 +111,8 @@ public class PlayerControl : MonoBehaviour {
             state = "landed";
             anim.SetInteger ( "state", 5 );
             cameraControl.PositionShake ( new Vector3 ( 0, 0.5f, 0 ), new Vector3 ( 0, 20.0f, 0 ), 0.5f );
-            cameraControl.TiltShake ( 2.0f, 25.0f, 0.5f ); 
+            cameraControl.TiltShake ( 2.0f, 25.0f, 0.5f );
+            audioSource.PlayOneShot(groundShake);
         }
     }
 }
