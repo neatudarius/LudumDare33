@@ -1,101 +1,79 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &156642
+--- !u!1 &156724
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 428426}
-  - 212: {fileID: 21217844}
-  - 114: {fileID: 11459408}
-  - 61: {fileID: 6161546}
-  - 114: {fileID: 11418610}
-  - 68: {fileID: 6879190}
+  - 4: {fileID: 439564}
+  - 212: {fileID: 21221158}
+  - 114: {fileID: 11461090}
+  - 114: {fileID: 11415500}
+  - 61: {fileID: 6115500}
   m_Layer: 0
-  m_Name: ObstacleCone
+  m_Name: ObstacleLamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &428426
+--- !u!4 &439564
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156642}
+  m_GameObject: {fileID: 156724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.35400009, y: .0219999999, z: 0}
-  m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
+  m_LocalPosition: {x: -2.75, y: 3.17000008, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6161546
+--- !u!61 &6115500
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156642}
+  m_GameObject: {fileID: 156724}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -.0429296494, y: -3.58290315}
+  m_Offset: {x: 0, y: 1.00999999}
   serializedVersion: 2
-  m_Size: {x: 6.13926888, y: .262497336}
---- !u!68 &6879190
-EdgeCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156642}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: .449999988, y: -4}
-  m_Points:
-  - {x: -.659172535, y: 7.72062302}
-  - {x: -.172294796, y: 7.77887821}
-  - {x: -.20179671, y: 7.59134436}
-  - {x: .142758667, y: 6.47283649}
-  - {x: 1.91164327, y: .755543947}
-  - {x: 2.38265038, y: .630984008}
-  - {x: -2.49275684, y: .531799495}
-  - {x: -2.34349251, y: .799221098}
-  - {x: -.670623779, y: 7.75656462}
---- !u!114 &11418610
+  m_Size: {x: 1.54999995, y: .610000014}
+--- !u!114 &11415500
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156642}
+  m_GameObject: {fileID: 156724}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 681edd76865bab74c9f62c458c348a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isBackgroundItem: 0
---- !u!114 &11459408
+--- !u!114 &11461090
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156642}
+  m_GameObject: {fileID: 156724}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6eb2ce6cd90099479f93c1e1fd0b931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 100
---- !u!212 &21217844
+--- !u!212 &21221158
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156642}
+  m_GameObject: {fileID: 156724}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -114,7 +92,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: bdc1fdc9bd4813b4b8968d7600ba4da8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78111bebe251409459141da5f7dc103c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -122,28 +100,8 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.x
-      value: .100000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.y
-      value: .100000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.z
-      value: .100000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_SortingOrder
-      value: 100
-      objectReference: {fileID: 0}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 156642}
+  m_RootGameObject: {fileID: 156724}
   m_IsPrefabParent: 1

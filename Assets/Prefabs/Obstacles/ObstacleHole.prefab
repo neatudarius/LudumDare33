@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11486070}
   - 114: {fileID: 11426996}
   - 61: {fileID: 6151458}
+  - 68: {fileID: 6867094}
   m_Layer: 0
   m_Name: ObstacleHole
   m_TagString: Untagged
@@ -37,13 +38,37 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122082}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: .150000006, y: 0}
   serializedVersion: 2
   m_Size: {x: 6.13000011, y: 4.63999987}
+--- !u!68 &6867094
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122082}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -5.09001541, y: 1.52587891e-05}
+  - {x: .0160630532, y: 2.08021426}
+  - {x: -3.79122734, y: -.409856617}
+  - {x: -2.46699953, y: 1.01429701}
+  - {x: -2.89563179, y: -1.04077733}
+  - {x: -.580914795, y: .443962395}
+  - {x: 1.24820065, y: -1.88908732}
+  - {x: 3.40183568, y: -.703836262}
+  - {x: 1.79612792, y: -.0965126306}
+  - {x: .0670687333, y: 1.93444884}
+  - {x: -.710582733, y: 1.81898594}
+  - {x: 5.08998489, y: 1.52587891e-05}
 --- !u!114 &11426996
 MonoBehaviour:
   m_ObjectHideFlags: 1
