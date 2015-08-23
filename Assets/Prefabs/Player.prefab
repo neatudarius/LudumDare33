@@ -129,8 +129,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fcc1036de3870a444830af36889b9cbe, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .0199999996
-  m_Pitch: .5
+  m_Volume: .300000012
+  m_Pitch: .600000024
   Loop: 0
   Mute: 0
   Priority: 128
@@ -226,7 +226,7 @@ MonoBehaviour:
   state: 
   distance: 0
   distanceObj: {fileID: 0}
-  groundShake: {fileID: 8300000, guid: fcc1036de3870a444830af36889b9cbe, type: 3}
+  groundShake: {fileID: 8300000, guid: 3510558a3756d3b479fef3d9a7d3397c, type: 3}
 --- !u!212 &21268928
 SpriteRenderer:
   m_ObjectHideFlags: 1
