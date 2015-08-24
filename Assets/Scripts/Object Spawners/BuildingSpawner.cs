@@ -20,8 +20,8 @@ public class BuildingSpawner : MonoBehaviour {
 			
 			// Align it to the last one
 			newBuilding.transform.position = transform.position; 			// Align it to the spawner
-			float lastBuildingRight = lastBuilding.GetComponent<SpriteUtility> ().GetRightXValue();
-			float newBuildingLeft = newBuilding.GetComponent<SpriteUtility> ().GetLeftXValue();
+			float lastBuildingRight = lastBuilding.GetComponent<ScenePrefab> ().GetRightXValue();
+			float newBuildingLeft = newBuilding.GetComponent<ScenePrefab> ().GetLeftXValue();
 			float distance = newBuildingLeft - lastBuildingRight;			// Get the distance between the last building and the new building
 			newBuilding.transform.Translate ( distance * Vector3.left );	// Align the new building
 			
