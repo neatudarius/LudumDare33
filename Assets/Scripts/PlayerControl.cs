@@ -68,8 +68,7 @@ public class PlayerControl : MonoBehaviour {
         //jump
         if (isGrounded && (Input.GetButton("Jump") || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))) {
             state = "jump";
-            if ( !GlobalManager.rage.activated )
-                anim.SetInteger("state", 3);
+            anim.SetInteger("state", 3);
             rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpSpeed);
             GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Jumping;
             GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Jumping;
@@ -106,8 +105,7 @@ public class PlayerControl : MonoBehaviour {
 
         if ( rigid2D.velocity.normalized.y < 0.2 && state == "jump" ) {
             state = "falling";
-            if ( !GlobalManager.rage.activated )
-                anim.SetInteger ( "state", 4 );
+            anim.SetInteger ( "state", 4 );
             GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Accelerated;
             GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Accelerated;
         }
@@ -121,8 +119,7 @@ public class PlayerControl : MonoBehaviour {
     void OnCollisionEnter2D ( Collision2D hit ) {
         if ( hit.gameObject.layer == LayerMask.NameToLayer ( "Ground" ) ) {
             state = "landed";
-            if ( !GlobalManager.rage.activated )
-                anim.SetInteger ( "state", 2 );
+            anim.SetInteger ( "state", 2 );
             cameraControl.PositionShake ( new Vector3 ( 0, 0.5f, 0 ), new Vector3 ( 0, 20.0f, 0 ), 0.5f );
             cameraControl.TiltShake ( 2.0f, 25.0f, 0.5f );
             audioSource.PlayOneShot(groundShake);
