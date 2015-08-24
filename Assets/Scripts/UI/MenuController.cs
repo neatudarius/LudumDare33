@@ -151,8 +151,14 @@ public class MenuController : MonoBehaviour {
             return;
         }
 
-
-
+        if ( command == StringsDatabase._muteButton ) {
+            if ( AudioListener.volume > 0f ) {
+                AudioListener.volume = 0f;
+            } else{
+                AudioListener.volume = 1f;
+            }
+            return;
+        }
 
     }
 
