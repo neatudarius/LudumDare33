@@ -39,7 +39,7 @@ public class GlobalManager : MonoBehaviour {
         }
     }
     #endregion    
-    //static int printSreenCounter = 0;
+    static int printSreenCounter = 0;
 
     //default speed values
     public static float backgroundSpeed_Normal = 1.0f;
@@ -96,12 +96,12 @@ public class GlobalManager : MonoBehaviour {
     }
 
     void Update ( ) {
-        /*
+        
         if ( Input.GetKeyUp ( KeyCode.P ) ) {
             printSreenCounter++;
             Application.CaptureScreenshot ( StringsDatabase.screenShotName + printSreenCounter.ToString ( ) + ".png" );
         }
-        */
+        
         if ( Input.GetKeyUp ( KeyCode.R ) && rage && !rage.activated && rage.Ready()) {
             rage.Activate ( );
         }
