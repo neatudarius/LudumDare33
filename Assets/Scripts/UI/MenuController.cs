@@ -25,7 +25,8 @@ public class MenuController : MonoBehaviour {
     // Main Menu/ Pause Menu
     private int ButtonsCount;
     private GameObject[ ] buttons;// as object
-    public Text title; 
+    public Text title;
+    public GameObject signInPart;
     private string[ ] buttonsNames; // what you see
 
 
@@ -58,7 +59,12 @@ public class MenuController : MonoBehaviour {
         isShowingCreditsPanel = false;
         CreditsControlPanel.SetActive ( false );
 
-
+        if (GameJolt.API.Manager.Instance.CurrentUser == null) {
+            signInPart.SetActive(true);
+        }
+        else {
+            signInPart.SetActive(false);
+        }
     }
 
     void Update ( ) {
@@ -134,6 +140,16 @@ public class MenuController : MonoBehaviour {
             return;
         }
 
+        if ( command == StringsDatabase._loginButton ) {
+            ShowSignIn ( );
+            return;
+        }
+
+
+        if ( command == StringsDatabase._showScoresButton) {
+            GlobalManager.ShowLeaderBoards ( );
+            return;
+        }
 
 
 
@@ -194,18 +210,16 @@ public class MenuController : MonoBehaviour {
         }
     }
 
-
-
-
     // Assign Main Menu Buttons' names
     void MainMenu ( ) {
-        ButtonsCount = 2;
+        ButtonsCount = 3;
 
         buttons = new GameObject[ ButtonsCount ];
         buttonsNames = new string[ ButtonsCount ];
 
         buttonsNames[ 0 ] = StringsDatabase._playGameButton;
-        buttonsNames[ 1 ] = StringsDatabase._creditsButton;
+        buttonsNames[ 1 ] = StringsDatabase._showScoresButton;
+        buttonsNames[ 2 ] = StringsDatabase._creditsButton;
     }
 
     // Assign Pause Menu Buttons' names
@@ -227,17 +241,27 @@ public class MenuController : MonoBehaviour {
 
         buttons[ 0 ].GetComponent<ButtonAction> ( ).buttonName.text = StringsDatabase._replayGameButton;
         buttons[ 0 ].GetComponent<ButtonAction> ( ).command = StringsDatabase._replayGameButton;
+
+
         isShowingMenu = true;
 
         string dist = ((int)GlobalManager.player.distance).ToString() + " meters ";
         string beans = GlobalManager.rage.GetTotal ( ).ToString() + " coins";
-        title.text = dist + "\n" + beans; 
+        title.text = dist + "\n" + beans;
+        if ( GameJolt.API.Manager.Instance.CurrentUser == null ) {
+            signInPart.SetActive ( true );
+        }
+        else {
+            signInPart.SetActive(false);
+            GlobalManager.SendScore ( );
+        }
+
     }
 
     // For a preset set of value build a menu
     void BuildMenuButtons ( ) {
         title.text = StringsDatabase.gameName;
-        Vector3 currentPosition = new Vector3 ( 0, +100, 0 );
+        Vector3 currentPosition = new Vector3 ( -15, +100, 0 );
         Vector3 offset = new Vector3 ( 0, -50, 0 );
         for ( int i = 0; i < ButtonsCount; i++ ) {
             currentPosition += offset;
@@ -277,5 +301,14 @@ public class MenuController : MonoBehaviour {
     IEnumerator MakeGameOver( float time = 1.0f ) {
         yield return new WaitForSeconds ( time );
         isGameOver = true;
+    }
+
+    public void ShowSignIn ( ) {
+        GameJolt.UI.Manager.Instance.ShowSignIn ( ( bool success ) => {
+            if ( success ) {
+                if (Application.loadedLevelName== StringsDatabase.gameSceneName) GlobalManager.SendScore ( );
+                signInPart.SetActive ( false );
+            }
+        } );
     }
 }

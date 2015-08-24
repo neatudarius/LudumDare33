@@ -27,7 +27,6 @@ GameObject:
   - 224: {fileID: 22400002}
   - 222: {fileID: 22200002}
   - 114: {fileID: 11400002}
-  - 114: {fileID: 11409398}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -140,10 +139,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .933823526, g: .665414274, b: .302119374, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 708715896cd772f4f8f7dfbf6fca7084, type: 3}
-    m_FontSize: 21
+    m_Font: {fileID: 12800000, guid: 3fbf5f08130bbd64c8ce251a70bcfcc0, type: 3}
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -153,7 +152,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Settings
+  m_Text: SETTINGS
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -206,20 +205,6 @@ MonoBehaviour:
         m_CallState: 0
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &11409398
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: .147058845, g: .118944652, b: .0767733678, a: 1}
-  m_EffectDistance: {x: .300000012, y: .300000012}
-  m_UseGraphicAlpha: 1
 --- !u!114 &11469520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -307,14 +292,14 @@ RectTransform:
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .833086371, y: .833086371, z: .833086371}
+  m_LocalScale: {x: .614276171, y: .614276171, z: .614276171}
   m_Children:
   - {fileID: 22400000}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -1024.78552, y: -573.716736}
+  m_AnchoredPosition: {x: -487.822235, y: -227.467194}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
