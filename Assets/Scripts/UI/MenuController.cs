@@ -59,7 +59,12 @@ public class MenuController : MonoBehaviour {
         isShowingCreditsPanel = false;
         CreditsControlPanel.SetActive ( false );
 
-
+        if (GameJolt.API.Manager.Instance.CurrentUser == null) {
+            signInPart.SetActive(true);
+        }
+        else {
+            signInPart.SetActive(false);
+        }
     }
 
     void Update ( ) {
@@ -205,9 +210,6 @@ public class MenuController : MonoBehaviour {
         }
     }
 
-
-
-
     // Assign Main Menu Buttons' names
     void MainMenu ( ) {
         ButtonsCount = 3;
@@ -248,7 +250,9 @@ public class MenuController : MonoBehaviour {
         title.text = dist + "\n" + beans;
         if ( GameJolt.API.Manager.Instance.CurrentUser == null ) {
             signInPart.SetActive ( true );
-        } else {
+        }
+        else {
+            signInPart.SetActive(false);
             GlobalManager.SendScore ( );
         }
 
