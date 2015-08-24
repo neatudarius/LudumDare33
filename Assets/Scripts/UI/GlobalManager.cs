@@ -84,8 +84,16 @@ public class GlobalManager : MonoBehaviour {
             progressBar = GameObject.Find ( "ProgressBarLabelRight" ).GetComponent<ProgressBarBehaviour> ( );
             player = GameObject.Find ( "Player" ).GetComponent<PlayerControl> ( );
         }
-    }
 
+
+        //gamejolt API
+        if (GameJolt.API.Manager.Instance.CurrentUser != null) {
+            //user is logged
+        }
+        else {
+            //user is not logged
+        }
+    }
 
     void Update ( ) {
         /*
@@ -133,4 +141,46 @@ public class GlobalManager : MonoBehaviour {
         return random.Next ( a, b + 1 );
     }
 
+    public void ShowSignIn() {
+        GameJolt.UI.Manager.Instance.ShowSignIn((bool success) => {
+            if (success) {
+                //user logged in
+            }
+            else {
+                //user failed to log in
+            }
+        });
+    }
+
+    public void ShowLeaderboards() {
+        GameJolt.UI.Manager.Instance.ShowLeaderboards((bool success) => {
+            //user closed the leaderboards
+
+        });
+    }
+
+    public void SendScore() {
+        int dist = (int)player.distance, 
+            coins = (int)rage.GetTotal();
+
+        //send coins
+        int scoreValue = coins;
+        string scoreText = coins.ToString() + " coins"; // A string representing the score to be shown on the website.
+        int tableID = 0; // Main highscore table.
+        string extraData = ""; // This will not be shown on the website. You can store any information.
+
+        GameJolt.API.Scores.Add(scoreValue, scoreText, tableID, extraData, (bool success) => {
+            Debug.Log(string.Format("Score Add {0}.", success ? "Successful" : "Failed"));
+        });
+
+        //send distance
+        scoreValue = dist;
+        scoreText = dist.ToString() + " meters";
+        tableID = 91835; // Distance highscore table.
+        
+        GameJolt.API.Scores.Add(scoreValue, scoreText, tableID, extraData, (bool success) => {
+            Debug.Log(string.Format("Score Add {0}.", success ? "Successful" : "Failed"));
+        });
+        
+    }
 }
