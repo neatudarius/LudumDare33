@@ -3088,6 +3088,10 @@ Prefab:
       propertyPath: m_Text
       value: Press R to charge
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
   m_IsPrefabParent: 0
