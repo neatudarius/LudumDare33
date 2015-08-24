@@ -5,11 +5,13 @@ public class ObstacleHole : MonoBehaviour {
 
 	private bool playerDead = false;
 	private float deathTimer = 0.5f;
+    MenuController menu;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		transform.Translate (0.17f * Vector3.down);
-	}
+        menu = GameObject.FindObjectOfType<MenuController> ( );
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -17,9 +19,9 @@ public class ObstacleHole : MonoBehaviour {
 			deathTimer -= Time.deltaTime;
 
 			if( deathTimer <= 0 ) {
-                GameObject.Find ( "_Canvas" ).GetComponent<MenuController> ( ).GameIsOver ( );
-				GlobalManager.ResetDifficulty();
-			}
+                menu.GameIsOver ( );
+                GlobalManager.FreezeSpeed ( );
+            }
 		}
 	}
 

@@ -150,8 +150,8 @@ public class CoffeeBeansController : MonoBehaviour {
             listOfBeans.Add ( GetBean ( center + new Vector2 ( c * R, s * R ) ) );
             angle += phi;
         }
-        yield return new WaitForSeconds ( 0.5f );
-        StartCoroutine ( Release ( ) );
+        yield return new WaitForSeconds ( 0f );
+        StartCoroutine ( Release (2f ) );
     }
     IEnumerator ZigZag ( float y, int cnt ) {
         bool up = true;

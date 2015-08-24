@@ -5,9 +5,10 @@ using System.Collections.Generic;
 public class Obstacle : MonoBehaviour {
     bool spin, fall;
     public float rotateSpeed = 100.0f;
-
+    MenuController menu;
     void Start ( ) {
         spin = fall = false;
+        menu = GameObject.FindObjectOfType<MenuController> ( );
     }
 
 	public virtual void  OnCollisionEnter2D( Collision2D coll ) {
@@ -18,8 +19,8 @@ public class Obstacle : MonoBehaviour {
         }
 		if (coll.gameObject.name == "Player") {
             coll.gameObject.GetComponent<PlayerControl>().Die();
-            GameObject.Find("_Canvas").GetComponent<MenuController>().GameIsOver();
-            GlobalManager.ResetDifficulty();
+            menu.GameIsOver();
+            GlobalManager.FreezeSpeed ( );
 		}
 	}
 
