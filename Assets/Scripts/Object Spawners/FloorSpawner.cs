@@ -22,7 +22,7 @@ public class FloorSpawner : MonoBehaviour {
 		if (lastFloor.GetComponent<SpriteUtility> ().GetRightXValue () <= spawnBoundary.GetComponent<SpawnBoundary> ().GetXValue ()) {
 			
 			// Spawn a new floor tile randomly from the list
-			int index = Random.Range (0, floorPrefabs.Count);
+			int index = GlobalManager.rand ( 0, floorPrefabs.Count-1);
 			GameObject newFloor = Instantiate (floorPrefabs[index]);
 			
 			// Align it to the last one

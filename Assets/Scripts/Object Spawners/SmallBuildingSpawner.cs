@@ -16,7 +16,7 @@ public class SmallBuildingSpawner : MonoBehaviour {
 	void Update () {
 		if (spawnTimer < 0) {
 			// Choose a random building
-			int randomIndex = Random.Range(0, smallBuildingPrefabs.Count);
+			int randomIndex = GlobalManager.rand(0, smallBuildingPrefabs.Count-1);
 			GameObject randomPrefab = smallBuildingPrefabs[randomIndex];
 			
 			// Spawn the building and position it

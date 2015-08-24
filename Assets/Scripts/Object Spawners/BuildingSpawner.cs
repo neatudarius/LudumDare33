@@ -15,7 +15,7 @@ public class BuildingSpawner : MonoBehaviour {
 		if (lastBuilding.GetComponent<SpriteUtility> ().GetRightXValue () <= spawnBoundary.GetComponent<SpawnBoundary> ().GetXValue ()) {
 			
 			// Spawn a new building randomly from the list
-			int index = Random.Range (0, buildingPrefabs.Count);
+			int index = GlobalManager.rand ( 0, buildingPrefabs.Count-1);
 			GameObject newBuilding = Instantiate (buildingPrefabs[index]);
 			
 			// Align it to the last one

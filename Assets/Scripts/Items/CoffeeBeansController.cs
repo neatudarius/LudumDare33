@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+
 
 public class CoffeeBeansController : MonoBehaviour {
     public GameObject CoffeeBeanPrefab;
     public GameObject leftBound, rightBound;
     public Transform coffeeParent;
-    public float delayTime = 0.5f;
-    public float minY = 1.0f, maxY = 5.0f, dif = 10f;
-    float Y_MAX = 9f;
-    //float Y_MIN = 5.5f;
+    public float delayTime = 0.1f;
+    public float minY = 1.0f, maxY = 5.0f, dif = 3f;
+    float Y_MAX = 8f;
+    float Y_MIN = 5.5f;
     float defaultY = 1.0f;
 
     List<GameObject> listOfBeans;
@@ -22,26 +22,27 @@ public class CoffeeBeansController : MonoBehaviour {
         listOfBeans = new List<GameObject> ( );
         avaible = true;
         defaultY = minY;
-        Random.seed = 50;
     }
 
     void FixedUpdate ( ) {
         if ( avaible ) {
             avaible = false;
-            int rand = Random.Range ( 0, 100 ) % 3 + 1;
+            int rand = GlobalManager.rand ( 1, 3 );
             switch ( rand ) {
                 case 1:
-                    //line
-                    defaultY = Random.Range ( 1.0f, 3.0f ) * Random.Range ( 1.0f, 2.0f );
-                    StartCoroutine ( TrowBeans_LINE ( ( int ) Random.Range ( 2f, 5f ) ) );
+                    //line 
+                    defaultY = GlobalManager.rand ( 1.0f, 3.0f );
+                    StartCoroutine ( TrowBeans_LINE ( GlobalManager.rand (3,5) ) );
                     break;
                 case 2:
-                    defaultY = Random.Range ( 1.0f, 3.0f );
-                    StartCoroutine ( TrowBeans_Ascending ( 5 ) );
+                    // Ascending
+                    defaultY = GlobalManager.rand ( 1.0f, 3.0f );
+                    StartCoroutine ( TrowBeans_Ascending ( GlobalManager.rand ( 3, 5 ) ) );
                     break;
                 case 3:
+                    //Descending
                     defaultY = 6.0f;
-                    StartCoroutine ( TrowBeans_Descending ( 5 ) );
+                    StartCoroutine ( TrowBeans_Descending ( GlobalManager.rand ( 3, 5 ) ) );
                     break;
             }
         }
@@ -55,9 +56,9 @@ public class CoffeeBeansController : MonoBehaviour {
         if ( cnt > 0 && defaultY > minY )
             StartCoroutine ( TrowBeans_Descending ( cnt ) );
         else {
-            int rand = Random.Range ( 0, 100 );
+            int rand = GlobalManager.rand(1,2);
             if ( rand % 2 == 0 )
-                StartCoroutine ( TrowBeans_Ascending ( 5 ) );
+                StartCoroutine ( TrowBeans_Ascending ( GlobalManager.rand ( 1, 5 ) ) );
             else
                 StartCoroutine ( Release ( 2.0f ) );
         }
@@ -71,9 +72,9 @@ public class CoffeeBeansController : MonoBehaviour {
         if ( cnt > 0 && defaultY < Y_MAX )
             StartCoroutine ( TrowBeans_Ascending ( cnt ) );
         else {
-            int rand = Random.Range ( 0, 100 );
+            int rand = GlobalManager.rand(1,2);
             if ( rand % 2 == 0 )
-                StartCoroutine ( TrowBeans_Descending ( 5 ) );
+                StartCoroutine ( TrowBeans_Descending ( GlobalManager.rand ( 1, 5 )  ) );
             else
                 StartCoroutine ( Release ( 2.0f ) );
         }

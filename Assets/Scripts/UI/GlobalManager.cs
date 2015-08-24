@@ -56,14 +56,17 @@ public class GlobalManager : MonoBehaviour {
 	public static float difficultyMultiplier;
 
     // rageMode
-
     public static RagePanelController rage;
     public static ProgressBarBehaviour progressBar;
+
+    //Random numbers
+    static System.Random random;
 
     void Start ( ) {
         rage = null;
         progressBar = null;
-		ResetDifficulty ();
+        random = new System.Random ( );
+        ResetDifficulty ();
     }
 
 
@@ -101,5 +104,14 @@ public class GlobalManager : MonoBehaviour {
 	static public void FreezeSpeed() {
 		difficultyMultiplier = 0.0f;
 	}
+
+    public static float rand ( float a, float b ) {
+        float t = ( float ) random.NextDouble ( );
+        return ( 1 - t ) * a + t * b;
+    }
+
+    public static int rand ( int a, int b ) {
+        return random.Next ( a, b + 1 );
+    }
 
 }
