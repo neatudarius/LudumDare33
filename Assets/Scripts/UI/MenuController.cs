@@ -28,7 +28,7 @@ public class MenuController : MonoBehaviour {
     public Text title;
     public GameObject signInPart;
     private string[ ] buttonsNames; // what you see
-
+    public Sprite muteSprite, soundSprite;
 
     // Settings menu
     private GameObject backToMenuButton;
@@ -154,9 +154,12 @@ public class MenuController : MonoBehaviour {
         if ( command == StringsDatabase._muteButton ) {
             if ( AudioListener.volume > 0f ) {
                 AudioListener.volume = 0f;
+                GameObject.Find ( "Sound" ).GetComponent<Image> ( ).sprite = muteSprite;
             } else{
                 AudioListener.volume = 1f;
+                GameObject.Find ( "Sound" ).GetComponent<Image> ( ).sprite = soundSprite;
             }
+            
             return;
         }
 
