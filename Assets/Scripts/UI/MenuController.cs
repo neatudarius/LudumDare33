@@ -237,7 +237,7 @@ public class MenuController : MonoBehaviour {
     // For a preset set of value build a menu
     void BuildMenuButtons ( ) {
         title.text = StringsDatabase.gameName;
-        Vector3 currentPosition = new Vector3 ( 0, +100, 0 );
+        Vector3 currentPosition = new Vector3 ( -5, +100, 0 );
         Vector3 offset = new Vector3 ( 0, -50, 0 );
         for ( int i = 0; i < ButtonsCount; i++ ) {
             currentPosition += offset;

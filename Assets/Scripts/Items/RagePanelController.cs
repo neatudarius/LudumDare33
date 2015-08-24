@@ -18,7 +18,8 @@ public class RagePanelController : MonoBehaviour {
     }
     public int needed = 100;
     int total = 0, current = 0 ;
-    public Text counter, displayText;
+    public Text counter;
+    public GameObject displayText;
     public bool activated = false;
     public float duration = 10f;
 
@@ -33,7 +34,6 @@ public class RagePanelController : MonoBehaviour {
         current = 0;
 
         counter.text = total.ToString ( );
-        displayText.text = "Press R to charge";
         displayText.gameObject.SetActive ( false );
         
         
@@ -43,7 +43,7 @@ public class RagePanelController : MonoBehaviour {
     public void IncreaseRage ( ) {
         total++;
         current++;
-        counter.text = total.ToString ( )+ " meters";
+        counter.text = total.ToString ( )+ " coins";
         if ( !activated )
             value = (float)current/needed*100f;
                    
@@ -52,13 +52,18 @@ public class RagePanelController : MonoBehaviour {
     public void Activate ( ) {
         activated = true;
         t = 0f;
-        displayText.gameObject.SetActive ( true );
+        //displayText.gameObject.SetActive ( false );
         effect.enabled = true;
         GlobalManager.RageON ( );
 
     }
 
     void Update ( ) {
+        if ( Ready ( ) ) {
+            displayText.gameObject.SetActive (true );
+        } else {
+            displayText.gameObject.SetActive ( false );
+        }
         if ( activated ) {
             value = Mathf.Lerp ( 100f, 0f, t += Time.deltaTime / duration );
         }
@@ -68,7 +73,7 @@ public class RagePanelController : MonoBehaviour {
             activated = false;
             value = 0f;
             current = 0;
-            displayText.gameObject.SetActive ( false );
+            //displayText.gameObject.SetActive ( false );
             effect.enabled = false;
             GlobalManager.RageOFF ( );
         }
@@ -76,7 +81,7 @@ public class RagePanelController : MonoBehaviour {
     }
 
     public bool Ready ( ) {
-        return GlobalManager.progressBar.isDone;
+        return GlobalManager.progressBar.isDone;        
     }
 
     public int GetTotal ( ) {
