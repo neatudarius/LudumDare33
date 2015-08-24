@@ -83,8 +83,8 @@ public class CoffeeBeansController : MonoBehaviour {
                 case 9:
                     // ZigZag
                     y = GlobalManager.rand ( 3.0f, 4.0f );
-                    cnt = 5*GlobalManager.rand (2, 6 );
-                    StartCoroutine ( ZigZag( y, cnt ) );
+                    cnt = 5 * GlobalManager.rand ( 2, 6 );
+                    StartCoroutine ( ZigZag ( y, cnt ) );
                     break;
                 default:
                     cnt = GlobalManager.rand ( 4, 8 );
@@ -102,7 +102,7 @@ public class CoffeeBeansController : MonoBehaviour {
         if ( cnt > 0 && y > minY )
             StartCoroutine ( TrowBeans_Descending ( y, cnt ) );
         else {
-                StartCoroutine ( Release ( ) );
+            StartCoroutine ( Release ( ) );
         }
     }
 
@@ -125,11 +125,11 @@ public class CoffeeBeansController : MonoBehaviour {
         if ( cnt > 0 )
             StartCoroutine ( TrowBeans_Horizontal ( y, cnt ) );
         else
-            StartCoroutine ( Release (2.0f ) );
-        yield return new WaitForSeconds ( 0);
+            StartCoroutine ( Release ( 2.0f ) );
+        yield return new WaitForSeconds ( 0 );
     }
 
-    IEnumerator TrowBeans_Vertical( float y, int cnt ) {
+    IEnumerator TrowBeans_Vertical ( float y, int cnt ) {
         listOfBeans.Add ( GetBean ( y ) );
         //yield return new WaitForSeconds ( ydif );
         cnt--;
@@ -137,7 +137,7 @@ public class CoffeeBeansController : MonoBehaviour {
         if ( cnt > 0 )
             StartCoroutine ( TrowBeans_Vertical ( y, cnt ) );
         else
-            StartCoroutine ( Release (0.5f ) );
+            StartCoroutine ( Release ( 0.5f ) );
         yield return new WaitForSeconds ( 0f );
     }
 
@@ -157,7 +157,7 @@ public class CoffeeBeansController : MonoBehaviour {
         bool up = true;
         for ( int i = 1; i <= cnt; i++ ) {
             if ( up ) {
-                while ( i % 5 !=0) {
+                while ( i % 5 != 0 ) {
                     listOfBeans.Add ( GetBean ( y ) );
                     y += ydif;
                     yield return new WaitForSeconds ( 0.1f );
@@ -172,7 +172,7 @@ public class CoffeeBeansController : MonoBehaviour {
                     yield return new WaitForSeconds ( 0.1f );
                     i++;
                 }
-                
+
                 yield return new WaitForSeconds ( 0.1f );
             }
 
@@ -180,12 +180,14 @@ public class CoffeeBeansController : MonoBehaviour {
         }
         StartCoroutine ( Release ( ) );
     }
-    IEnumerator Shit (float y, int cnt) {
+    IEnumerator Shit ( float y, int cnt ) {
         bool up = true;
         for ( int i = 0; i < cnt; i++ ) {
-            listOfBeans.Add ( GetBean (y ));
-            if ( up ) y += ydif;
-                 else y -= ydif;
+            listOfBeans.Add ( GetBean ( y ) );
+            if ( up )
+                y += ydif;
+            else
+                y -= ydif;
             yield return new WaitForSeconds ( 0.1f );
             up = !up;
         }
