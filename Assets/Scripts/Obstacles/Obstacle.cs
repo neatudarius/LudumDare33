@@ -11,9 +11,14 @@ public class Obstacle : MonoBehaviour {
         menu = GameObject.FindObjectOfType<MenuController> ( );
     }
 
-	public virtual void  OnTriggerEnter2D( Collider2D coll ) {
+    public virtual void OnTriggerEnter2D ( Collider2D coll ) {
+        if ( GlobalManager.rage ) {
+            GlobalManager.rage.value = 0;
+        }
+
         if ( GlobalManager.rage && GlobalManager.rage.activated ) {
             spin = true;
+            
             gameObject.GetComponent<Scroller> ( ).enabled = false;
             StartCoroutine ( WaitUntilFall ( 0.2f ) );
 
