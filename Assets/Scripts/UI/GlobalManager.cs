@@ -152,14 +152,14 @@ public class GlobalManager : MonoBehaviour {
         });
     }
 
-    public void ShowLeaderboards() {
+    public static void ShowLeaderBoards() {
         GameJolt.UI.Manager.Instance.ShowLeaderboards((bool success) => {
             //user closed the leaderboards
 
         });
     }
 
-    public void SendScore() {
+    public static void SendScore() {
         int dist = (int)player.distance, 
             coins = (int)rage.GetTotal();
 

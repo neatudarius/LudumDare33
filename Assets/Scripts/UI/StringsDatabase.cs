@@ -57,10 +57,12 @@ public class StringsDatabase : MonoBehaviour
         _resumeGameButton = "Resume",
         _backToMenuButton = "Back",
         _creditsButton = "Credits",
-        _advanceToMenuScene = "Main Menu";
+        _advanceToMenuScene = "Main Menu",
+        _loginButton = "Log in",
+        _showScoresButton = "Leaderboard";
     #endregion
 
-    
+
 
     public static string
         screenShotName = "Screenshot";
