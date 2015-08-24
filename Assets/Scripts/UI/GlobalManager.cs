@@ -67,6 +67,10 @@ public class GlobalManager : MonoBehaviour {
         progressBar = null;
         random = new System.Random ( );
         ResetDifficulty ();
+        if ( rage == null && GameObject.Find ( "RagePanel" ) ) {
+            rage = GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( );
+            progressBar = GameObject.Find ( "ProgressBarLabelRight" ).GetComponent<ProgressBarBehaviour> ( );
+        }
     }
 
 
@@ -77,17 +81,9 @@ public class GlobalManager : MonoBehaviour {
             Application.CaptureScreenshot ( StringsDatabase.screenShotName + printSreenCounter.ToString ( ) + ".png" );
         }
         */
-        if ( rage == null && GameObject.Find ( "RagePanel" ) ) {
-            rage = GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( );
-            progressBar = GameObject.Find ( "ProgressBarLabelRight" ).GetComponent<ProgressBarBehaviour> ( );
-        }
-        if ( rage && Input.GetKeyUp ( KeyCode.R ) ) {
-            if ( !rage.activated && rage.cost <= rage.value && progressBar.Value >= 100) {
-                rage.activated = true;
-                rage.DecreaseRage ( );
-                rage.displayText.gameObject.SetActive ( true );
-            }
 
+        if ( Input.GetKeyUp ( KeyCode.R ) && rage && !rage.activated && rage.Ready()) {
+            rage.Activate ( );
         }
 
 		difficultyMultiplier += Time.deltaTime * speedIncrement;

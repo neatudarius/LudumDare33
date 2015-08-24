@@ -55,7 +55,7 @@ namespace ProgressBar
         /// </summary>
         [SerializeField]
         private Text m_AttachedText;
-
+        public float current = 0;
         /// <summary>
         /// In pixels per seconds, the speed at which the Filler will be animated.
         /// </summary>
@@ -150,8 +150,11 @@ namespace ProgressBar
         /// <param name="Width">the new Filler's width</param>
         public void SetFillerSize(float Width)
         {
-            if (m_AttachedText)
-                m_AttachedText.text = Mathf.Round(Width / m_FillerInfo.MaxWidth * 100).ToString() + " %";
+            if ( m_AttachedText ) {
+                current = Mathf.Round ( Width / m_FillerInfo.MaxWidth * 100 );
+                m_AttachedText.text = Mathf.Round ( Width / m_FillerInfo.MaxWidth * 100 ).ToString ( ) + " %";
+            }
+                
 
             m_FillRect.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, XOffset, Width);
         }

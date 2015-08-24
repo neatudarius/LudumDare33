@@ -1173,11 +1173,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1592100130}
+  m_Father: {fileID: 1978219400}
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -431.700012, y: 224}
+  m_AnchoredPosition: {x: -95.6999512, y: -19.9999695}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &565938620
@@ -1457,7 +1457,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 259, y: 3}
+  m_AnchoredPosition: {x: 273, y: -2}
   m_SizeDelta: {x: 160, y: 29.7180004}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &744916088
@@ -1781,7 +1781,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FillRect: {fileID: 458274626}
   m_AttachedText: {fileID: 775318515}
-  ProgressSpeed: 10
+  current: 0
+  ProgressSpeed: 100
   TriggerOnComplete: 1
   OnCompleteMethods:
     m_PersistentCalls:
@@ -2880,7 +2881,6 @@ RectTransform:
   - {fileID: 244848477}
   - {fileID: 1133582146}
   - {fileID: 1978219400}
-  - {fileID: 565938619}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
@@ -3371,6 +3371,7 @@ RectTransform:
   - {fileID: 912985974}
   - {fileID: 848373643}
   - {fileID: 744916087}
+  - {fileID: 565938619}
   m_Father: {fileID: 1592100130}
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
@@ -3412,16 +3413,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66bbe4569ead78e48954f5c9fa51e58b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
-  cost: 2
+  needed: 10
   counter: {fileID: 912985975}
   displayText: {fileID: 744916088}
   activated: 0
-  waitBeforeRefill: 5
-  refillTime: 5
-  beanRage: 2
-  delay: .5
-  rageDuration: 5
+  duration: 60
 --- !u!222 &1978219403
 CanvasRenderer:
   m_ObjectHideFlags: 0

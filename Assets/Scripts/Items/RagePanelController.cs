@@ -4,60 +4,72 @@ using System.Collections;
 
 
 public class RagePanelController : MonoBehaviour {
-    public int value = 0;
-    public int cost = 2;
+    public float value {
+        get {
+            if ( GlobalManager.progressBar == null )
+                return 0;
+            return GlobalManager.progressBar.Value;
+        }
+        set {
+            if ( GlobalManager.progressBar == null )
+                return;
+            GlobalManager.progressBar.Value = value;
+        }
+    }
+    public int needed = 100;
+    int total = 0, current = 0 ;
     public Text counter, displayText;
     public bool activated = false;
-    public float waitBeforeRefill = 5.0f;
-    public float refillTime = 5.0f;
-    public float beanRage = 10.0f;
-    public float delay = 0.1f;
-    public float rageDuration = 10.0f;
+    public float duration = 10f;
 
+    float t = 0f;
     void Start ( ) {
         value = 0;
+        total = 0;
         activated = false;
-        counter.text = value.ToString ( );
-        displayText.text = "Rage Mode";
+        current = 0;
+
+        counter.text = total.ToString ( );
+        displayText.text = "Angry Mode";
         displayText.gameObject.SetActive ( false );
-        StartCoroutine ( Reactivate ( waitBeforeRefill ) );
+        
+        
     }
 
     
     public void IncreaseRage ( ) {
-        value++;
-        counter.text = value.ToString ( );
-        GlobalManager.progressBar.IncrementValue (beanRage);
+        total++;
+        current++;
+        counter.text = total.ToString ( );
+        if ( !activated )
+            value = (float)current/needed*100f;
+                   
+    }
+
+    public void Activate ( ) {
+        activated = true;
+        t = 0f;
+        displayText.gameObject.SetActive ( true );
+    }
+
+    void Update ( ) {
+        if ( activated ) {
+            value = Mathf.Lerp ( 100f, 0f, t += Time.deltaTime / duration );
+        }
+    }
+    void FixedUpdate ( ) {
+        if ( activated && GlobalManager.progressBar.current < 0.1f ) {
+            activated = false;
+            value = 0f;
+            current = 0;
+            displayText.gameObject.SetActive ( false );
+        }
         
     }
 
-    public void DecreaseRage ( ) {
-        value -= cost;
-        counter.text = value.ToString ( );
-        GlobalManager.progressBar.DecrementValue ( GlobalManager.progressBar.Value );
-        StartCoroutine ( Reactivate ( waitBeforeRefill ) );
+    public bool Ready ( ) {
+        return GlobalManager.progressBar.isDone;
     }
 
-    IEnumerator Reactivate ( float time ) {
-        yield return new WaitForSeconds ( time );
-        StartCoroutine ( DeactivateRage (  ) );
-
-    }
-
-    IEnumerator DeactivateRage ( ) {
-        yield return new WaitForSeconds ( rageDuration );
-        activated = false;
-        displayText.gameObject.SetActive ( false );
-        StartCoroutine ( Refill ( refillTime ) );
-    }
-
-    IEnumerator Refill ( float time ) {
-        GlobalManager.progressBar.IncrementValue (beanRage);
-        yield return new WaitForSeconds ( delay);
-        if (GlobalManager.progressBar.Value < 100) {
-            StartCoroutine ( Refill ( time - delay ) );
-        }
-    }
-
-
-}
+    
+  }
