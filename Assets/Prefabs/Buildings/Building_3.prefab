@@ -9,8 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 406882}
   - 212: {fileID: 21285434}
-  - 114: {fileID: 11442574}
-  - 114: {fileID: 11410300}
   m_Layer: 0
   m_Name: Building_3
   m_TagString: Untagged
@@ -30,29 +28,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11410300
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 145526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 681edd76865bab74c9f62c458c348a25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isBackgroundItem: 0
---- !u!114 &11442574
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 145526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d8b381e989377746bccc4f1034e0b07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &21285434
 SpriteRenderer:
   m_ObjectHideFlags: 1
