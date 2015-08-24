@@ -12,7 +12,7 @@ public class Obstacle : MonoBehaviour {
     }
 
 	public virtual void  OnCollisionEnter2D( Collision2D coll ) {
-        if ( GlobalManager.rage.activated ) {
+        if ( GlobalManager.rage && GlobalManager.rage.activated ) {
             spin = true;
             StartCoroutine ( WaitUntilFall ( 0.2f ) );
             return;
