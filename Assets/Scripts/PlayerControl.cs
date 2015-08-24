@@ -40,7 +40,10 @@ public class PlayerControl : MonoBehaviour {
         anim.SetInteger ( "state", 0 );
     }
 
-    void Update ( ) {
+    void Update() {
+        //check if is grounded
+        isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+
         distance += GlobalManager.foregroundSpeed * Time.deltaTime;
         distanceObj.text = ( ( int ) distance ).ToString ( );
 
@@ -53,10 +56,23 @@ public class PlayerControl : MonoBehaviour {
             currentSpeed = 0.0f;
         }
 
+        if (isGrounded && state == "landed") {
+            state = "walk_idle";
+            anim.SetInteger("state", 0);
+        }
+
+        //jump
+        if (isGrounded && (Input.GetButton("Jump") || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))) {
+            state = "jump";
+            anim.SetInteger("state", 3);
+            rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpSpeed);
+            GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Jumping;
+            GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Jumping;
+        }
 
         //get input for forward/backward movement
         if ( Input.GetAxis ( "Horizontal" ) > 0.1 ) {
-            if ( isGrounded ) {
+            if ( isGrounded && state != "jump" ) {
                 state = "walk_forward";
                 anim.SetInteger ( "state", 1 );
             }
@@ -64,7 +80,7 @@ public class PlayerControl : MonoBehaviour {
             GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Accelerated;
             //currentSpeed = 
         } else if ( Input.GetAxis ( "Horizontal" ) < -0.1 ) {
-            if ( isGrounded ) {
+            if (isGrounded && state != "jump") {
                 state = "walk_backward";
                 anim.SetInteger ( "state", 2 );
             }
@@ -72,7 +88,7 @@ public class PlayerControl : MonoBehaviour {
             GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Normal;
             //currentSpeed = Mathf.SmoothDamp(currentSpeed, -backwardSpeed, ref speedDampVelocity, speedSmooth);
         } else {
-            if ( isGrounded ) {
+            if ( isGrounded && state != "jump") {
                 state = "walk_idle";
                 anim.SetInteger ( "state", 0 );
             }
@@ -80,16 +96,6 @@ public class PlayerControl : MonoBehaviour {
             GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Normal;
             //currentSpeed = Mathf.SmoothDamp(currentSpeed, 0f, ref speedDampVelocity, speedSmooth);
         }
-
-        //jump
-        if ( isGrounded && ( Input.GetButton ( "Jump" ) || Input.GetKey ( KeyCode.W ) || Input.GetKey ( KeyCode.UpArrow ) ) ) {
-            state = "jump";
-            anim.SetInteger ( "state", 3 );
-            rigid2D.velocity = new Vector2 ( rigid2D.velocity.x, jumpSpeed );
-            GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Jumping;
-            GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Jumping;
-        }
-
 
         if ( rigid2D.velocity.normalized.y < 0.2 && state == "jump" ) {
             state = "falling";
@@ -102,14 +108,12 @@ public class PlayerControl : MonoBehaviour {
     void FixedUpdate ( ) {
         //apply the force
         rigid2D.velocity = new Vector2 ( currentSpeed, rigid2D.velocity.y );
-        //check if is grounded
-        isGrounded = Physics2D.Linecast ( transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ( "Ground" ) );
     }
 
     void OnCollisionEnter2D ( Collision2D hit ) {
         if ( hit.gameObject.layer == LayerMask.NameToLayer ( "Ground" ) ) {
             state = "landed";
-            anim.SetInteger ( "state", 5 );
+            anim.SetInteger ( "state", 2 );
             cameraControl.PositionShake ( new Vector3 ( 0, 0.5f, 0 ), new Vector3 ( 0, 20.0f, 0 ), 0.5f );
             cameraControl.TiltShake ( 2.0f, 25.0f, 0.5f );
             audioSource.PlayOneShot(groundShake);
