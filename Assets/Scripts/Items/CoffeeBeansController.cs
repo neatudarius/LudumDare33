@@ -39,10 +39,10 @@ public class CoffeeBeansController : MonoBehaviour {
                     break;
                 case 2:
                     // double line
-                    y = GlobalManager.rand ( 1.5f, 5.0f );
+                    y = GlobalManager.rand ( 1.5f, 2.0f );
                     cnt = GlobalManager.rand ( 3, 8 );
                     StartCoroutine ( TrowBeans_Horizontal ( y, cnt ) );
-                    StartCoroutine ( TrowBeans_Horizontal ( y + 1.0f, cnt ) );
+                    StartCoroutine ( TrowBeans_Horizontal ( y + GlobalManager.rand ( 3.0f, 4.5f ), cnt ) );
                     break;
                 case 3:
                     // vertical line
@@ -125,7 +125,7 @@ public class CoffeeBeansController : MonoBehaviour {
         if ( cnt > 0 )
             StartCoroutine ( TrowBeans_Horizontal ( y, cnt ) );
         else
-            StartCoroutine ( Release ( 2.0f ) );
+            StartCoroutine ( Release ( 1.0f ) );
         yield return new WaitForSeconds ( 0 );
     }
 
