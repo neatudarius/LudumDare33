@@ -98,10 +98,9 @@ public class MenuController : MonoBehaviour {
     // This functions is called by buttons. Execute commands
     public void Command ( string command ) {
         // Play Button - Main Menu => Play first level
-        if ( command == StringsDatabase._playGameButton ) {
+        if ( command == StringsDatabase._playGameButton || command == StringsDatabase._replayGameButton ) {
             Time.timeScale = 1.0f;
-            //Application.LoadLevel( StringsDatabase.gameSceneName );
-            globalManager.LoadLevel ( StringsDatabase.gameSceneName );
+            GlobalManager.LoadLevel ( StringsDatabase.gameSceneName );
             return;
         }
 
@@ -130,7 +129,7 @@ public class MenuController : MonoBehaviour {
         }
 
         if ( command == StringsDatabase._advanceToMenuScene ) {
-            globalManager.LoadLevel ( StringsDatabase.menuSceneName );
+            GlobalManager.LoadLevel ( StringsDatabase.menuSceneName );
             return;
         }
 
@@ -225,7 +224,8 @@ public class MenuController : MonoBehaviour {
             return;
         }
 
-        buttons[ 0 ].SetActive ( false );
+        buttons[0].GetComponent<ButtonAction> ( ).buttonName.text = StringsDatabase._replayGameButton;
+        buttons[ 0 ].GetComponent<ButtonAction> ( ).command = StringsDatabase._replayGameButton;
         isShowingMenu = true;
     }
 

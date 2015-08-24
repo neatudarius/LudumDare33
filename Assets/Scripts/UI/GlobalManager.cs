@@ -57,7 +57,7 @@ public class GlobalManager : MonoBehaviour {
 
 	// Adjust difficulty using these!!
 	public static float baseDifficulty = 1.5f;
-    public static float rageDifficulty = 5.0f;
+    public static float rageDifficulty = 15.0f;
     public static float maxDifficulty = 12f;
     static float lastDifficulty = 0f;
     public static float speedIncrement = 0.1f;
@@ -98,7 +98,7 @@ public class GlobalManager : MonoBehaviour {
 		if(difficultyMultiplier < maxDifficulty) difficultyMultiplier += Time.deltaTime * speedIncrement;
     }
 	
-    public void LoadLevel ( string nextLevel ) {
+    public static void LoadLevel ( string nextLevel ) {
         Application.LoadLevel ( nextLevel );
     }
 	

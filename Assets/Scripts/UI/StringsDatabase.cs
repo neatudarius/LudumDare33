@@ -53,6 +53,7 @@ public class StringsDatabase : MonoBehaviour
     #region Buttons
     public static string
         _playGameButton = "Play",
+        _replayGameButton = "Play again :p",
         _resumeGameButton = "Resume",
         _backToMenuButton = "Back",
         _creditsButton = "Credits",
