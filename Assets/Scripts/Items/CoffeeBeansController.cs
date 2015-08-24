@@ -27,12 +27,12 @@ public class CoffeeBeansController : MonoBehaviour {
     void FixedUpdate ( ) {
         if ( avaible ) {
             avaible = false;
-            int rand = GlobalManager.rand ( 1, 3 );
+            int rand = GlobalManager.rand ( 1, 4);
             switch ( rand ) {
                 case 1:
                     //line 
                     defaultY = GlobalManager.rand ( 1.0f, 3.0f );
-                    StartCoroutine ( TrowBeans_LINE ( GlobalManager.rand (3,5) ) );
+                    StartCoroutine ( TrowBeans_LINE ( GlobalManager.rand ( 3, 5 ) ) );
                     break;
                 case 2:
                     // Ascending
@@ -43,6 +43,12 @@ public class CoffeeBeansController : MonoBehaviour {
                     //Descending
                     defaultY = 6.0f;
                     StartCoroutine ( TrowBeans_Descending ( GlobalManager.rand ( 3, 5 ) ) );
+                    break;
+                case 4:
+                    // Circle
+                    StartCoroutine(Circle (GlobalManager.rand(1.0f,2.5f) ));
+                    break;
+                default:
                     break;
             }
         }
@@ -60,7 +66,7 @@ public class CoffeeBeansController : MonoBehaviour {
             if ( rand % 2 == 0 )
                 StartCoroutine ( TrowBeans_Ascending ( GlobalManager.rand ( 1, 5 ) ) );
             else
-                StartCoroutine ( Release ( 2.0f ) );
+                StartCoroutine ( Release ( ) );
         }
     }
 
@@ -76,7 +82,7 @@ public class CoffeeBeansController : MonoBehaviour {
             if ( rand % 2 == 0 )
                 StartCoroutine ( TrowBeans_Descending ( GlobalManager.rand ( 1, 5 )  ) );
             else
-                StartCoroutine ( Release ( 2.0f ) );
+                StartCoroutine ( Release ( ) );
         }
     }
 
@@ -87,12 +93,26 @@ public class CoffeeBeansController : MonoBehaviour {
         if ( cnt > 0 )
             StartCoroutine ( TrowBeans_LINE ( cnt ) );
         else
-            StartCoroutine ( Release ( 2.50f ) );
+            StartCoroutine ( Release (  ) );
     }
 
+    IEnumerator Circle (float R ) {
+        int cnt = 4;
+        Vector2 center = new Vector2 ( 18f, GlobalManager.rand ( 1f, 3f ) );
+        Vector2[ ] pos = new Vector2[ cnt ];
+        pos[ 0 ] = new Vector2 ( 0, R );
+        pos[ 1 ] = new Vector2 ( R, 0 );
+        pos[ 2 ] = new Vector2 ( 0, -R );
+        pos[ 3 ] = new Vector2 ( -R, 0 );
+        for ( int i = 0; i < cnt; i++ ) {
+            yield return new WaitForSeconds ( 0.01f );
+            listOfBeans.Add ( GetBean ( center + pos[ i ] ) );
+        }
+        StartCoroutine ( Release ( 2.0f ) );
+    }
 
-    IEnumerator Release ( float time ) {
-        yield return new WaitForSeconds ( time );
+    IEnumerator Release ( float time = 1.0f ) {
+        yield return new WaitForSeconds (time);
         avaible = true;
     }
 
@@ -100,6 +120,16 @@ public class CoffeeBeansController : MonoBehaviour {
         GameObject newBean = ( GameObject ) Instantiate ( CoffeeBeanPrefab, transform.position, Quaternion.identity );
         newBean.transform.SetParent ( coffeeParent );
         newBean.transform.position = new Vector3 ( transform.position.x, _defaultY, -1 );
+        //newBean.transform.localScale = new Vector3 ( 0.8f, 0.8f, 0.8f );
+        newBean.transform.localScale = new Vector3 ( 0.4f, 0.4f, 0.4f );
+        return newBean;
+    }
+
+
+    private GameObject GetBean ( Vector2 pos ) {
+        GameObject newBean = ( GameObject ) Instantiate ( CoffeeBeanPrefab, transform.position, Quaternion.identity );
+        newBean.transform.SetParent ( coffeeParent );
+        newBean.transform.position = new Vector3 ( pos.x, pos.y, -1 );
         //newBean.transform.localScale = new Vector3 ( 0.8f, 0.8f, 0.8f );
         newBean.transform.localScale = new Vector3 ( 0.4f, 0.4f, 0.4f );
         return newBean;

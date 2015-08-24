@@ -16,7 +16,7 @@ public class MenuController : MonoBehaviour {
     public GameObject RagePanel;
 
     // Maintenance
-    public bool isGameOver = false;
+    private bool isGameOver = false;
     private bool isInMainMenu; // check if current scene is StringsDatabase.menuSceneName
     private bool isShowingMenu; // check if should show MenuControlPanel
     private bool isShowingCreditsPanel; // check if should show CreditsControlPanel
@@ -280,5 +280,14 @@ public class MenuController : MonoBehaviour {
         newButton.transform.localPosition = localPosition;
         newButton.transform.localScale = new Vector3 ( 1, 1, 1 );
         return newButton;
+    }
+
+    public void GameIsOver ( float delay = 1.0f ) {
+        StartCoroutine ( MakeGameOver ( delay ) );
+    }
+
+    IEnumerator MakeGameOver( float time = 1.0f ) {
+        yield return new WaitForSeconds ( time );
+        isGameOver = true;
     }
 }
