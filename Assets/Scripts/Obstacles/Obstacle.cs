@@ -23,7 +23,7 @@ public class Obstacle : MonoBehaviour {
 	}
 
 
-    void Update ( ) {
+    public virtual void Update() {
         if ( spin ) {
             gameObject.transform.Rotate ( Vector3.up, Time.deltaTime * rotateSpeed );
             gameObject.transform.Rotate ( Vector3.forward, Time.deltaTime * rotateSpeed );

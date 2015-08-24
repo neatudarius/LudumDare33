@@ -12,7 +12,6 @@ GameObject:
   - 114: {fileID: 11463172}
   - 61: {fileID: 6145104}
   - 114: {fileID: 11407802}
-  - 96: {fileID: 9636934}
   m_Layer: 0
   m_Name: ObstacleMissile
   m_TagString: Untagged
@@ -57,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.88499999, y: 2.046, z: 0}
+  m_LocalPosition: {x: 4.36000013, y: 2.64825273, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 401492}
@@ -76,51 +75,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .839999974, y: .262497336}
---- !u!96 &9636934
-TrailRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134588}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: d799d0930b771e741bcf23b503c96fba, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Time: .100000001
-  m_StartWidth: 1
-  m_EndWidth: 1
-  m_Colors:
-    m_Color[0]:
-      serializedVersion: 2
-      rgba: 4294967295
-    m_Color[1]:
-      serializedVersion: 2
-      rgba: 4294967295
-    m_Color[2]:
-      serializedVersion: 2
-      rgba: 4294967295
-    m_Color[3]:
-      serializedVersion: 2
-      rgba: 4294967295
-    m_Color[4]:
-      serializedVersion: 2
-      rgba: 16777215
-  m_MinVertexDistance: .100000001
-  m_Autodestruct: 0
 --- !u!114 &11407802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,10 +106,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 134588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb2ce6cd90099479f93c1e1fd0b931, type: 3}
+  m_Script: {fileID: 11500000, guid: 353cc31213f3da84481169d505d3f303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 100
+  explosionPrefab: {fileID: 477402, guid: b39eb8b14e466bc46a80eeceeb8c3a79, type: 2}
+  speed: 1
 --- !u!198 &19859946
 ParticleSystem:
   m_ObjectHideFlags: 1
