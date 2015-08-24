@@ -2799,11 +2799,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -18
+      value: -27
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -22
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
       propertyPath: m_PreserveAspect
@@ -2811,11 +2811,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -598
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
       propertyPath: m_SizeDelta.y
-      value: -79.4000015
+      value: -119
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
       propertyPath: m_FontData.m_RichText
@@ -2823,11 +2823,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
       propertyPath: m_FontData.m_Alignment
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
       propertyPath: m_FontData.m_BestFit
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
       propertyPath: m_PreserveAspect
@@ -2835,7 +2835,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
       propertyPath: m_FontData.m_FontSize
-      value: 28
+      value: 27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}

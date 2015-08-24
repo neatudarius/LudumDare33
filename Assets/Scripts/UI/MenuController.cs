@@ -231,13 +231,14 @@ public class MenuController : MonoBehaviour {
 
         string dist = ((int)GlobalManager.player.distance).ToString() + " meters ";
         string beans = GlobalManager.rage.GetTotal ( ).ToString() + " coins";
-        title.text = dist + "\n" + beans; 
+        title.text = dist + "\n" + beans;
+
     }
 
     // For a preset set of value build a menu
     void BuildMenuButtons ( ) {
         title.text = StringsDatabase.gameName;
-        Vector3 currentPosition = new Vector3 ( -5, +100, 0 );
+        Vector3 currentPosition = new Vector3 ( -15, +100, 0 );
         Vector3 offset = new Vector3 ( 0, -50, 0 );
         for ( int i = 0; i < ButtonsCount; i++ ) {
             currentPosition += offset;
