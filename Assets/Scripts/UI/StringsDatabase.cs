@@ -57,7 +57,7 @@ public class StringsDatabase : MonoBehaviour
         _resumeGameButton = "Resume",
         _backToMenuButton = "Back",
         _creditsButton = "Credits",
-        _advanceToMenuScene = "Back to Main Menu";
+        _advanceToMenuScene = "Main Menu";
     #endregion
 
     

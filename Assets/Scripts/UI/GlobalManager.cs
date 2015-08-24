@@ -35,6 +35,7 @@ public class GlobalManager : MonoBehaviour {
         if ( rage == null && GameObject.Find ( "RagePanel" ) ) {
             rage = GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( );
             progressBar = GameObject.Find ( "ProgressBarLabelRight" ).GetComponent<ProgressBarBehaviour> ( );
+            player = GameObject.Find ( "Player" ).GetComponent<PlayerControl> ( );
         }
     }
     #endregion    
@@ -68,6 +69,7 @@ public class GlobalManager : MonoBehaviour {
     // rageMode
     public static RagePanelController rage;
     public static ProgressBarBehaviour progressBar;
+    public static PlayerControl player;
 
     //Random numbers
     static System.Random random;
@@ -80,6 +82,7 @@ public class GlobalManager : MonoBehaviour {
         if ( rage == null && GameObject.Find ( "RagePanel" ) ) {
             rage = GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( );
             progressBar = GameObject.Find ( "ProgressBarLabelRight" ).GetComponent<ProgressBarBehaviour> ( );
+            player = GameObject.Find ( "Player" ).GetComponent<PlayerControl> ( );
         }
     }
 
@@ -109,6 +112,8 @@ public class GlobalManager : MonoBehaviour {
     static public void RageON ( ) {
         lastDifficulty = difficultyMultiplier;
         difficultyMultiplier = rageDifficulty;
+
+        player.anim.SetInteger ( "state", 1 );
     }
 
     static public void RageOFF ( ) {

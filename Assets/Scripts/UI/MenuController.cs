@@ -24,7 +24,8 @@ public class MenuController : MonoBehaviour {
 
     // Main Menu/ Pause Menu
     private int ButtonsCount;
-    private GameObject[ ] buttons; // as object
+    private GameObject[ ] buttons;// as object
+    public Text title; 
     private string[ ] buttonsNames; // what you see
 
 
@@ -224,18 +225,23 @@ public class MenuController : MonoBehaviour {
             return;
         }
 
-        buttons[0].GetComponent<ButtonAction> ( ).buttonName.text = StringsDatabase._replayGameButton;
+        buttons[ 0 ].GetComponent<ButtonAction> ( ).buttonName.text = StringsDatabase._replayGameButton;
         buttons[ 0 ].GetComponent<ButtonAction> ( ).command = StringsDatabase._replayGameButton;
         isShowingMenu = true;
+
+        string dist = ((int)GlobalManager.player.distance).ToString() + " meters ";
+        string beans = GlobalManager.rage.GetTotal ( ).ToString() + " coins";
+        title.text = dist + "\n" + beans; 
     }
 
     // For a preset set of value build a menu
     void BuildMenuButtons ( ) {
+        title.text = StringsDatabase.gameName;
         Vector3 currentPosition = new Vector3 ( 0, +100, 0 );
         Vector3 offset = new Vector3 ( 0, -50, 0 );
         for ( int i = 0; i < ButtonsCount; i++ ) {
-            buttons[ i ] = GetButton ( SF_ButtonPrefab, MenuControlPanel, buttonsNames[ i ], currentPosition );
             currentPosition += offset;
+            buttons[ i ] = GetButton ( SF_ButtonPrefab, MenuControlPanel, buttonsNames[ i ], currentPosition );
         }
     }
 
@@ -249,26 +255,6 @@ public class MenuController : MonoBehaviour {
         backToMenuButton = GetButton ( SF_ButtonPrefab, CreditsControlPanel, StringsDatabase._backToMenuButton, position + 8 * translation );
 
 
-    }
-
-    void BuildLoadingMenuButtons ( ) {
-        float W = Screen.width, H = Screen.height;
-        Vector3 position = new Vector3 ( -W / 3.3f, +H / 3.0f, 0f );
-        Vector3 translation = new Vector3 ( 0, -50, 0 );
-
-        backToMenuButton = GetButton ( SF_ButtonPrefab, CreditsControlPanel, StringsDatabase._backToMenuButton, position + 8 * translation );
-
-    }
-
-    // Create a button, set parent, position as (x,y,z) , scale (1,1,1)
-    private GameObject GetButton ( GameObject ButtonPrefab, GameObject ButtonParent, string ButtonName, float x = 0, float y = 50, float z = 0 ) {
-        GameObject newButton = ( GameObject ) Instantiate ( ButtonPrefab );
-        newButton.transform.SetParent ( ButtonParent.transform );
-        newButton.GetComponent<ButtonAction> ( ).buttonName.text = ButtonName;
-        newButton.GetComponent<ButtonAction> ( ).command = ButtonName;
-        newButton.transform.localPosition = new Vector3 ( x, y, z );
-        newButton.transform.localScale = new Vector3 ( 1, 1, 1 );
-        return newButton;
     }
 
     // Create a button, set parent, position, scale (1,1,1)

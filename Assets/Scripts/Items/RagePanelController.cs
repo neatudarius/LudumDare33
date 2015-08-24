@@ -43,7 +43,7 @@ public class RagePanelController : MonoBehaviour {
     public void IncreaseRage ( ) {
         total++;
         current++;
-        counter.text = total.ToString ( );
+        counter.text = total.ToString ( )+ " meters";
         if ( !activated )
             value = (float)current/needed*100f;
                    
@@ -79,5 +79,7 @@ public class RagePanelController : MonoBehaviour {
         return GlobalManager.progressBar.isDone;
     }
 
-    
+    public int GetTotal ( ) {
+        return total;
+    }
   }

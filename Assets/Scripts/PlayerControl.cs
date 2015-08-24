@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour {
     public string state;
 
     private Rigidbody2D rigid2D;
-    private Animator anim;
+    public Animator anim;
 
     private float currentSpeed;
     private bool isGrounded;
@@ -48,7 +48,7 @@ public class PlayerControl : MonoBehaviour {
         isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
         distance += GlobalManager.foregroundSpeed * Time.deltaTime;
-        distanceObj.text = ( ( int ) distance ).ToString ( );
+        distanceObj.text = ( ( int ) distance ).ToString ( ) + " meters";
 
         //make sure it stays in bounds
         if ( transform.position.x < leftBound.position.x ) {
@@ -61,13 +61,15 @@ public class PlayerControl : MonoBehaviour {
 
         if (isGrounded && state == "landed") {
             state = "walk_idle";
-            anim.SetInteger("state", 0);
+            if (!GlobalManager.rage.activated)
+                anim.SetInteger("state", 0);
         }
 
         //jump
         if (isGrounded && (Input.GetButton("Jump") || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))) {
             state = "jump";
-            anim.SetInteger("state", 3);
+            if ( !GlobalManager.rage.activated )
+                anim.SetInteger("state", 3);
             rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpSpeed);
             GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Jumping;
             GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Jumping;
@@ -77,15 +79,16 @@ public class PlayerControl : MonoBehaviour {
         if ( Input.GetAxis ( "Horizontal" ) > 0.1 ) {
             if ( isGrounded && state != "jump" ) {
                 state = "walk_forward";
-                anim.SetInteger ( "state", 1 );
+                if (!GlobalManager.rage.activated)
+                    anim.SetInteger ( "state", 1 );
             }
             GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Accelerated;
             GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Accelerated;
-            //currentSpeed = 
         } else if ( Input.GetAxis ( "Horizontal" ) < -0.1 ) {
             if (isGrounded && state != "jump") {
                 state = "walk_backward";
-                anim.SetInteger ( "state", 2 );
+                if ( !GlobalManager.rage.activated )
+                    anim.SetInteger ( "state", 2 );
             }
             GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Normal;
             GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Normal;
@@ -93,7 +96,8 @@ public class PlayerControl : MonoBehaviour {
         } else {
             if ( isGrounded && state != "jump") {
                 state = "walk_idle";
-                anim.SetInteger ( "state", 0 );
+                if ( !GlobalManager.rage.activated )
+                    anim.SetInteger ( "state", 0 );
             }
             GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Normal;
             GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Normal;
@@ -102,7 +106,8 @@ public class PlayerControl : MonoBehaviour {
 
         if ( rigid2D.velocity.normalized.y < 0.2 && state == "jump" ) {
             state = "falling";
-            anim.SetInteger ( "state", 4 );
+            if ( !GlobalManager.rage.activated )
+                anim.SetInteger ( "state", 4 );
             GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Accelerated;
             GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Accelerated;
         }
@@ -116,7 +121,8 @@ public class PlayerControl : MonoBehaviour {
     void OnCollisionEnter2D ( Collision2D hit ) {
         if ( hit.gameObject.layer == LayerMask.NameToLayer ( "Ground" ) ) {
             state = "landed";
-            anim.SetInteger ( "state", 2 );
+            if ( !GlobalManager.rage.activated )
+                anim.SetInteger ( "state", 2 );
             cameraControl.PositionShake ( new Vector3 ( 0, 0.5f, 0 ), new Vector3 ( 0, 20.0f, 0 ), 0.5f );
             cameraControl.TiltShake ( 2.0f, 25.0f, 0.5f );
             audioSource.PlayOneShot(groundShake);
@@ -125,6 +131,7 @@ public class PlayerControl : MonoBehaviour {
 
     public void Die() {
         state = "dead";
-        anim.SetTrigger("isDead");
+        if ( !GlobalManager.rage.activated )
+            anim.SetTrigger("isDead");
     }
 }
