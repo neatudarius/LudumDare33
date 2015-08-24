@@ -18,6 +18,7 @@ public class Obstacle : MonoBehaviour {
             return;
         }
 		if (coll.gameObject.name == "Player") {
+            GetComponent<Collider2D>().enabled = false;
             coll.gameObject.GetComponent<PlayerControl>().Die();
             menu.GameIsOver();
             GlobalManager.FreezeSpeed ( );
