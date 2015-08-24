@@ -3974,6 +3974,7 @@ MonoBehaviour:
   displayText: {fileID: 906178481}
   activated: 0
   duration: 10
+  incCoinsPeRage: 10
   effect: {fileID: 646445459}
 --- !u!222 &1978219403
 CanvasRenderer:

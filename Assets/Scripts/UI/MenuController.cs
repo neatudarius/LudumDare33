@@ -232,6 +232,11 @@ public class MenuController : MonoBehaviour {
         string dist = ((int)GlobalManager.player.distance).ToString() + " meters ";
         string beans = GlobalManager.rage.GetTotal ( ).ToString() + " coins";
         title.text = dist + "\n" + beans;
+        if ( GameJolt.API.Manager.Instance.CurrentUser == null ) {
+            signInPart.SetActive ( true );
+        } else {
+            GlobalManager.SendScore ( );
+        }
 
     }
 
