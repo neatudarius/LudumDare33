@@ -306,7 +306,7 @@ public class MenuController : MonoBehaviour {
     public void ShowSignIn ( ) {
         GameJolt.UI.Manager.Instance.ShowSignIn ( ( bool success ) => {
             if ( success ) {
-                GlobalManager.SendScore ( );
+                if (Application.loadedLevelName== StringsDatabase.gameSceneName) GlobalManager.SendScore ( );
                 signInPart.SetActive ( false );
             }
         } );

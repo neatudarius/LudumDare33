@@ -39,7 +39,7 @@ public class StringsDatabase : MonoBehaviour
 
     #region Titles, Names
 	public static string
-		gameName = "\nTREX GONE MAD",
+		gameName = "\nTREX Gone MAD",
 		menuSceneName = "Menu",
 		gameSceneName = "Game";
 
