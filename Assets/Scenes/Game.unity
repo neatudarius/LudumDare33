@@ -1531,7 +1531,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 469646, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11440450, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
       propertyPath: cameraControl
@@ -2941,7 +2941,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481182, guid: 7a2e587034d846647b593aa159d7ed8d, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 174140, guid: 7a2e587034d846647b593aa159d7ed8d, type: 2}
       propertyPath: m_IsActive
@@ -3285,6 +3285,8 @@ MonoBehaviour:
   prefabs:
   - {fileID: 118030, guid: 631c548925e217d48a522f8151876bf0, type: 2}
   - {fileID: 100996, guid: 97e97055b76b61b4584772c73b476301, type: 2}
+  - {fileID: 145836, guid: 7d0d4ba01c8080246a8e3d822c3133ff, type: 2}
+  - {fileID: 145836, guid: 7d0d4ba01c8080246a8e3d822c3133ff, type: 2}
   lastPrefab: {fileID: 734147570}
   spawnBoundary: {fileID: 1870478480}
 --- !u!4 &949821137
@@ -5024,6 +5026,8 @@ MonoBehaviour:
   RagePanel: {fileID: 1978219399}
   title: {fileID: 1331760645}
   signInPart: {fileID: 108342171}
+  muteSprite: {fileID: 0}
+  soundSprite: {fileID: 0}
 --- !u!114 &1592100132
 MonoBehaviour:
   m_ObjectHideFlags: 0
