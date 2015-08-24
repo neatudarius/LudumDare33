@@ -64,10 +64,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 164426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb2ce6cd90099479f93c1e1fd0b931, type: 3}
+  m_Script: {fileID: 11500000, guid: eaad0b30ca301ce448e2b70b9c3766da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 100
+  explosionPrefab: {fileID: 477402, guid: b39eb8b14e466bc46a80eeceeb8c3a79, type: 2}
 --- !u!212 &21231110
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -106,6 +107,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 3ab19baeb98423a4f80066091f4ba6eb,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 477402, guid: b39eb8b14e466bc46a80eeceeb8c3a79, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 164426}

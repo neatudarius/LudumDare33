@@ -10,15 +10,15 @@ public class Obstacle : MonoBehaviour {
         spin = fall = false;
     }
 
-	void OnCollisionEnter2D( Collision2D coll ) {
+	public virtual void  OnCollisionEnter2D( Collision2D coll ) {
         if ( GlobalManager.rage.activated ) {
             spin = true;
             StartCoroutine ( WaitUntilFall ( 0.2f ) );
             return;
         }
 		if (coll.gameObject.name == "Player") {
-            GameObject.Find ( "_Canvas" ).GetComponent<MenuController> ( ).isGameOver = true;
-			GlobalManager.ResetDifficulty();
+            GameObject.Find("_Canvas").GetComponent<MenuController>().GameIsOver();
+            GlobalManager.ResetDifficulty();
 		}
 	}
 
