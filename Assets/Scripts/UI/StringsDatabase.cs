@@ -59,7 +59,8 @@ public class StringsDatabase : MonoBehaviour
         _creditsButton = "Credits",
         _advanceToMenuScene = "Main Menu",
         _loginButton = "Log in",
-        _showScoresButton = "Leaderboard";
+        _showScoresButton = "Leaderboard",
+        _muteButton = "Mute";
     #endregion
 
 
