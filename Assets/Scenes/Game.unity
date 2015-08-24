@@ -2362,7 +2362,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!4 &702831788
 Transform:
   m_ObjectHideFlags: 0
@@ -3283,10 +3283,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 118030, guid: 631c548925e217d48a522f8151876bf0, type: 2}
+  - {fileID: 199170, guid: 38730ca9bcbe21447bda7ae808a162a1, type: 2}
   - {fileID: 100996, guid: 97e97055b76b61b4584772c73b476301, type: 2}
   - {fileID: 145836, guid: 7d0d4ba01c8080246a8e3d822c3133ff, type: 2}
-  - {fileID: 145836, guid: 7d0d4ba01c8080246a8e3d822c3133ff, type: 2}
+  - {fileID: 145836, guid: ad9142a221e8a534082427d6d205bf6d, type: 2}
   lastPrefab: {fileID: 734147570}
   spawnBoundary: {fileID: 1870478480}
 --- !u!4 &949821137
@@ -3341,7 +3341,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 484862, guid: 97e97055b76b61b4584772c73b476301, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.84000015
+      value: 3.18000007
       objectReference: {fileID: 0}
     - target: {fileID: 484862, guid: 97e97055b76b61b4584772c73b476301, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3367,7 +3367,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 21203084, guid: 97e97055b76b61b4584772c73b476301, type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ff290f703d517434a9a2db4952c1f8a1,
@@ -5026,8 +5026,8 @@ MonoBehaviour:
   RagePanel: {fileID: 1978219399}
   title: {fileID: 1331760645}
   signInPart: {fileID: 108342171}
-  muteSprite: {fileID: 0}
-  soundSprite: {fileID: 0}
+  muteSprite: {fileID: 21300000, guid: a4a2a8baad0767f4ebbca6b5d16a0343, type: 3}
+  soundSprite: {fileID: 21300000, guid: 7e7581f0b9aa7a54482b7d10aff7339f, type: 3}
 --- !u!114 &1592100132
 MonoBehaviour:
   m_ObjectHideFlags: 0
