@@ -17,7 +17,7 @@ public class ObstacleHole : MonoBehaviour {
 			deathTimer -= Time.deltaTime;
 
 			if( deathTimer <= 0 ) {
-				GameObject.Find ( "_Canvas" ).GetComponent<MenuController> ( ).isGameOver = true;
+                GameObject.Find ( "_Canvas" ).GetComponent<MenuController> ( ).GameIsOver ( );
 				GlobalManager.ResetDifficulty();
 			}
 		}
