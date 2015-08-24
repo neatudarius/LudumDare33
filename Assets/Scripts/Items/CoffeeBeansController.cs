@@ -28,7 +28,7 @@ public class CoffeeBeansController : MonoBehaviour {
             float y, R;
             int cnt;
 
-            int rand = GlobalManager.rand ( 1, 9 );
+            int rand = GlobalManager.rand ( 1,10 );
 
             switch ( rand ) {
                 case 1:
@@ -54,25 +54,27 @@ public class CoffeeBeansController : MonoBehaviour {
                     }
                     break;
                 case 4:
-                    // vertical double line
-                    avaible = true;
-                    break;
-                case 5:
                     // Ascending
                     y = GlobalManager.rand ( 1.0f, 3.0f );
                     cnt = GlobalManager.rand ( 3, 5 );
                     StartCoroutine ( TrowBeans_Ascending ( y, cnt ) );
                     break;
-                case 6:
+                case 5:
                     //Descending
                     cnt = GlobalManager.rand ( 3, 5 );
                     StartCoroutine ( TrowBeans_Descending ( 6.0f, cnt ) );
                     break;
-                case 7:
+                case 6:
                     // Circle
                     cnt = GlobalManager.rand ( 4, 8 );
                     R = GlobalManager.rand ( 1.0f, 2.5f );
                     StartCoroutine ( Circle ( cnt, R ) );
+                    break;
+                case 7:
+                    // Multi Circle
+                    cnt = GlobalManager.rand ( 4, 8 );
+                    R = GlobalManager.rand ( 1.0f, 2.5f );
+                    StartCoroutine ( MultiCircle ( cnt, 3f ) );
                     break;
                 case 8:
                     // Shit
@@ -85,6 +87,17 @@ public class CoffeeBeansController : MonoBehaviour {
                     y = GlobalManager.rand ( 3.0f, 4.0f );
                     cnt = 5 * GlobalManager.rand ( 2, 6 );
                     StartCoroutine ( ZigZag ( y, cnt ) );
+                    break;
+                case 10:
+                    // multi line
+                    y = GlobalManager.rand ( 1.5f, 2.0f );
+                    cnt = GlobalManager.rand ( 3, 8 );
+                    int nr = GlobalManager.rand ( 2, 4 );
+                    float dif = GlobalManager.rand ( 3.5f, 5f ) / ( nr - 1 );
+                    for ( int i = 1; i <= nr; i++ ) {
+                        StartCoroutine ( TrowBeans_Horizontal ( y, cnt ) );
+                        y += dif;
+                    }
                     break;
                 default:
                     cnt = GlobalManager.rand ( 4, 8 );
@@ -152,6 +165,23 @@ public class CoffeeBeansController : MonoBehaviour {
         }
         yield return new WaitForSeconds ( 0f );
         StartCoroutine ( Release (2f ) );
+    }
+
+    IEnumerator MultiCircle ( int cnt, float R ) {
+        Vector2 center = new Vector2 ( 18f, GlobalManager.rand ( 3.5f, 5f ) );
+        Vector2[ ] pos = new Vector2[ cnt ];
+        float angle = 0, phi = 2 * Mathf.PI / cnt;
+        for ( int i = 0; i < cnt; i++ ) {
+            float c = ( float ) Mathf.Cos ( angle ), s = ( float ) Mathf.Sin ( angle );
+            listOfBeans.Add ( GetBean ( center + new Vector2 ( c * R, s * R ) ) );
+            listOfBeans.Add ( GetBean ( center + new Vector2 ( c * R/1.5f, s * R/1.5f ) ) );
+            listOfBeans.Add ( GetBean ( center + new Vector2 ( c * R/2.5f, s * R/2.5f ) ) );
+            angle += phi;
+        }
+        listOfBeans.Add ( GetBean ( center ) );
+        
+        yield return new WaitForSeconds ( 0f );
+        StartCoroutine ( Release ( 2f ) );
     }
     IEnumerator ZigZag ( float y, int cnt ) {
         bool up = true;
