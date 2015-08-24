@@ -283,6 +283,8 @@ public class MenuController : MonoBehaviour {
     }
 
     public void GameIsOver ( float delay = 1.0f ) {
+        GlobalManager.backgroundSpeed = 0f;
+        GlobalManager.foregroundSpeed = 0f;
         StartCoroutine ( MakeGameOver ( delay ) );
     }
 

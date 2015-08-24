@@ -27,7 +27,8 @@ public class CoffeeBeansController : MonoBehaviour {
     void FixedUpdate ( ) {
         if ( avaible ) {
             avaible = false;
-            int rand = GlobalManager.rand ( 1, 4);
+            int rand = 5;//
+            GlobalManager.rand ( 1, 5 );
             switch ( rand ) {
                 case 1:
                     //line 
@@ -46,7 +47,11 @@ public class CoffeeBeansController : MonoBehaviour {
                     break;
                 case 4:
                     // Circle
-                    StartCoroutine(Circle (GlobalManager.rand(1.0f,2.5f) ));
+                    StartCoroutine ( Circle4 ( GlobalManager.rand ( 1.0f, 2.5f ) ) );
+                    break;
+                case 5:
+                    // Circle
+                    StartCoroutine ( Circle ( GlobalManager.rand ( 1.0f, 2.5f ) ) );
                     break;
                 default:
                     break;
@@ -62,7 +67,7 @@ public class CoffeeBeansController : MonoBehaviour {
         if ( cnt > 0 && defaultY > minY )
             StartCoroutine ( TrowBeans_Descending ( cnt ) );
         else {
-            int rand = GlobalManager.rand(1,2);
+            int rand = GlobalManager.rand ( 1, 2 );
             if ( rand % 2 == 0 )
                 StartCoroutine ( TrowBeans_Ascending ( GlobalManager.rand ( 1, 5 ) ) );
             else
@@ -78,9 +83,9 @@ public class CoffeeBeansController : MonoBehaviour {
         if ( cnt > 0 && defaultY < Y_MAX )
             StartCoroutine ( TrowBeans_Ascending ( cnt ) );
         else {
-            int rand = GlobalManager.rand(1,2);
+            int rand = GlobalManager.rand ( 1, 2 );
             if ( rand % 2 == 0 )
-                StartCoroutine ( TrowBeans_Descending ( GlobalManager.rand ( 1, 5 )  ) );
+                StartCoroutine ( TrowBeans_Descending ( GlobalManager.rand ( 1, 5 ) ) );
             else
                 StartCoroutine ( Release ( ) );
         }
@@ -93,10 +98,26 @@ public class CoffeeBeansController : MonoBehaviour {
         if ( cnt > 0 )
             StartCoroutine ( TrowBeans_LINE ( cnt ) );
         else
-            StartCoroutine ( Release (  ) );
+            StartCoroutine ( Release ( ) );
     }
 
-    IEnumerator Circle (float R ) {
+    IEnumerator Circle ( float R ) {
+        int cnt = 4;
+        float cos = ( float ) Math.Sqrt ( 2f ) / 2f;
+        Vector2 center = new Vector2 ( 18f, GlobalManager.rand ( 1f, 3f ) );
+        Vector2[ ] pos = new Vector2[ cnt ];
+        float angle = 0, phi = 360 / cnt;
+        for ( int i = 0; i < cnt; i++ ) {
+            Debug.Log ( angle );
+            float c = ( float ) Math.Cos ( angle ), s = ( float ) Math.Sin ( angle );
+            listOfBeans.Add ( GetBean ( center + new Vector2 ( c * R, s * R ) ) );
+            angle += phi;
+        }
+        yield return new WaitForSeconds ( 0.01f );
+        StartCoroutine ( Release ( 2.0f ) );
+    }
+
+    IEnumerator Circle4 ( float R ) {
         int cnt = 4;
         Vector2 center = new Vector2 ( 18f, GlobalManager.rand ( 1f, 3f ) );
         Vector2[ ] pos = new Vector2[ cnt ];
@@ -112,7 +133,7 @@ public class CoffeeBeansController : MonoBehaviour {
     }
 
     IEnumerator Release ( float time = 1.0f ) {
-        yield return new WaitForSeconds (time);
+        yield return new WaitForSeconds ( time );
         avaible = true;
     }
 
