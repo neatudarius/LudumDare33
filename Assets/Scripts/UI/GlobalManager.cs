@@ -32,6 +32,10 @@ public class GlobalManager : MonoBehaviour {
             if ( this != _instance )
                 Destroy ( this.gameObject );
         }
+        if ( rage == null && GameObject.Find ( "RagePanel" ) ) {
+            rage = GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( );
+            progressBar = GameObject.Find ( "ProgressBarLabelRight" ).GetComponent<ProgressBarBehaviour> ( );
+        }
     }
     #endregion    
     //static int printSreenCounter = 0;
@@ -81,7 +85,7 @@ public class GlobalManager : MonoBehaviour {
             Application.CaptureScreenshot ( StringsDatabase.screenShotName + printSreenCounter.ToString ( ) + ".png" );
         }
         */
-
+        
         if ( Input.GetKeyUp ( KeyCode.R ) && rage && !rage.activated && rage.Ready()) {
             rage.Activate ( );
         }
