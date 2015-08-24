@@ -8,15 +8,16 @@ public class Scroller : MonoBehaviour {
 	
 
 	void OnBecameInvisible() {
-        if ( transform.position.x < 0 ) {
-            if (gameObject.tag == "bean")
-                GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( ).IncreaseRage ( );
-            Destroy ( gameObject );
+		if ( transform.position.x < 0 && gameObject.tag == "bean" ) {
+        	GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( ).IncreaseRage ( );
         }
 	}
 
 	// Update is called once per frame
 	void Update () {
+		if (transform.position.x < -50) {
+			Destroy( gameObject );
+		}
 		if (isBackgroundItem) {
 			transform.position = transform.position + GlobalManager.backgroundSpeed * Vector3.left * Time.deltaTime;
 		} else {

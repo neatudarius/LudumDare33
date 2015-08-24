@@ -25,6 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 498020}
   - 114: {fileID: 11404792}
+  - 114: {fileID: 11499848}
   m_Layer: 8
   m_Name: Base_Scene_Prefab
   m_TagString: Untagged
@@ -221,7 +222,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.21, y: -14.3999996, z: 0}
+  m_LocalPosition: {x: -2.36801147, y: -17.7369366, z: 0}
   m_LocalScale: {x: 1.35298359, y: .246635824, z: .601326168}
   m_Children:
   - {fileID: 475994}
@@ -265,6 +266,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d8b381e989377746bccc4f1034e0b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11499848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4361dd0a4596814eb6eb93ab71d8104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21208112
