@@ -15,6 +15,8 @@ GameObject:
   - 61: {fileID: 6181216}
   - 58: {fileID: 5834128}
   - 82: {fileID: 8234100}
+  - 61: {fileID: 6171434}
+  - 58: {fileID: 5834630}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -88,9 +90,35 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .25999999, y: -1.59000003}
+  m_Offset: {x: .25999999, y: -.239999995}
   serializedVersion: 2
-  m_Radius: 1.62
+  m_Radius: 1.13
+--- !u!58 &5834630
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119470}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 2.1500001, y: .879999995}
+  serializedVersion: 2
+  m_Radius: .720000029
+--- !u!61 &6171434
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119470}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 1.01999998, y: .540000021}
+  serializedVersion: 2
+  m_Size: {x: 1.93051887, y: .829999983}
 --- !u!61 &6181216
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -101,9 +129,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .58436358, y: .408200294}
+  m_Offset: {x: -1.71941733, y: .139840752}
   serializedVersion: 2
-  m_Size: {x: 8.74827099, y: 1.83460963}
+  m_Size: {x: 2.66026568, y: .241266668}
 --- !u!82 &8234100
 AudioSource:
   m_ObjectHideFlags: 1

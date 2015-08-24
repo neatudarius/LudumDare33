@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fec4fdf823ea7a14e88dcced05c3517a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoffeeBeanPrefab: {fileID: 100130, guid: ee64b03419e599749a8b83bd0874a1a3, type: 2}
+  CoffeeBeanPrefab: {fileID: 198530, guid: 3582a01155f9e60419115dd023e5017a, type: 2}
   leftBound: {fileID: 430337020}
   rightBound: {fileID: 78971823}
   coffeeParent: {fileID: 91802236}
@@ -1047,7 +1047,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 469646, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11440450, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
       propertyPath: cameraControl
@@ -1065,20 +1065,7 @@ Prefab:
       propertyPath: distanceObj
       value: 
       objectReference: {fileID: 565938620}
-    - target: {fileID: 6181216, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5834128, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5828102, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5828102, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &351493589
@@ -2816,7 +2803,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 420936, guid: 30e88f70f84fe4448ad88cceb82af497, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11460588, guid: 30e88f70f84fe4448ad88cceb82af497, type: 2}
       propertyPath: leftBound
@@ -3878,7 +3865,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 402538, guid: 23bc01643287e3e40beef57d46be21a5, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 23bc01643287e3e40beef57d46be21a5, type: 2}
@@ -4222,7 +4209,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 452830, guid: 033b31e7ae4ad004d8c5e03c2ecbfc1b, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11419256, guid: 033b31e7ae4ad004d8c5e03c2ecbfc1b, type: 2}
       propertyPath: foregroundSpeed
