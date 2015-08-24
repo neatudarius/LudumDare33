@@ -41,6 +41,8 @@ public class PlayerControl : MonoBehaviour {
     }
 
     void Update() {
+        if (state == "dead")
+            return;
         //check if is grounded
         isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
@@ -118,5 +120,10 @@ public class PlayerControl : MonoBehaviour {
             cameraControl.TiltShake ( 2.0f, 25.0f, 0.5f );
             audioSource.PlayOneShot(groundShake);
         }
+    }
+
+    public void Die() {
+        state = "dead";
+        anim.SetTrigger("isDead");
     }
 }
