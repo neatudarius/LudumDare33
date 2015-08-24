@@ -33,7 +33,7 @@ public class RagePanelController : MonoBehaviour {
         activated = false;
         current = 0;
 
-        counter.text = total.ToString ( );
+        counter.text = total.ToString ( ) + " coins";
         displayText.gameObject.SetActive ( false );
         
         
@@ -43,7 +43,7 @@ public class RagePanelController : MonoBehaviour {
     public void IncreaseRage ( ) {
         total++;
         current++;
-        counter.text = total.ToString ( )+ " coins";
+        counter.text = total.ToString ( ) + " coins";
         if ( !activated )
             value = (float)current/needed*100f;
                    
@@ -73,6 +73,7 @@ public class RagePanelController : MonoBehaviour {
             activated = false;
             value = 0f;
             current = 0;
+            needed += 10;
             //displayText.gameObject.SetActive ( false );
             effect.enabled = false;
             GlobalManager.RageOFF ( );
