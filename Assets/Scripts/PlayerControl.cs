@@ -38,6 +38,7 @@ public class PlayerControl : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         state = "walk_idle";
         anim.SetInteger ( "state", 0 );
+        GlobalManager.ResetDifficulty ( );
     }
 
     void Update() {
