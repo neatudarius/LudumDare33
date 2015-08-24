@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-
+using UnityStandardAssets.ImageEffects;
 
 public class RagePanelController : MonoBehaviour {
     public float value {
@@ -22,6 +22,9 @@ public class RagePanelController : MonoBehaviour {
     public bool activated = false;
     public float duration = 10f;
 
+    public VignetteAndChromaticAberration effect;
+
+
     float t = 0f;
     void Start ( ) {
         value = 0;
@@ -30,7 +33,7 @@ public class RagePanelController : MonoBehaviour {
         current = 0;
 
         counter.text = total.ToString ( );
-        displayText.text = "Angry Mode";
+        displayText.text = "Press R to charge";
         displayText.gameObject.SetActive ( false );
         
         
@@ -50,6 +53,9 @@ public class RagePanelController : MonoBehaviour {
         activated = true;
         t = 0f;
         displayText.gameObject.SetActive ( true );
+        effect.enabled = true;
+        GlobalManager.RageON ( );
+
     }
 
     void Update ( ) {
@@ -58,11 +64,13 @@ public class RagePanelController : MonoBehaviour {
         }
     }
     void FixedUpdate ( ) {
-        if ( activated && GlobalManager.progressBar.current < 0.1f ) {
+            if ( activated && GlobalManager.progressBar.current < 0.1f ) {
             activated = false;
             value = 0f;
             current = 0;
             displayText.gameObject.SetActive ( false );
+            effect.enabled = false;
+            GlobalManager.RageOFF ( );
         }
         
     }

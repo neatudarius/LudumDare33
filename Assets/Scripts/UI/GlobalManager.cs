@@ -47,6 +47,9 @@ public class GlobalManager : MonoBehaviour {
     public static float foregroundSpeed_Accelerated = 3.0f;
     public static float backgroundSpeed_Jumping = 10.0f;
     public static float foregroundSpeed_Jumping = 12.0f;
+    public static float backgroundSpeed_Rage = 20.0f;
+    public static float foregroundSpeed_Rage = 25.0f;
+
 
     // curent speed
     public static float foregroundSpeed = 2.0f;
@@ -54,7 +57,10 @@ public class GlobalManager : MonoBehaviour {
 
 	// Adjust difficulty using these!!
 	public static float baseDifficulty = 1.5f;
-	public static float speedIncrement = 0.1f;
+    public static float rageDifficulty = 5.0f;
+    public static float maxDifficulty = 12f;
+    static float lastDifficulty = 0f;
+    public static float speedIncrement = 0.1f;
 
 	// Do not give this initial value
 	public static float difficultyMultiplier;
@@ -85,12 +91,11 @@ public class GlobalManager : MonoBehaviour {
             Application.CaptureScreenshot ( StringsDatabase.screenShotName + printSreenCounter.ToString ( ) + ".png" );
         }
         */
-        
         if ( Input.GetKeyUp ( KeyCode.R ) && rage && !rage.activated && rage.Ready()) {
             rage.Activate ( );
         }
 
-		difficultyMultiplier += Time.deltaTime * speedIncrement;
+		if(difficultyMultiplier < maxDifficulty) difficultyMultiplier += Time.deltaTime * speedIncrement;
     }
 	
     public void LoadLevel ( string nextLevel ) {
@@ -101,7 +106,16 @@ public class GlobalManager : MonoBehaviour {
 		difficultyMultiplier = baseDifficulty;
 	}
 
-	static public void FreezeSpeed() {
+    static public void RageON ( ) {
+        lastDifficulty = difficultyMultiplier;
+        difficultyMultiplier = rageDifficulty;
+    }
+
+    static public void RageOFF ( ) {
+        difficultyMultiplier = lastDifficulty;
+    }
+
+    static public void FreezeSpeed() {
 		difficultyMultiplier = 0.0f;
 	}
 

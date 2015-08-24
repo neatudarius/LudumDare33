@@ -164,7 +164,7 @@ public class CoffeeBeansController : MonoBehaviour {
             angle += phi;
         }
         yield return new WaitForSeconds ( 0f );
-        StartCoroutine ( Release (2f ) );
+        StartCoroutine ( Release (2.5f ) );
     }
 
     IEnumerator MultiCircle ( int cnt, float R ) {
@@ -174,8 +174,8 @@ public class CoffeeBeansController : MonoBehaviour {
         for ( int i = 0; i < cnt; i++ ) {
             float c = ( float ) Mathf.Cos ( angle ), s = ( float ) Mathf.Sin ( angle );
             listOfBeans.Add ( GetBean ( center + new Vector2 ( c * R, s * R ) ) );
-            listOfBeans.Add ( GetBean ( center + new Vector2 ( c * R/1.5f, s * R/1.5f ) ) );
-            listOfBeans.Add ( GetBean ( center + new Vector2 ( c * R/2.5f, s * R/2.5f ) ) );
+            listOfBeans.Add ( GetBean ( center + new Vector2 ( c * R/1.7f, s * R/1.7f ) ) );
+            listOfBeans.Add ( GetBean ( center + new Vector2 ( c * R/2.8f, s * R/2.8f ) ) );
             angle += phi;
         }
         listOfBeans.Add ( GetBean ( center ) );

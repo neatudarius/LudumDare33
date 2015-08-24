@@ -856,7 +856,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 469646, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.38000011
+      value: -6.32999992
       objectReference: {fileID: 0}
     - target: {fileID: 469646, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1366,13 +1366,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 646445452}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd6d4281e5d7cd44d8c6e38bc2c1b8d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
-  intensity: .375
+  intensity: 1
   chromaticAberration: 5
   axialAberration: .5
   blur: .5
@@ -3584,7 +3584,8 @@ MonoBehaviour:
   counter: {fileID: 912985975}
   displayText: {fileID: 744916088}
   activated: 0
-  duration: 60
+  duration: 10
+  effect: {fileID: 646445459}
 --- !u!222 &1978219403
 CanvasRenderer:
   m_ObjectHideFlags: 0
