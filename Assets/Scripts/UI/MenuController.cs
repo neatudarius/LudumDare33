@@ -232,6 +232,7 @@ public class MenuController : MonoBehaviour {
         string dist = ((int)GlobalManager.player.distance).ToString() + " meters ";
         string beans = GlobalManager.rage.GetTotal ( ).ToString() + " coins";
         title.text = dist + "\n" + beans;
+        GlobalManager.SendScore (  );
 
     }
 

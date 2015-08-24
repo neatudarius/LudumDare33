@@ -133,4 +133,8 @@ public class GlobalManager : MonoBehaviour {
         return random.Next ( a, b + 1 );
     }
 
+    public static void SendScore ( ) {
+        int dist = ( int ) player.distance, beans = ( int ) rage.GetTotal ( );
+    }
+
 }

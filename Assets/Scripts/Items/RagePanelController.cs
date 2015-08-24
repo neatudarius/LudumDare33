@@ -22,6 +22,7 @@ public class RagePanelController : MonoBehaviour {
     public GameObject displayText;
     public bool activated = false;
     public float duration = 10f;
+    public int incCoinsPeRage = 10;
 
     public VignetteAndChromaticAberration effect;
 
@@ -73,7 +74,7 @@ public class RagePanelController : MonoBehaviour {
             activated = false;
             value = 0f;
             current = 0;
-            needed += 10;
+            needed += incCoinsPeRage;
             //displayText.gameObject.SetActive ( false );
             effect.enabled = false;
             GlobalManager.RageOFF ( );
