@@ -135,6 +135,7 @@ public class GlobalManager : MonoBehaviour {
 
     public static void SendScore ( ) {
         int dist = ( int ) player.distance, beans = ( int ) rage.GetTotal ( );
+
     }
 
 }
