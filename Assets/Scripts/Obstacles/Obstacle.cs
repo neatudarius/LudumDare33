@@ -17,6 +17,7 @@ public class Obstacle : MonoBehaviour {
             return;
         }
 		if (coll.gameObject.name == "Player") {
+            coll.gameObject.GetComponent<PlayerControl>().Die();
             GameObject.Find("_Canvas").GetComponent<MenuController>().GameIsOver();
             GlobalManager.ResetDifficulty();
 		}
