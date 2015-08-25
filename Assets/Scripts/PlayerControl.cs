@@ -64,10 +64,11 @@ public class PlayerControl : MonoBehaviour {
             if (!GlobalManager.rage.activated)
                 anim.SetInteger("state", 0);
         }
-
+        
         //jump
-        if (isGrounded && (Input.GetButton("Jump") || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))) {
+        if (isGrounded && (ControlsManager.isJumpPressed || Input.GetKeyDown ( KeyCode.Space) ) ) {
             state = "jump";
+            ControlsManager.isJumpPressed = false;
             anim.SetInteger("state", 3);
             rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpSpeed);
             GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Jumping;
@@ -75,7 +76,7 @@ public class PlayerControl : MonoBehaviour {
         }
 
         //get input for forward/backward movement
-        if ( Input.GetAxis ( "Horizontal" ) > 0.1 ) {
+        if ( ControlsManager.isRunPressed || Input.GetKeyDown(KeyCode.D) ) {
             if ( isGrounded && state != "jump" ) {
                 state = "walk_forward";
                 if (!GlobalManager.rage.activated)
@@ -83,7 +84,7 @@ public class PlayerControl : MonoBehaviour {
             }
             GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Accelerated;
             GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Accelerated;
-        } else if ( Input.GetAxis ( "Horizontal" ) < -0.1 ) {
+        } /*else if ( !ControlsManager.isRunPressed ) {
             if (isGrounded && state != "jump") {
                 state = "walk_backward";
                 if ( !GlobalManager.rage.activated )
@@ -91,8 +92,8 @@ public class PlayerControl : MonoBehaviour {
             }
             GlobalManager.backgroundSpeed = GlobalManager.backgroundSpeed_Normal;
             GlobalManager.foregroundSpeed = GlobalManager.foregroundSpeed_Normal;
-            //currentSpeed = Mathf.SmoothDamp(currentSpeed, -backwardSpeed, ref speedDampVelocity, speedSmooth);
-        } else {
+            //currentSpeed = Mathf.SmoothDamp(currentSpeed, -backwardSpeed, ref speedDampVelocity, speedSmooth);}*/
+         else {
             if ( isGrounded && state != "jump") {
                 state = "walk_idle";
                 if ( !GlobalManager.rage.activated )

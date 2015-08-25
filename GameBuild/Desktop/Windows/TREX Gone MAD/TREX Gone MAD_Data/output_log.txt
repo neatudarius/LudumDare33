@@ -1,0 +1,47 @@
+Initialize engine version: 5.1.3f1 (b0a23b31c3d8)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics Family (ID=0xa16)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.059 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: R:\GitHub\LudumDare33\GameBuild\Desktop\TREX Gone MAD\TREX Gone MAD_Data\Managed\System.dll (this message is harmless)
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.354942 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 4446.
+Total: 1.533565 ms (FindLiveObjects: 0.200997 ms CreateObjectMapping: 0.126585 ms MarkObjects: 1.178185 ms  DeleteObjects: 0.022237 ms)
+
+Score Add Successful.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Score Add Successful.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.612535 ms
+
+Unloading 2616 unused Assets to reduce memory usage. Loaded Objects now: 1662.
+Total: 1.230359 ms (FindLiveObjects: 0.201852 ms CreateObjectMapping: 0.108624 ms MarkObjects: 0.606412 ms  DeleteObjects: 0.311759 ms)
+

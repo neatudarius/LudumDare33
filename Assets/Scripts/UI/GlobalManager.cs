@@ -33,9 +33,7 @@ public class GlobalManager : MonoBehaviour {
                 Destroy ( this.gameObject );
         }
         if ( rage == null && GameObject.Find ( "RagePanel" ) ) {
-            rage = GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( );
-            progressBar = GameObject.Find ( "ProgressBarLabelRight" ).GetComponent<ProgressBarBehaviour> ( );
-            player = GameObject.Find ( "Player" ).GetComponent<PlayerControl> ( );
+            Init ( );
         }
     }
     #endregion    
@@ -74,15 +72,24 @@ public class GlobalManager : MonoBehaviour {
     //Random numbers
     static System.Random random;
 
+    //Android
+    public static AsyncOperation async, asyncLoad;
+    static public string nextLevelToLoad;
+
+    //Coins
+    public static CoinsController coins;
+
     void Start ( ) {
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+        Screen.SetResolution ( Screen.currentResolution.width, Screen.currentResolution.height, true );
+        Screen.fullScreen = true;
+
         rage = null;
         progressBar = null;
         random = new System.Random ( );
         ResetDifficulty ();
         if ( rage == null && GameObject.Find ( "RagePanel" ) ) {
-            rage = GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( );
-            progressBar = GameObject.Find ( "ProgressBarLabelRight" ).GetComponent<ProgressBarBehaviour> ( );
-            player = GameObject.Find ( "Player" ).GetComponent<PlayerControl> ( );
+            Init ( );
         }
 
 
@@ -95,25 +102,69 @@ public class GlobalManager : MonoBehaviour {
         }
     }
 
+    void Init ( ) {
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+        Screen.SetResolution ( Screen.currentResolution.width, Screen.currentResolution.height, true );
+        Screen.fullScreen = true;
+
+        if ( rage == null && GameObject.Find ( "RagePanel" ) ) {
+ 
+            rage = GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( );
+            progressBar = GameObject.Find ( "ProgressBarLabelRight" ).GetComponent<ProgressBarBehaviour> ( );
+            player = GameObject.Find ( "Player" ).GetComponent<PlayerControl> ( );
+            coins = GameObject.FindObjectOfType<CoinsController> ( ).GetComponent<CoinsController> ( );
+        }
+
+    }
     void Update ( ) {
-        
+        /*
         if ( Input.GetKeyUp ( KeyCode.P ) ) {
             printSreenCounter++;
             Application.CaptureScreenshot ( StringsDatabase.screenShotName + printSreenCounter.ToString ( ) + ".png" );
         }
-        
-        if ( Input.GetKeyUp ( KeyCode.R ) && rage && !rage.activated && rage.Ready()) {
+        */
+       // Debug.Log ( rage.activated  + " " + Time.time);
+        if ( (ControlsManager.isRagePressed || Input.GetKeyDown(KeyCode.R) ) && rage && !rage.activated && rage.Ready()) {
             rage.Activate ( );
+            ControlsManager.isRagePressed = false;
         }
 
 		if(difficultyMultiplier < maxDifficulty) difficultyMultiplier += Time.deltaTime * speedIncrement;
     }
-	
+
     public static void LoadLevel ( string nextLevel ) {
-        Application.LoadLevel ( nextLevel );
+        nextLevelToLoad = nextLevel;
+        instance.StartLoading ( );
     }
-	
-	static public void ResetDifficulty() {
+
+    void StartLoading ( ) {
+        StartCoroutine ( "load" );
+    }
+
+    IEnumerator load ( ) {
+        asyncLoad = Application.LoadLevelAsync ( StringsDatabase.loadingSceneName );
+        asyncLoad.allowSceneActivation = true;
+        yield return asyncLoad;
+        async = Application.LoadLevelAsync ( nextLevelToLoad );
+        async.allowSceneActivation = true;
+        yield return async;
+    }
+
+    static public void ActivateScene ( ) {
+        async.allowSceneActivation = true;
+        if ( asyncLoad != null ) {
+            asyncLoad.allowSceneActivation = false;
+        }
+    }
+
+    public static float PercentLoaded ( ) {
+        if ( async != null ) {
+            return async.progress;
+        }
+        return 0.0f;
+    }
+
+    static public void ResetDifficulty() {
 		difficultyMultiplier = baseDifficulty;
 	}
 
@@ -128,6 +179,9 @@ public class GlobalManager : MonoBehaviour {
         difficultyMultiplier = lastDifficulty;
     }
 
+    static public void IncreaseRage ( ) {
+        rage.IncreaseRage ( );
+    }
     static public void FreezeSpeed() {
 		difficultyMultiplier = 0.0f;
 	}

@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 72ae3e05650b1954e81bbd76050fedeb, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -110,12 +110,12 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 4
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0 %
+  m_Text: 0%
 --- !u!114 &11442328
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AttachedText: {fileID: 11442326}
-  ProgressSpeed: .349999994
+  ProgressSpeed: 1
   TriggerOnComplete: 1
   OnCompleteMethods:
     m_PersistentCalls:
@@ -144,7 +144,8 @@ MonoBehaviour:
           m_StringArgument: 446f6e65
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: 50726f67726573734261722e5574696c732e4f6e436f6d706c6574654576656e742c20417373656d626c792d4353686172702c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_TypeName: ProgressBar.Utils.OnCompleteEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &11442330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,10 +158,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: .0294117928, b: .0294117928, a: 1}
   m_Sprite: {fileID: 21300000, guid: 8bdd3f87f25042248a57d43f183d59c2, type: 3}
   m_Type: 3
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -253,7 +254,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22442326}
@@ -261,7 +262,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 306, y: 5}
+  m_AnchoredPosition: {x: -5, y: 200}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22442332

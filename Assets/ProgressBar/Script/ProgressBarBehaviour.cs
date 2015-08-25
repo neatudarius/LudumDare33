@@ -24,6 +24,11 @@ namespace ProgressBar
         /// This is raw Data that you don't need to be using. See the Value property.
         /// </summary>
         private ProgressValue m_Value;
+        public float current {
+            get {
+                return m_Value.PercentAsInt;
+            }
+        }
         /// <summary>
         /// Value is the variable you want to call to set or get the current Filler value as a percentage.
         /// It must always be set as a value between 0 and 100.
@@ -55,7 +60,7 @@ namespace ProgressBar
         /// </summary>
         [SerializeField]
         private Text m_AttachedText;
-        public float current = 0;
+
         /// <summary>
         /// In pixels per seconds, the speed at which the Filler will be animated.
         /// </summary>
@@ -150,11 +155,8 @@ namespace ProgressBar
         /// <param name="Width">the new Filler's width</param>
         public void SetFillerSize(float Width)
         {
-            if ( m_AttachedText ) {
-                current = Mathf.Round ( Width / m_FillerInfo.MaxWidth * 100 );
-                m_AttachedText.text = Mathf.Round ( Width / m_FillerInfo.MaxWidth * 100 ).ToString ( ) + " %";
-            }
-                
+            if (m_AttachedText)
+                m_AttachedText.text = Mathf.Round(Width / m_FillerInfo.MaxWidth * 100).ToString() + " %";
 
             m_FillRect.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, XOffset, Width);
         }

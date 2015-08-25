@@ -38,10 +38,11 @@ public class StringsDatabase : MonoBehaviour
     #endregion
 
     #region Titles, Names
-	public static string
-		gameName = "\nTREX Gone MAD",
-		menuSceneName = "Menu",
-		gameSceneName = "Game";
+    public static string
+        gameName = "\nTREX Gone MAD",
+        menuSceneName = "Menu",
+        gameSceneName = "Game",
+        loadingSceneName = "Loading";
 
     #endregion
 
@@ -60,7 +61,19 @@ public class StringsDatabase : MonoBehaviour
         _advanceToMenuScene = "Main Menu",
         _loginButton = "Log in",
         _showScoresButton = "Leaderboard",
-        _muteButton = "Mute";
+        _muteButton = "Mute",
+        _quitButton = "Quit",
+        _rageButton = "Press to charge",
+        _runButton = "Run",
+        _jumpButton = "Jump",
+        _advanceToGameButton = "Advance",
+        _pleaseWaitButton = "Please wait",
+        _escButton = "Esc";
+
+    public static string
+        loadingMessage = "Game is loading",
+        loadedGameMessage = "Done";
+        
     #endregion
 
 

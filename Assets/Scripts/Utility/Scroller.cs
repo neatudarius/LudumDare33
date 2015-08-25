@@ -5,13 +5,15 @@ public class Scroller : MonoBehaviour {
 	
 	public bool isBackgroundItem;
 
-	
-
+	// TO ASK
+    /*
 	void OnBecameInvisible() {
-		if ( transform.position.x < 0 && gameObject.tag == "bean" ) {
+        Debug.Log ( "inv" );
+		if ( transform.position.x < 0 && gameObject.tag == "coin" ) {
         	GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( ).IncreaseRage ( );
         }
 	}
+    */
 
 	// Update is called once per frame
 	void Update () {

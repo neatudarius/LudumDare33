@@ -296,6 +296,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -6991,7 +6992,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!1 &1074044182
 GameObject:
   m_ObjectHideFlags: 0
@@ -9405,7 +9406,7 @@ Transform:
   - {fileID: 376508291}
   - {fileID: 1727965860}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1419559194
 GameObject:
   m_ObjectHideFlags: 0
@@ -11397,7 +11398,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -99
+      value: -66
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
       propertyPath: m_SizeDelta.x

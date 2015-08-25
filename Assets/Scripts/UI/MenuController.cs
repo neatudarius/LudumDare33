@@ -68,7 +68,7 @@ public class MenuController : MonoBehaviour {
     }
 
     void Update ( ) {
-        if ( Input.GetKeyDown ( KeyCode.Escape ) && !isGameOver ) {
+        if ( ControlsManager.isEscPressed && !isGameOver ) {
             if ( isShowingMenu ) {
                 if ( !isInMainMenu ) {
                     isShowingMenu = false;
@@ -79,6 +79,7 @@ public class MenuController : MonoBehaviour {
                 }
                 isShowingMenu = true;
             }
+            ControlsManager.isEscPressed = false;
         }
 
         if ( isGameOver ) {
@@ -163,6 +164,11 @@ public class MenuController : MonoBehaviour {
             return;
         }
 
+        if ( command == StringsDatabase._quitButton ) {
+            Application.Quit ( );
+            return;
+        }
+
     }
 
     void ShowMenu ( ) {
@@ -221,7 +227,7 @@ public class MenuController : MonoBehaviour {
 
     // Assign Main Menu Buttons' names
     void MainMenu ( ) {
-        ButtonsCount = 3;
+        ButtonsCount = 4;
 
         buttons = new GameObject[ ButtonsCount ];
         buttonsNames = new string[ ButtonsCount ];
@@ -229,17 +235,19 @@ public class MenuController : MonoBehaviour {
         buttonsNames[ 0 ] = StringsDatabase._playGameButton;
         buttonsNames[ 1 ] = StringsDatabase._showScoresButton;
         buttonsNames[ 2 ] = StringsDatabase._creditsButton;
+        buttonsNames[ 3 ] = StringsDatabase._quitButton;
     }
 
     // Assign Pause Menu Buttons' names
     void PauseMenu ( ) {
-        ButtonsCount = 2;
+        ButtonsCount = 3;
 
         buttons = new GameObject[ ButtonsCount ];
         buttonsNames = new string[ ButtonsCount ];
 
         buttonsNames[ 0 ] = StringsDatabase._resumeGameButton;
         buttonsNames[ 1 ] = StringsDatabase._advanceToMenuScene;
+        buttonsNames[ 2 ] = StringsDatabase._quitButton;
     }
 
     // Assign Game Over Menu Buttons' names

@@ -70,7 +70,8 @@ public class RagePanelController : MonoBehaviour {
         }
     }
     void FixedUpdate ( ) {
-            if ( activated && GlobalManager.progressBar.current < 0.1f ) {
+        
+        if ( activated && GlobalManager.progressBar.current < 0.1f ) {
             activated = false;
             value = 0f;
             current = 0;
@@ -83,7 +84,7 @@ public class RagePanelController : MonoBehaviour {
     }
 
     public bool Ready ( ) {
-        return GlobalManager.progressBar.isDone;        
+        return GlobalManager.progressBar.isDone;       
     }
 
     public int GetTotal ( ) {

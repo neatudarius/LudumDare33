@@ -12,7 +12,7 @@ public class Obstacle : MonoBehaviour {
     }
 
     public virtual void OnTriggerEnter2D ( Collider2D coll ) {
-        if ( GlobalManager.rage ) {
+        if ( GlobalManager.rage && coll.gameObject.tag == "Player") {
             GlobalManager.rage.value = 0;
         }
 

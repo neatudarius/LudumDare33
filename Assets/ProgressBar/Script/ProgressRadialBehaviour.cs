@@ -81,8 +81,16 @@ namespace ProgressBar
             SetFillerSize(0);
         }
 
+        void FixedUpdate ( ) {
+            m_Value += 0.01f;
+        }
+
         void Update()
         {
+            
+
+
+
             //If theses two values aren't equals this means m_Value has been updated and the animation needs to start.
             if (TransitoryValue != m_Value)
             {
