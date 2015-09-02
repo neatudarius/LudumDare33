@@ -8,6 +8,10 @@ public class Missile : Obstacle {
 
     public override void OnTriggerEnter2D(Collider2D coll) {
         base.OnTriggerEnter2D(coll);
+        if ( coll.tag == "wall" ) {
+            Destroy ( gameObject );
+            return;
+        }
         if (explosionPrefab != null) {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             transform.GetComponent<Renderer>().enabled = false;

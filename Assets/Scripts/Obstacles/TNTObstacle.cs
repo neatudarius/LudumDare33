@@ -7,6 +7,13 @@ public class TNTObstacle : Obstacle {
 
     public override void OnTriggerEnter2D(Collider2D coll) {
         base.OnTriggerEnter2D(coll);
+        if ( coll.tag == "wall" ) {
+            Destroy ( gameObject );
+            return;
+        }
+        if ( coll.gameObject.tag == "Player"  && GlobalManager.rage && !GlobalManager.rage.activated) {
+            GlobalManager.rage.value = 0;
+        }
         if (explosionPrefab != null) {
             if ( !GlobalManager.rage.activated ) {
                 GetExplostion ( );

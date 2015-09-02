@@ -6,8 +6,8 @@ using System;
 public class ObstacleSpawner : MonoBehaviour {
 
 	public List<GameObject> obstaclePrefabList;
-
-	private float spawnTime = 0;
+    public Transform obstacleHolder;
+    private float spawnTime = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -18,9 +18,10 @@ public class ObstacleSpawner : MonoBehaviour {
 		if (spawnTime <= 0) {
 			int randomIndex = GlobalManager.rand ( 0, obstaclePrefabList.Count-1 );
 			GameObject newObstacle = Instantiate (obstaclePrefabList[randomIndex]);
-			newObstacle.transform.parent = GameObject.Find ("ObstacleHolder").transform;
-			newObstacle.transform.position = transform.position;
-
+			newObstacle.transform.parent = obstacleHolder;
+            newObstacle.transform.position = transform.position;
+            if ( newObstacle.tag == "trash" )
+                newObstacle.transform.localPosition = new Vector3( transform.position.x, 0.25f, transform.position.z );
 			spawnTime = GlobalManager.rand ( 2.0f, 3.0f );
 		}
 
