@@ -79,11 +79,8 @@ public class GlobalManager : MonoBehaviour {
     //Coins
     public static CoinsController coins;
 
-    void Start ( ) {
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
-        Screen.SetResolution ( Screen.currentResolution.width, Screen.currentResolution.height, true );
-        Screen.fullScreen = true;
 
+    void Start ( ) {
         rage = null;
         progressBar = null;
         random = new System.Random ( );
@@ -103,10 +100,6 @@ public class GlobalManager : MonoBehaviour {
     }
 
     void Init ( ) {
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
-        Screen.SetResolution ( Screen.currentResolution.width, Screen.currentResolution.height, true );
-        Screen.fullScreen = true;
-
         if ( rage == null && GameObject.Find ( "RagePanel" ) ) {
  
             rage = GameObject.Find ( "RagePanel" ).GetComponent<RagePanelController> ( );

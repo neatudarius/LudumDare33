@@ -71,8 +71,8 @@ public class StringsDatabase : MonoBehaviour
         _escButton = "Esc";
 
     public static string
-        loadingMessage = "Game is loading",
-        loadedGameMessage = "Done";
+        loadingMessage = "Loading",
+        loadedGameMessage = "Loading";
         
     #endregion
 

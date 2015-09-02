@@ -8,6 +8,8 @@ TagManager:
   - _Canvas
   - SF_Button
   - wall
+  - AdvanceToScene
+  - trash
   layers:
   - Default
   - TransparentFX

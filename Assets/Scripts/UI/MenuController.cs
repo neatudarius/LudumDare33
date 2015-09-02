@@ -26,6 +26,7 @@ public class MenuController : MonoBehaviour {
     private int ButtonsCount;
     private GameObject[ ] buttons;// as object
     public Text title;
+    public GameObject titleObj;
     public GameObject signInPart;
     private string[ ] buttonsNames; // what you see
     public Sprite muteSprite, soundSprite;
@@ -33,8 +34,27 @@ public class MenuController : MonoBehaviour {
     // Settings menu
     private GameObject backToMenuButton;
 
+    int H, W,h,w,offset, MAX_CNT = 4 ;
+
+    void Awake ( ) {
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+        Screen.SetResolution ( Screen.currentResolution.width, Screen.currentResolution.height, true );
+        Screen.fullScreen = true;
+        
+    }
     void Start ( ) {
         globalManager = GameObject.FindObjectOfType<GlobalManager> ( );
+
+        H = Screen.height;
+        W = Screen.width;
+        offset = H * 10 / 100 / MAX_CNT;
+        h = ( H * 80 / 100 - ( MAX_CNT ) * offset ) / ( MAX_CNT + 2 );
+        w = W / 3;
+
+
+
+
+
 
         isInMainMenu = ( Application.loadedLevelName == StringsDatabase.menuSceneName ? true : false );
         isGameOver = false;
@@ -59,6 +79,9 @@ public class MenuController : MonoBehaviour {
         isShowingCreditsPanel = false;
         CreditsControlPanel.SetActive ( false );
 
+        signInPart.transform.SetParent ( MenuControlPanel.transform);
+        signInPart.transform.localScale = new Vector3 ( 1, 1, 1 );
+        signInPart.GetComponent<RectTransform> ( ).sizeDelta = new Vector2 ( w/1.5f, h*5 );
         if (GameJolt.API.Manager.Instance.CurrentUser == null) {
             signInPart.SetActive(true);
         }
@@ -278,10 +301,10 @@ public class MenuController : MonoBehaviour {
     // For a preset set of value build a menu
     void BuildMenuButtons ( ) {
         title.text = StringsDatabase.gameName;
-        Vector3 currentPosition = new Vector3 ( -15, +100, 0 );
-        Vector3 offset = new Vector3 ( 0, -50, 0 );
+        Vector3 currentPosition = new Vector3 ( -offset, titleObj.transform.localPosition.y - 5*offset, 0 );
+        Vector3 translation = new Vector3 ( 0, -( h + offset ), 0 );
         for ( int i = 0; i < ButtonsCount; i++ ) {
-            currentPosition += offset;
+            currentPosition += translation;
             buttons[ i ] = GetButton ( SF_ButtonPrefab, MenuControlPanel, buttonsNames[ i ], currentPosition );
         }
     }
@@ -290,10 +313,8 @@ public class MenuController : MonoBehaviour {
     // For a preset set of value build a settings menu
     void BuildCreditsPanel ( ) {
         float W = Screen.width, H = Screen.height;
-        Vector3 position = new Vector3 ( -W / 3.3f, +H / 3.0f, 0f );
-        Vector3 translation = new Vector3 ( 0, -50, 0 );
-
-        backToMenuButton = GetButton ( SF_ButtonPrefab, CreditsControlPanel, StringsDatabase._backToMenuButton, position + 8 * translation );
+        Vector3 position = new Vector3 ( -W / 3.3f, -H / 2.0f, 0f );
+        backToMenuButton = GetButton ( SF_ButtonPrefab, CreditsControlPanel, StringsDatabase._backToMenuButton, position );
 
 
     }
@@ -306,6 +327,7 @@ public class MenuController : MonoBehaviour {
         newButton.GetComponent<ButtonAction> ( ).command = ButtonName;
         newButton.transform.localPosition = localPosition;
         newButton.transform.localScale = new Vector3 ( 1, 1, 1 );
+        newButton.GetComponent<RectTransform> ( ).sizeDelta = new Vector2(w,h);
         return newButton;
     }
 

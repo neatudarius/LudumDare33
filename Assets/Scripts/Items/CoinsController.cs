@@ -44,7 +44,7 @@ public class CoinsController : MonoBehaviour {
         if ( avaible ) {
             avaible = false;
 
-            int rand = 9;// GlobalManager.rand ( 1,9 );
+            int rand = GlobalManager.rand ( 1,9 );
             switch ( rand ) {
                 case 1:
                     // Horizontal line

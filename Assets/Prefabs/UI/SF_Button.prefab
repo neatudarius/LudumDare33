@@ -152,7 +152,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SETTINGS
+  m_Text: Log in
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonName: {fileID: 11400002}
-  command: 
+  command: Log in
 --- !u!222 &22200000
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -299,7 +299,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -487.822235, y: -227.467194}
+  m_AnchoredPosition: {x: 373, y: -219}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
