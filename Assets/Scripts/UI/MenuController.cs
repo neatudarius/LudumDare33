@@ -192,6 +192,12 @@ public class MenuController : MonoBehaviour {
             return;
         }
 
+        if ( command == StringsDatabase._signUpButton )
+        {
+            Application.OpenURL ( "https://gamejolt.com/join" );
+            return;
+        }
+
     }
 
     void ShowMenu ( ) {
@@ -313,7 +319,7 @@ public class MenuController : MonoBehaviour {
     // For a preset set of value build a settings menu
     void BuildCreditsPanel ( ) {
         float W = Screen.width, H = Screen.height;
-        Vector3 position = new Vector3 ( -W / 3.3f, -H / 2.0f, 0f );
+        Vector3 position = new Vector3 ( -W / 3.3f, -H / 2.0f + 3*offset, 0f );
         backToMenuButton = GetButton ( SF_ButtonPrefab, CreditsControlPanel, StringsDatabase._backToMenuButton, position );
 
 

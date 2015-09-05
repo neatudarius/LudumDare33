@@ -14,13 +14,25 @@ public class Coin : MonoBehaviour {
 
 
     CoinsController parent;
+
+    public bool last = false;
     void Start ( ) {
         effectIsOn = false;
         audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         anim.SetBool("effectIsOn", false);
+        parent = transform.parent.parent.gameObject.GetComponent<CoinsController> ( );
     }
 
+
+    void Update()
+    {
+        if  (last && transform.position.x < -1f )
+        {
+            parent.MakeAvaible ( );
+            last = false;
+        }
+    }
     void OnTriggerEnter2D ( Collider2D hit ) {
         if ( !effectIsOn ) {
             //Animation
@@ -31,8 +43,7 @@ public class Coin : MonoBehaviour {
 
             //Rangeincrease
             GlobalManager.IncreaseRage ( );
-            parent = transform.parent.parent.gameObject.GetComponent<CoinsController> ( );
-
+            
             // Selfdestroy
             parent.Remove ( transform.parent.gameObject.name );
             Destroy ( transform.parent.gameObject, timeUntilDestroy );

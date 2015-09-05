@@ -68,7 +68,8 @@ public class StringsDatabase : MonoBehaviour
         _jumpButton = "Jump",
         _advanceToGameButton = "Advance",
         _pleaseWaitButton = "Please wait",
-        _escButton = "Esc";
+        _escButton = "Esc",
+        _signUpButton = "Sign up";
 
     public static string
         loadingMessage = "Loading",

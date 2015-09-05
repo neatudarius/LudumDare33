@@ -13,9 +13,7 @@ public class CoinsController : MonoBehaviour {
     public float
         deltaX = 1f,
         deltaY = 1f;
-
-
-    List<GameObject> listOfBeans;
+    List<GameObject> listOfCoins;
     int ID;
     bool avaible;
     Vector3 coinScale;
@@ -28,7 +26,7 @@ public class CoinsController : MonoBehaviour {
 
     // Use this for initialization
     void Start ( ) {
-        listOfBeans = new List<GameObject> ( );
+        listOfCoins = new List<GameObject> ( );
         avaible = true;
         ID = 0;
         coinScale = new Vector3 ( 0.4f, 0.4f, 0.4f );
@@ -40,60 +38,65 @@ public class CoinsController : MonoBehaviour {
     }
 
     void Update ( ) {
-        
         if ( avaible ) {
             avaible = false;
-
-            int rand = GlobalManager.rand ( 1,9 );
-            switch ( rand ) {
-                case 1:
-                    // Horizontal line
-                    RandomLineRight ( );
-                    break;
-                case 2:
-                    // Vertical line
-                    RandomLineUp ( );
-                    break;
-                case 3:
-                    // MultiLine
-                    RandomMultiLine ( );
-                    break;
-                case 4:
-                    // Rectangle
-                    RandomRectangle ( );
-                    break;
-                case 5:
-                    //Triangle
-                    RandomTriangle ( );
-                    break;
-                case 6:
-                    //Circle
-                    RandomCircle ( );
-                    break;
-                case 7:
-                    //MultiCircles
-                    RandomMultiCircles ( );
-                    break;
-                case 8:
-                    // Two Paralel Lines
-                    RandomTwoParalelLines ( );
-                    break;
-                case 9:
-                    // Mountain
-                    RandomMountain ( );
-                    break;
-                case 10:
-                    //
-                    break;
-
-                default:
-
-                    break;
-            }
-            WaitUntilAvaible ( 5f );
+            GenerateCoins ( );
+            
+            //WaitUntilAvaible ( 5f );
         }
     }
 
+    void GenerateCoins()
+    {
+        int rand = GlobalManager.rand ( 1, 9 );
+        switch ( rand )
+        {
+            case 1:
+                // Horizontal line
+                RandomLineRight ( );
+                break;
+            case 2:
+                // Vertical line
+                RandomLineUp ( );
+                break;
+            case 3:
+                // MultiLine
+                RandomMultiLine ( );
+                break;
+            case 4:
+                // Rectangle
+                RandomRectangle ( );
+                break;
+            case 5:
+                //Triangle
+                RandomTriangle ( );
+                break;
+            case 6:
+                //Circle
+                RandomCircle ( );
+                break;
+            case 7:
+                //MultiCircles
+                RandomMultiCircles ( );
+                break;
+            case 8:
+                // Two Paralel Lines
+                RandomTwoParalelLines ( );
+                break;
+            case 9:
+                // Mountain
+                RandomMountain ( );
+                break;
+            case 10:
+                //
+                break;
+
+            default:
+
+                break;
+        }
+        listOfCoins [ listOfCoins.Count - 1 ].transform.GetChild ( 0 ).gameObject.GetComponent<Coin> ( ).last = true;
+    }
     void RandomMountain ( ) {
         float x = defaultX,
             y = 0f;
@@ -114,7 +117,7 @@ public class CoinsController : MonoBehaviour {
             for ( int i = 1; i <= times; i++ ) {
                 if ( ascending ) {
                     for ( int j = 1; j <= cnt; j++ ) {
-                         listOfBeans.Add ( GetCoin ( x, y ) );
+                         listOfCoins.Add ( GetCoin ( x, y ) );
                         y += deltaY;
                         x += deltaX;
                         if ( y > yMax ) {
@@ -126,7 +129,7 @@ public class CoinsController : MonoBehaviour {
                     y -= 2 * deltaY;
                 } else {
                     for ( int j = 2; j < cnt; j++ ) {
-                        listOfBeans.Add ( GetCoin ( x, y ) );
+                        listOfCoins.Add ( GetCoin ( x, y ) );
                         y -= deltaY;
                         x += deltaX;
                         if ( y < yMin ) {
@@ -140,7 +143,7 @@ public class CoinsController : MonoBehaviour {
             for ( int i = 1; i <= times; i++ ) {
                 if ( ascending ) {
                     for ( int j = 2; j < cnt; j++ ) {
-                        listOfBeans.Add ( GetCoin ( x, y ) );
+                        listOfCoins.Add ( GetCoin ( x, y ) );
                         y += deltaY;
                         x += deltaX;
                         if ( y > yMax ) {
@@ -149,7 +152,7 @@ public class CoinsController : MonoBehaviour {
                     }
                 } else {
                     for ( int j = 1; j <= cnt; j++ ) {
-                        listOfBeans.Add ( GetCoin ( x, y ) );
+                        listOfCoins.Add ( GetCoin ( x, y ) );
                         y -= deltaY;
                         x += deltaX;
                         if ( y < yMin ) {
@@ -196,7 +199,7 @@ public class CoinsController : MonoBehaviour {
     void DrawLineRight (float y, float xCount ) {
         float  x = defaultX;
         for ( int i = 1; i <= xCount; i++ ) {
-            listOfBeans.Add ( GetCoin (  x, y  ) );
+            listOfCoins.Add ( GetCoin (  x, y  ) );
             x += deltaX;
         }
     }
@@ -209,7 +212,7 @@ public class CoinsController : MonoBehaviour {
     void DrawLineUp ( float lowestY, float yCount ) {
         float x = defaultX, y = lowestY;
         for ( int i = 1; i <= yCount; i++ ) {
-            listOfBeans.Add ( GetCoin (  x, y  ) );
+            listOfCoins.Add ( GetCoin (  x, y  ) );
             y += deltaY;
             if ( y > yMax )
                 break;
@@ -226,8 +229,8 @@ public class CoinsController : MonoBehaviour {
     void DrawRectangle (float x1, float y1, int xCount, int yCount ) {
         float x2 = x1 + deltaX * ( xCount - 1 ), y2 = y1;
         for ( int i = 1; i <= yCount; i++ ) {
-            listOfBeans.Add ( GetCoin ( x1, y2 ) );
-            listOfBeans.Add ( GetCoin ( x2, y2 ) );
+            listOfCoins.Add ( GetCoin ( x1, y2 ) );
+            listOfCoins.Add ( GetCoin ( x2, y2 ) );
             y2 += deltaY;
             if ( y2 > yMax ) {
                 break;
@@ -236,8 +239,8 @@ public class CoinsController : MonoBehaviour {
         y2 -= deltaY;
         x1 += deltaX;
         for ( int i = 2; i < xCount; i++ ) {
-            listOfBeans.Add ( GetCoin ( x1, y1 ) );
-            listOfBeans.Add ( GetCoin ( x1, y2 ) );
+            listOfCoins.Add ( GetCoin ( x1, y1 ) );
+            listOfCoins.Add ( GetCoin ( x1, y2 ) );
             x1 += deltaX;
         }
 
@@ -252,10 +255,10 @@ public class CoinsController : MonoBehaviour {
     }
     void DrawTriangle ( float x, float y, int yCount ) {
         for ( int i = 1; i <= yCount; i++ ) {
-            listOfBeans.Add ( GetCoin ( x, y ) );
+            listOfCoins.Add ( GetCoin ( x, y ) );
             for ( int j = 1; j < i; j++ ) {
-                listOfBeans.Add ( GetCoin ( x + deltaX*j, y ) );
-                listOfBeans.Add ( GetCoin ( x - deltaX * j, y ) );
+                listOfCoins.Add ( GetCoin ( x + deltaX*j, y ) );
+                listOfCoins.Add ( GetCoin ( x - deltaX * j, y ) );
             }
             y -= deltaY;
             if ( y < yMin ) {
@@ -271,14 +274,14 @@ public class CoinsController : MonoBehaviour {
         float x = defaultX;
         float R = GlobalManager.rand ( minR, maxR );
         if ( GlobalManager.rand ( 0, 1 ) == 0 )
-            listOfBeans.Add ( GetCoin ( x, y ) );
+            listOfCoins.Add ( GetCoin ( x, y ) );
         DrawCircle ( x, y, R, cnt );
     }
     void DrawCircle ( float x, float y, float R, int cnt ) {
         float angle = 0, phi = 2 * Mathf.PI / cnt;
         for ( int i = 1; i <= cnt; i++ ) {
             float c = ( float ) Mathf.Cos ( angle ), s = ( float ) Mathf.Sin ( angle );
-            listOfBeans.Add ( GetCoin ( x + c * R, y + s * R ) );
+            listOfCoins.Add ( GetCoin ( x + c * R, y + s * R ) );
             angle += phi;
         }
     }
@@ -292,23 +295,25 @@ public class CoinsController : MonoBehaviour {
 
         // Put a coin in center
         if ( GlobalManager.rand ( 1, 100 ) % 2 == 0 )
-            listOfBeans.Add ( GetCoin ( x, y ) );
+            listOfCoins.Add ( GetCoin ( x, y ) );
         for ( int i = 1; i <= circles; i++ ) {
             DrawCircle ( x, y, R, cnt );
             R -= R / circles;
         }
     }
 
-    void WaitUntilAvaible ( float time = 1f ) {
-        StartCoroutine ( Release ( time ) );
-    }
+    public void MakeAvaible (  ) {
+        avaible = true;
+    }      
     IEnumerator Release ( float time  ) {
         yield return new WaitForSeconds ( time );
         avaible = true;
     }
 
     public void Remove ( string coinName ) {
-        listOfBeans.RemoveAll ( item => item.name == coinName);
+        //Debug.Log ( "fu " + listOfCoins.Count );
+        listOfCoins.RemoveAll ( item => item.name == coinName);
+        //Debug.Log ( "este " + listOfCoins.Count );
     }
     
 
@@ -322,14 +327,4 @@ public class CoinsController : MonoBehaviour {
         return newCoin;
     }
 
-    /*
-        GameObject GetCoin ( float y ) {
-        ID++;
-        GameObject newCoin = ( GameObject ) Instantiate ( CoinPrefab, new Vector3 ( defaultX, y, -1 ), Quaternion.identity );
-        newCoin.transform.SetParent ( coinsParent );
-        newCoin.transform.localScale = coinScale;
-        newCoin.gameObject.name = ID.ToString ( );
-        return newCoin;
-    }
-    */
 }

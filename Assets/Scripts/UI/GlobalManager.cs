@@ -110,13 +110,14 @@ public class GlobalManager : MonoBehaviour {
 
     }
     void Update ( ) {
-        /*
+        if ( (Time.frameCount & 31) == 0 ) {
+            System.GC.Collect ( );
+        }
         if ( Input.GetKeyUp ( KeyCode.P ) ) {
             printSreenCounter++;
             Application.CaptureScreenshot ( StringsDatabase.screenShotName + printSreenCounter.ToString ( ) + ".png" );
         }
-        */
-       // Debug.Log ( rage.activated  + " " + Time.time);
+        // Debug.Log ( rage.activated  + " " + Time.time);
         if ( (ControlsManager.isRagePressed || Input.GetKeyDown(KeyCode.R) ) && rage && !rage.activated && rage.Ready()) {
             rage.Activate ( );
             ControlsManager.isRagePressed = false;
