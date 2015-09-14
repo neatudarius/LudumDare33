@@ -25,7 +25,18 @@ public class RagePanelController : MonoBehaviour {
     public int incCoinsPeRage = 10;
 
     public VignetteAndChromaticAberration effect;
-    private int comboMultiply = 1;
+
+    private int _comboMultiply = 1;
+    private int comboMultiply
+    {
+        get { return _comboMultiply; }
+        set{
+            _comboMultiply = value;
+            comboDisplay.text = "Combo x" + _comboMultiply.ToString ( );
+        }
+    }
+    private float comboDuration = 10f;
+    private float resetComboTime = 0f;
 
     float t = 0f;
 
@@ -38,6 +49,7 @@ public class RagePanelController : MonoBehaviour {
         activated = false;
         current = 0;
         comboMultiply = 1;
+        resetComboTime = 0f;
 
         counter.text = total.ToString ( ) + " coins";
         comboDisplay.text = "Combo x" + comboMultiply.ToString ( );
@@ -65,6 +77,8 @@ public class RagePanelController : MonoBehaviour {
     }
 
     void Update ( ) {
+        if (Time.time > resetComboTime)
+            comboMultiply = 1;
         if ( Ready ( ) ) {
             displayText.gameObject.SetActive (true );
         } else {
@@ -96,20 +110,9 @@ public class RagePanelController : MonoBehaviour {
 
     public void Combo(int value)
     {
-        if (value > comboMultiply)
-        {
-            comboMultiply = value;
-            audioSource.PlayOneShot ( comboSound );
-            comboDisplay.text = "Combo x" + comboMultiply.ToString ( );
-            StartCoroutine ( ResetCombo ( 7.0f ) );
-        }
-                  
+        comboMultiply++;
+        resetComboTime += comboDuration;
+        audioSource.PlayOneShot ( comboSound );
     }
 
-    IEnumerator ResetCombo(float time)
-    {
-        yield return new WaitForSeconds ( time );
-        comboMultiply = 1;
-        comboDisplay.text = "Combo x" + comboMultiply.ToString ( );
-    }
   }

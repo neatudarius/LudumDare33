@@ -1,5 +1,5 @@
 ********************************************************************************
-*                    Monday, September 14, 2015 8:51:05 PM                     *
+*                    Monday, September 14, 2015 10:35:58 PM                    *
 ********************************************************************************
 
 smcs.exe version: 1.2.0.0
@@ -10,30 +10,9 @@ Compiler: Version3
 - Compilation -----------------------------------------------
 
 Process: C:/Program Files/Unity/Editor/Data\Mono/bin/mono.exe
-Arguments: "C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/gmcs.exe" @Temp/UnityTempFile-dc2653c0e7d7e7f4b9afa0129c8a147c
+Arguments: "C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/gmcs.exe" @Temp/UnityTempFile-ef3ebfb118a19d946b2a374831dc5b38
 Exit code: 0
-Elapsed time: 1.03 sec
-
-- Compiler output:
-0: 
-
-- Compiler errors:
-0: 
-********************************************************************************
-*                    Monday, September 14, 2015 8:55:49 PM                     *
-********************************************************************************
-
-smcs.exe version: 1.2.0.0
-Project directory: D:\Development\GitHub\TREX-Gone-MAD
-Unity directory: C:/Program Files/Unity/Editor/Data
-Compiler: Version3
-
-- Compilation -----------------------------------------------
-
-Process: C:/Program Files/Unity/Editor/Data\Mono/bin/mono.exe
-Arguments: "C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/gmcs.exe" @Temp/UnityTempFile-92fe8cc7b1ad13246a368d541b54d546
-Exit code: 0
-Elapsed time: 0.95 sec
+Elapsed time: 1.02 sec
 
 - Compiler output:
 0: 

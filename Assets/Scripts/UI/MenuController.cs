@@ -49,11 +49,15 @@ public class MenuController : MonoBehaviour {
        
         if ( AudioListener.volume > 0f )
         {
-            GameObject.Find ( "Sound" ).GetComponent<Image> ( ).sprite = soundSprite;
+            GameObject soundButton = GameObject.Find ( "Sound" );
+            if (soundButton != null)
+                soundButton.GetComponent<Image> ( ).sprite = soundSprite;
         }
         else
         {
-            GameObject.Find ( "Sound" ).GetComponent<Image> ( ).sprite = muteSprite;
+            GameObject soundButton = GameObject.Find ( "Sound" );
+            if ( soundButton != null )
+                soundButton.GetComponent<Image> ( ).sprite = muteSprite;
         }
          
         isInMainMenu = ( Application.loadedLevelName == StringsDatabase.menuSceneName ? true : false );
