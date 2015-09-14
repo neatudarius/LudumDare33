@@ -10,7 +10,7 @@ public class ButtonOFF : MonoBehaviour, IPointerUpHandler {
     #region IPointerUpHandler implementation
 
     public void OnPointerUp ( PointerEventData eventData ) {
-        Debug.Log ( command + " OFF " );
+        //Debug.Log ( command + " OFF " );
         if ( command == StringsDatabase._runButton ) {
             ControlsManager.isRunPressed = false;
             return;

@@ -13,7 +13,7 @@ public class Coin : MonoBehaviour {
     private AudioSource audioSource;
 
 
-    CoinsController parent;
+    Combo parent;
 
     public bool last = false;
     void Start ( ) {
@@ -21,14 +21,15 @@ public class Coin : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         anim.SetBool("effectIsOn", false);
-        parent = transform.parent.parent.gameObject.GetComponent<CoinsController> ( );
+        parent = transform.parent.parent.gameObject.GetComponent<Combo> ( );
+
     }
 
 
     void Update()
     {
         if  (last && transform.position.x < -1f )
-        {
+        {                                                            
             parent.MakeAvaible ( );
             last = false;
         }
@@ -42,10 +43,16 @@ public class Coin : MonoBehaviour {
             effectIsOn = true;
 
             //Rangeincrease
-            GlobalManager.IncreaseRage ( );
+            if (hit.gameObject.tag == "Player" )
+            {
+                GlobalManager.IncreaseRage ( );
+                parent.Remove ( transform.parent.gameObject.name, "collect" );
+            } else
+            {
+                parent.Remove ( transform.parent.gameObject.name, "wallCollide" );
+            }
             
             // Selfdestroy
-            parent.Remove ( transform.parent.gameObject.name );
             Destroy ( transform.parent.gameObject, timeUntilDestroy );
         }
     }

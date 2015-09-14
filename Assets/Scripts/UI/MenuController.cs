@@ -14,6 +14,7 @@ public class MenuController : MonoBehaviour {
     public GameObject MenuControlPanel;
     public GameObject CreditsControlPanel;
     public GameObject RagePanel;
+    public GameObject resumeButton;
 
     // Maintenance
     private bool isGameOver = false;
@@ -25,7 +26,7 @@ public class MenuController : MonoBehaviour {
     // Main Menu/ Pause Menu
     private int ButtonsCount;
     private GameObject[ ] buttons;// as object
-    public Text title;
+    public Text title, scoreDisplay;
     public GameObject titleObj;
     public GameObject signInPart;
     private string[ ] buttonsNames; // what you see
@@ -45,17 +46,16 @@ public class MenuController : MonoBehaviour {
     void Start ( ) {
         globalManager = GameObject.FindObjectOfType<GlobalManager> ( );
 
-        H = Screen.height;
-        W = Screen.width;
-        offset = H * 10 / 100 / MAX_CNT;
-        h = ( H * 80 / 100 - ( MAX_CNT ) * offset ) / ( MAX_CNT + 2 );
-        w = W / 3;
-
-
-
-
-
-
+       
+        if ( AudioListener.volume > 0f )
+        {
+            GameObject.Find ( "Sound" ).GetComponent<Image> ( ).sprite = soundSprite;
+        }
+        else
+        {
+            GameObject.Find ( "Sound" ).GetComponent<Image> ( ).sprite = muteSprite;
+        }
+         
         isInMainMenu = ( Application.loadedLevelName == StringsDatabase.menuSceneName ? true : false );
         isGameOver = false;
 
@@ -72,16 +72,16 @@ public class MenuController : MonoBehaviour {
             isShowingMenu = false;
         }
 
-        BuildMenuButtons ( );
-        BuildCreditsPanel ( );
+        //BuildMenuButtons ( );
+        //BuildCreditsPanel ( );
 
 
         isShowingCreditsPanel = false;
         CreditsControlPanel.SetActive ( false );
 
-        signInPart.transform.SetParent ( MenuControlPanel.transform);
-        signInPart.transform.localScale = new Vector3 ( 1, 1, 1 );
-        signInPart.GetComponent<RectTransform> ( ).sizeDelta = new Vector2 ( w/1.5f, h*5 );
+        //signInPart.transform.SetParent ( MenuControlPanel.transform);
+        //signInPart.transform.localScale = new Vector3 ( 1, 1, 1 );
+        //signInPart.GetComponent<RectTransform> ( ).sizeDelta = new Vector2 ( w/1.5f, h*5 );
         if (GameJolt.API.Manager.Instance.CurrentUser == null) {
             signInPart.SetActive(true);
         }
@@ -212,6 +212,9 @@ public class MenuController : MonoBehaviour {
 
         if ( !isInMainMenu ) {
             Time.timeScale = 0.0f;
+            string dist = ( ( int ) GlobalManager.player.distance ).ToString ( ) + " meters ";
+            string beans = GlobalManager.rage.GetTotal ( ).ToString ( ) + " coins";
+            scoreDisplay.text = dist + "\n" + beans;
         }
     }
 
@@ -285,15 +288,13 @@ public class MenuController : MonoBehaviour {
             return;
         }
 
-        buttons[ 0 ].GetComponent<ButtonAction> ( ).buttonName.text = StringsDatabase._replayGameButton;
-        buttons[ 0 ].GetComponent<ButtonAction> ( ).command = StringsDatabase._replayGameButton;
+        resumeButton.GetComponent<ButtonAction> ( ).buttonName.text = StringsDatabase._replayGameButton;
+        resumeButton.GetComponent<ButtonAction> ( ).command = StringsDatabase._replayGameButton;
 
 
         isShowingMenu = true;
 
-        string dist = ((int)GlobalManager.player.distance).ToString() + " meters ";
-        string beans = GlobalManager.rage.GetTotal ( ).ToString() + " coins";
-        title.text = dist + "\n" + beans;
+
         if ( GameJolt.API.Manager.Instance.CurrentUser == null ) {
             signInPart.SetActive ( true );
         }

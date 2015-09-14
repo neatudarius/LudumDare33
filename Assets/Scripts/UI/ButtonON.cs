@@ -10,7 +10,7 @@ public class ButtonON : MonoBehaviour, IPointerDownHandler{
     #region IPointerDownHandler implementation
 
     public void OnPointerDown( PointerEventData eventData ) {
-        Debug.Log ( command + " ON " );
+        //Debug.Log ( command + " ON " );
         if ( command == StringsDatabase._runButton ) {
             ControlsManager.isRunPressed = true;
             return;

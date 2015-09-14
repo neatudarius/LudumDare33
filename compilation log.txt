@@ -1,5 +1,5 @@
 ********************************************************************************
-*                   Saturday, September 05, 2015 2:20:41 PM                    *
+*                    Monday, September 14, 2015 8:51:05 PM                     *
 ********************************************************************************
 
 smcs.exe version: 1.2.0.0
@@ -10,9 +10,9 @@ Compiler: Version3
 - Compilation -----------------------------------------------
 
 Process: C:/Program Files/Unity/Editor/Data\Mono/bin/mono.exe
-Arguments: "C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/gmcs.exe" @Temp/UnityTempFile-e8e0c40a9e03b61469af9e1e3c96def5
+Arguments: "C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/gmcs.exe" @Temp/UnityTempFile-dc2653c0e7d7e7f4b9afa0129c8a147c
 Exit code: 0
-Elapsed time: 2.73 sec
+Elapsed time: 1.03 sec
 
 - Compiler output:
 0: 
@@ -20,7 +20,7 @@ Elapsed time: 2.73 sec
 - Compiler errors:
 0: 
 ********************************************************************************
-*                   Saturday, September 05, 2015 2:20:46 PM                    *
+*                    Monday, September 14, 2015 8:55:49 PM                     *
 ********************************************************************************
 
 smcs.exe version: 1.2.0.0
@@ -31,9 +31,9 @@ Compiler: Version3
 - Compilation -----------------------------------------------
 
 Process: C:/Program Files/Unity/Editor/Data\Mono/bin/mono.exe
-Arguments: "C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/gmcs.exe" @Temp/UnityTempFile-2aa4adf2377bf6144be3d05117e89387
+Arguments: "C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/gmcs.exe" @Temp/UnityTempFile-92fe8cc7b1ad13246a368d541b54d546
 Exit code: 0
-Elapsed time: 2.02 sec
+Elapsed time: 0.95 sec
 
 - Compiler output:
 0: 
