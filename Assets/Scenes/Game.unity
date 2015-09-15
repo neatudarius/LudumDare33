@@ -541,7 +541,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 50319885}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c15c1b61b1c45354e9859f9066d9e0ab, type: 3}
   m_Name: 
@@ -1763,6 +1763,92 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1318878940}
   m_RootOrder: 0
+--- !u!1 &387242979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 387242981}
+  - 61: {fileID: 387242980}
+  - 58: {fileID: 387242983}
+  - 58: {fileID: 387242982}
+  - 50: {fileID: 387242984}
+  m_Layer: 0
+  m_Name: ColliderForCoins
+  m_TagString: PlayerCollider
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!61 &387242980
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387242979}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -1.35556066, y: .234005645}
+  serializedVersion: 2
+  m_Size: {x: 3.71111727, y: .972768247}
+--- !u!4 &387242981
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387242979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.00999999978, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2076938553}
+  m_RootOrder: 1
+--- !u!58 &387242982
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387242979}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 2.01999998, y: .75}
+  serializedVersion: 2
+  m_Radius: 1.13
+--- !u!58 &387242983
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387242979}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -.349999994}
+  serializedVersion: 2
+  m_Radius: 1.38999999
+--- !u!50 &387242984
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387242979}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 4
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1001 &396965704
 Prefab:
   m_ObjectHideFlags: 0
@@ -4369,13 +4455,30 @@ Prefab:
       objectReference: {fileID: 565938620}
     - target: {fileID: 5808708, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
       propertyPath: m_Radius
-      value: 1.46709871
+      value: 1.10000002
       objectReference: {fileID: 0}
     - target: {fileID: 5808708, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
       propertyPath: m_Offset.x
       value: -.0500000007
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6171434, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
+      propertyPath: m_Offset.x
+      value: .72087419
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171434, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
+      propertyPath: m_Size.x
+      value: 1.33226705
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171434, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
+      propertyPath: m_Offset.y
+      value: .52130425
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171434, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
+      propertyPath: m_Size.y
+      value: .680436909
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6150556, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 058447313d4f5d04ab97eaf520e015a4, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1154754301
@@ -7140,6 +7243,7 @@ MonoBehaviour:
   duration: 10
   incCoinsPeRage: 10
   effect: {fileID: 646445459}
+  comboDuration: 5
   rageSound: {fileID: 8300000, guid: dc2b1c0da774abe43abfc0fb5dff09f6, type: 3}
   comboSound: {fileID: 8300000, guid: 58432c5c64e74bf4290b0550e8b4a257, type: 3}
 --- !u!222 &1978219403
