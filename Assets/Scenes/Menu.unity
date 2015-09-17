@@ -158,19 +158,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 227.199997
+      value: .33001709
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 53.7999992
+      value: -252
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 504.899994
+      value: -561.099976
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 132.600006
+      value: -467.399994
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
       propertyPath: m_AnchorMin.x
@@ -182,11 +182,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
       propertyPath: m_Pivot.x
@@ -415,7 +415,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -4163,7 +4162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: .503000021}
+  m_Color: {r: 1, g: 1, b: 1, a: .809000015}
   m_Sprite: {fileID: 21300000, guid: 330f09b6f2184e041a4e95120185df17, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4876,11 +4875,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
       propertyPath: m_FontData.m_FontSize
-      value: 1
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
       propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
+      propertyPath: m_FontData.m_RichText
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0fbfbabb7b6fb141b7df284096240c9, type: 2}
@@ -12214,6 +12221,10 @@ Prefab:
     - target: {fileID: 100004, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab8b512f81c227046a6a1d858f35079c, type: 2}
