@@ -43,7 +43,7 @@ public class Coin : MonoBehaviour {
             effectIsOn = true;
 
             //Rangeincrease
-            if (hit.gameObject.tag == "Player" )
+            if (hit.gameObject.tag == "Player"  || hit.gameObject.tag == "PlayerCollider" )
             {
                 GlobalManager.IncreaseRage ( );
                 parent.Remove ( transform.parent.gameObject.name, "collect" );

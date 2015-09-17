@@ -54,7 +54,7 @@ public class CoinsController : MonoBehaviour
 
     void GenerateCoins ( )
     {
-        int rand = GlobalManager.rand ( 10, 16 );
+        int rand = GlobalManager.rand ( 1, 16 );
         switch ( rand )
         {
             case 1:

@@ -459,11 +459,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11474490, guid: 376efb4fb640e594ea19217ad140515d, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11474490, guid: 376efb4fb640e594ea19217ad140515d, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 376efb4fb640e594ea19217ad140515d, type: 2}
@@ -1782,7 +1782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &387242980
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1793,9 +1793,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -1.35556066, y: .234005645}
+  m_Offset: {x: -2.24358869, y: .234005645}
   serializedVersion: 2
-  m_Size: {x: 3.71111727, y: .972768247}
+  m_Size: {x: 1.93506515, y: .972768247}
 --- !u!4 &387242981
 Transform:
   m_ObjectHideFlags: 0
@@ -1814,9 +1814,9 @@ CircleCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 387242979}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 2.01999998, y: .75}
   serializedVersion: 2
@@ -1827,9 +1827,9 @@ CircleCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 387242979}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: -.349999994}
   serializedVersion: 2
@@ -2540,6 +2540,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -6042,11 +6043,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11474490, guid: 376efb4fb640e594ea19217ad140515d, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11474490, guid: 376efb4fb640e594ea19217ad140515d, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11465788, guid: 376efb4fb640e594ea19217ad140515d, type: 2}
       propertyPath: m_Enabled
@@ -6886,8 +6887,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.74050903}
-  m_SizeDelta: {x: 0, y: -3.48099995}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1858343796
 MonoBehaviour:
